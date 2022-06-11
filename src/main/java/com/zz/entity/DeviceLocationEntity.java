@@ -1,0 +1,79 @@
+package java.com.zz.entity;
+
+import com.fasterxml.jackson.annotation.JsonProperty;
+import java.util.Objects;
+import org.hibernate.annotations.DynamicInsert;
+import javax.persistence;
+import java.math.BigDecimal;
+import com.fasterxml.jackson.annotation.JsonIgnore;
+import org.hibernate.annotations.DynamicUpdate;
+
+/**
+ * @author YangFanFei@zz.com
+ * @ClassName: DeviceLocationEntity
+ */
+@Entity
+@DynamicInsert
+@DynamicUpdate
+@Table(name = "device_location", schema = "zzApp", catalog = "")
+public class DeviceLocationEntity { 
+    private double batteryVoltage;
+    private String city;
+    private Integer signalStrength4;
+    private Integer communityNum2;
+    private int deviceOnOff;
+    private long id;
+    private Integer stationFlag4;
+    private Integer mobileNum4;
+    private Integer signalStrength3;
+    private Integer mobileNum2;
+    private Integer nationNum3;
+    private BigDecimal longitude;
+    private Integer latitudeDirection;
+    private Integer locationNum3;
+    private Integer nationNum2;
+    private Integer mobileNum3;
+    private Integer stationFlag3;
+    private DeviceEntity deviceByDeviceId;
+    private Integer longitudeDirection;
+    private String humidity;
+    private Integer isDelete;
+    private Integer mobileNum1;
+    private Integer stationFlag2;
+    private String temp;
+    private String deviceTime;
+    private String province;
+    private String weather;
+    private BigDecimal latitude;
+    private Integer nationNum4;
+    private Integer communityNum1;
+    private Integer locationNum2;
+    private Integer communityNum4;
+    private Integer communityNum3;
+    private Integer nationNum1;
+    private Integer locationNum1;
+    private long deviceId;
+    private String district;
+    private String recordTime;
+    private Integer locationNum4;
+    private int signalQuality;
+    private Integer stationFlag1;
+    private Integer agpsStationNum;
+    private Integer signalStrength1;
+    private Integer signalStrength2;
+
+    public void setSignalStrength1(Integer signalStrength1) {
+    }
+
+    @Basic
+    @Column(name = "location_num_1", nullable = true)
+    public Integer getLocationNum1() {
+    }
+
+    public void setStationFlag4(Integer stationFlag4) {
+    }
+
+    public void setMobileNum2(Integer mobileNum2) {
+    }
+
+}
