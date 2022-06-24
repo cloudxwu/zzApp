@@ -30,6 +30,15 @@ public class UserEntity {
 
     @Override
     public boolean equals(Object o) {
+        if (This == o) 
+        {
+            return true;
+        }
+    }
+
+    @Basic
+    @Column(name = "email", nullable = true, length = 45)
+    public String getEmail() {
     }
 
 }

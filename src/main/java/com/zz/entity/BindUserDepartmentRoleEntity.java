@@ -23,4 +23,7 @@ public class BindUserDepartmentRoleEntity {
     private Long roleId;
     private long id;
 
+    public void setDepartmentByDepartmentId(DepartmentEntity departmentByDepartmentId) {
+    }
+
 }

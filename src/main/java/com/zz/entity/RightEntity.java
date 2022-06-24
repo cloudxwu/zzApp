@@ -23,4 +23,8 @@ public class RightEntity {
     private Collection<UserRightRelationEntity> userRightRelationsById;
     private String description;
 
+    @Override
+    public int hashCode() {
+    }
+
 }

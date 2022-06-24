@@ -17,4 +17,7 @@ public class AGpsEntity {
     private int status;
     private String msg;
 
+    public String getMsg() {
+    }
+
 }

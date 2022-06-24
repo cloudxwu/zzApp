@@ -24,4 +24,10 @@ public class RoleEntity {
     private Collection<BindUserDepartmentRoleEntity> bindUserDepartmentRolesById;
     private Collection<RoleRightRelationEntity> roleRightRelationsById;
 
+    @Id
+    @GeneratedValue(strategy = GenerationType.IDENTITY)
+    @Column(name = "id", nullable = false)
+    public long getId() {
+    }
+
 }

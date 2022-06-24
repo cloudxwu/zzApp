@@ -25,4 +25,7 @@ public class DepartmentEntity {
     private String name;
     private String createTime;
 
+    public void setDevicesById(Collection<DeviceEntity> devicesById) {
+    }
+
 }

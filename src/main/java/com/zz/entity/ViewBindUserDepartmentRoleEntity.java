@@ -40,4 +40,12 @@ public class ViewBindUserDepartmentRoleEntity {
     public void setUserCreateTime(String userCreateTime) {
     }
 
+    public void setRoleComment(String roleComment) {
+    }
+
+    @Basic
+    @Column(name = "user_mobile", nullable = true, length = 45)
+    public String getUserMobile() {
+    }
+
 }

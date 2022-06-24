@@ -40,4 +40,10 @@ public class DeviceCmdEntity {
     public boolean equals(Object o) {
     }
 
+    public void setDeviceId(long deviceId) {
+    }
+
+    public void setGetDeviceIp(Integer getDeviceIp) {
+    }
+
 }

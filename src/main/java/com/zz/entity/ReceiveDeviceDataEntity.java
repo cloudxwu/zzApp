@@ -17,4 +17,7 @@ public class ReceiveDeviceDataEntity {
     private long deviceId;
     private DeviceEntity deviceByDeviceId;
 
+    public void setIsRead(int isRead) {
+    }
+
 }

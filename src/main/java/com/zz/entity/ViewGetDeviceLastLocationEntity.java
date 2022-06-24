@@ -69,4 +69,22 @@ public class ViewGetDeviceLastLocationEntity {
     public void setSignalStrength4(Integer signalStrength4) {
     }
 
+    @Basic
+    @Column(name = "agps_station_num", nullable = true)
+    public Integer getAgpsStationNum() {
+    }
+
+    @Basic
+    @Column(name = "community_num_4", nullable = true)
+    public Integer getCommunityNum4() {
+    }
+
+    public void setAgpsStationNum(Integer agpsStationNum) {
+    }
+
+    @Basic
+    @Column(name = "mobile_num_2", nullable = true)
+    public Integer getMobileNum2() {
+    }
+
 }

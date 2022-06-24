@@ -21,4 +21,7 @@ public class UserRightRelationEntity {
     private long id;
     private long rightId;
 
+    public void setUserByUserId(UserEntity userByUserId) {
+    }
+
 }

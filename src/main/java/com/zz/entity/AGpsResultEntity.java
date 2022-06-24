@@ -17,4 +17,7 @@ public class AGpsResultEntity {
     private String rid;
     private String id;
 
+    public void setRoads(String roads) {
+    }
+
 }

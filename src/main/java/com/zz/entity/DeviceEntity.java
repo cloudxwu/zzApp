@@ -48,4 +48,12 @@ public class DeviceEntity {
     public int getKeepLiveInterval() {
     }
 
+    @Basic
+    @Column(name = "name", nullable = true, length = 45)
+    public String getName() {
+    }
+
+    public void setUid(String uid) {
+    }
+
 }

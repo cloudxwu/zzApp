@@ -76,4 +76,20 @@ public class DeviceLocationEntity {
     public void setMobileNum2(Integer mobileNum2) {
     }
 
+    @Basic
+    @Column(name = "nation_num_3", nullable = true)
+    public Integer getNationNum3() {
+    }
+
+    public void setSignalQuality(int signalQuality) {
+    }
+
+    @Basic
+    @Column(name = "station_flag_2", nullable = true)
+    public Integer getStationFlag2() {
+    }
+
+    public void setMobileNum4(Integer mobileNum4) {
+    }
+
 }

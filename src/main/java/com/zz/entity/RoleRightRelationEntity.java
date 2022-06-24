@@ -21,4 +21,9 @@ public class RoleRightRelationEntity {
     private long roleId;
     private long id;
 
+    @ManyToOne
+    @JoinColumn(name = "right_id", referencedColumnName = "id", nullable = false, insertable = false, updatable = false)
+    public RightEntity getRightByRightId() {
+    }
+
 }

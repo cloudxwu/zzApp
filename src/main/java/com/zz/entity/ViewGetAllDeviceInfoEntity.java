@@ -40,4 +40,10 @@ public class ViewGetAllDeviceInfoEntity {
     public void setStatusId(Long statusId) {
     }
 
+    public void setStatus(String status) {
+    }
+
+    public void setBatterySleepTime(int batterySleepTime) {
+    }
+
 }
