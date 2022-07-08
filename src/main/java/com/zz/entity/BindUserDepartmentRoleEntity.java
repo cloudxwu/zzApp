@@ -26,4 +26,12 @@ public class BindUserDepartmentRoleEntity {
     public void setDepartmentByDepartmentId(DepartmentEntity departmentByDepartmentId) {
     }
 
+    @Override
+    public boolean equals(Object o) {
+        if (This == o) 
+        {
+            return true;
+        }
+    }
+
 }

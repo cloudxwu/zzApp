@@ -17,4 +17,7 @@ public class ResultEntity {
     public static final int SAVE_DATA_ERROR = 1;
     public static final int DATA_IS_EXIST = 5;
 
+    public ResultEntity(int code, String msg, JsonNode data) {
+    }
+
 }

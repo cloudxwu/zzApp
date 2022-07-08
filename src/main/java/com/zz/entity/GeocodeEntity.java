@@ -14,4 +14,7 @@ public class GeocodeEntity {
     private int status;
     private String info;
 
+    public int getInfocode() {
+    }
+
 }

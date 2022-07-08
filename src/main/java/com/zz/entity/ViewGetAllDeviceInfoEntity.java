@@ -46,4 +46,12 @@ public class ViewGetAllDeviceInfoEntity {
     public void setBatterySleepTime(int batterySleepTime) {
     }
 
+    @Basic
+    @Column(name = "keep_live_interval", nullable = false)
+    public int getKeepLiveInterval() {
+    }
+
+    public void setBatteryKeepLiveTime(int batteryKeepLiveTime) {
+    }
+
 }

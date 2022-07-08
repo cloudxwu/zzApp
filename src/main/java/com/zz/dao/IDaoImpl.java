@@ -17,4 +17,8 @@ public class IDaoImpl {
     private Class<T> clazz = null;
     private EntityManager entityManager;
 
+    @Override
+    public List<T> findByParams(String sql, Object params) {
+    }
+
 }

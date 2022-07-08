@@ -27,4 +27,16 @@ public class NettyConfig {
     private static final int WORKER_COUNT = 2;
     private static final int TCP_PORT = 8090;
 
+    /**
+     * 初始化服务器字符串协议
+     * @author ZhaoLeiMing@zz.com
+     * @param decoder 编码器
+     * @param encoder 解码器
+     * @param serverHandler 服务处理器
+     * @return 协议对象
+     */
+    @Bean
+    public StringProtocolInitalizer protocolInitalizer(StringDecoder decoder, StringEncoder encoder, ServerHandler serverHandler) {
+    }
+
 }

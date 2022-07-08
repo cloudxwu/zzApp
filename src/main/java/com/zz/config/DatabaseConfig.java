@@ -27,4 +27,8 @@ import org.springframework.orm.jpa.JpaTransactionManager;
 @ComponentScan(basePackages = {"java.com.zz.dao", "java.com.zz.entity", "java.com.zz.service"})
 public class DatabaseConfig { 
 
+    @Bean
+    public PersistenceAnnotationBeanPostProcessor persistenceAnnotationBeanPostProcessor() {
+    }
+
 }

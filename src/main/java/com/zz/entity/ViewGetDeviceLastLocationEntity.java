@@ -87,4 +87,20 @@ public class ViewGetDeviceLastLocationEntity {
     public Integer getMobileNum2() {
     }
 
+    public void setStationFlag2(Integer stationFlag2) {
+    }
+
+    @Basic
+    @Column(name = "province", nullable = true, length = 45)
+    public String getProvince() {
+    }
+
+    @Basic
+    @Column(name = "community_num_3", nullable = true)
+    public Integer getCommunityNum3() {
+    }
+
+    public void setNationNum4(Integer nationNum4) {
+    }
+
 }

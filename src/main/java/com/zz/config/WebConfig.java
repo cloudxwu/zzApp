@@ -24,4 +24,13 @@ import org.springframework.context.annotation.Configuration;
 public class WebConfig { 
     private ApplicationContext applicationContext = null;
 
+    /**
+     * 服务器连接
+     * ssh -p 22 root@127.0.0.1 
+     * root
+     */
+    @Override
+    public void addCorsMappings(CorsRegistry registry) {
+    }
+
 }

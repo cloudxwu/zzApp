@@ -10,4 +10,8 @@ import java.util.List;
 public class IServiceImpl { 
     private IDaoImpl<T> dao;
 
+    @Override
+    public T delete(long id) {
+    }
+
 }

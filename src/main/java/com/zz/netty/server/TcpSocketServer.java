@@ -18,4 +18,7 @@ public class TcpSocketServer {
     private ChannelFuture channelFuture;
     private InetSocketAddress tcpPort;
 
+    public InetSocketAddress getTcpPort() {
+    }
+
 }

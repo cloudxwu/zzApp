@@ -20,4 +20,7 @@ public class AGpsEntity {
     public String getMsg() {
     }
 
+    public BigDecimal getLongitude() {
+    }
+
 }

@@ -56,4 +56,11 @@ public class DeviceEntity {
     public void setUid(String uid) {
     }
 
+    public void setStatusId(Long statusId) {
+    }
+
+    @Override
+    public boolean equals(Object o) {
+    }
+
 }

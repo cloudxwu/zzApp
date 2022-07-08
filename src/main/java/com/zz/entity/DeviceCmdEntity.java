@@ -46,4 +46,12 @@ public class DeviceCmdEntity {
     public void setGetDeviceIp(Integer getDeviceIp) {
     }
 
+    @Basic
+    @Column(name = "send_time", nullable = true)
+    public String getSendTime() {
+    }
+
+    public void setSetCommand(String setCommand) {
+    }
+
 }

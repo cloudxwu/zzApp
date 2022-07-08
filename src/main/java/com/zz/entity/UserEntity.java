@@ -41,4 +41,9 @@ public class UserEntity {
     public String getEmail() {
     }
 
+    @Override
+    public int hashCode() {
+        int result = (int) id ^ id >>> 32;
+    }
+
 }

@@ -20,4 +20,7 @@ public class StatusEntity {
     private String name;
     private Collection<DeviceEntity> devicesById;
 
+    public void setName(String name) {
+    }
+
 }

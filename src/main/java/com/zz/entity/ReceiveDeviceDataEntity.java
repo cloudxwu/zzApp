@@ -20,4 +20,9 @@ public class ReceiveDeviceDataEntity {
     public void setIsRead(int isRead) {
     }
 
+    @Basic
+    @Column(name = "is_read", nullable = false)
+    public int getIsRead() {
+    }
+
 }

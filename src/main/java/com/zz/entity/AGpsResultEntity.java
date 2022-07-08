@@ -20,4 +20,7 @@ public class AGpsResultEntity {
     public void setRoads(String roads) {
     }
 
+    public String getRid() {
+    }
+
 }

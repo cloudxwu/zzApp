@@ -20,4 +20,8 @@ public class TypeEntity {
     private Collection<DeviceEntity> devicesById;
     private long id;
 
+    @Override
+    public int hashCode() {
+    }
+
 }

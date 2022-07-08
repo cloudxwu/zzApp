@@ -28,4 +28,20 @@ public class DeviceController {
     private DeviceService deviceService;
     private ViewGetAllDeviceInfoService viewGetAllDeviceInfoService;
 
+    /**
+     * @api {get} /api/manage/device/command/:id 根据设备ID获取接收到的数据
+     * @apiVersion 0.0.1
+     * @apiName getReceiveDataById
+     * @apiGroup deviceGroup
+     *
+     * @apiParam {Number} id 设备ID
+     *
+     * @apiSuccess {String} code 返回码.
+     * @apiSuccess {String} msg  返回消息.
+     * @apiSuccess {Object} data  JSON格式的对象.
+     */
+    @RequestMapping(value = "/device/command/{id}", method = RequestMethod.GET)
+    public ResultEntity getReceiveDataById(long id) {
+    }
+
 }

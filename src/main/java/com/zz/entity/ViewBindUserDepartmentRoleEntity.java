@@ -48,4 +48,14 @@ public class ViewBindUserDepartmentRoleEntity {
     public String getUserMobile() {
     }
 
+    @Basic
+    @Column(name = "role_create_time", nullable = true)
+    public String getRoleCreateTime() {
+    }
+
+    @Basic
+    @Column(name = "user_id", nullable = false)
+    public long getUserId() {
+    }
+
 }

@@ -27,4 +27,8 @@ public class RightEntity {
     public int hashCode() {
     }
 
+    @OneToMany(mappedBy = "rightByRightId")
+    public Collection<RoleRightRelationEntity> getRoleRightRelationsById() {
+    }
+
 }

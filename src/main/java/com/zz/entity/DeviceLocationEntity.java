@@ -92,4 +92,20 @@ public class DeviceLocationEntity {
     public void setMobileNum4(Integer mobileNum4) {
     }
 
+    @Basic
+    @Column(name = "record_time", nullable = false)
+    public String getRecordTime() {
+    }
+
+    public void setCommunityNum4(Integer communityNum4) {
+    }
+
+    public void setDeviceOnOff(int deviceOnOff) {
+    }
+
+    @Basic
+    @Column(name = "device_id", nullable = false)
+    public long getDeviceId() {
+    }
+
 }

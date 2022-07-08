@@ -23,4 +23,22 @@ public class UserController {
     private BindUserDepartmentRoleService bindUserDepartmentRelationService;
     private ViewBindUserDepartmentRoleService viewBindUserDepartmentRoleService;
 
+    /**
+     * @api {post} /api/manage/user/department 把用户加入某个部门
+     * @apiVersion 0.0.1
+     * @apiName bindDepartment
+     * @apiGroup userGroup
+     *
+     * @apiParam {Number} user_id 用户ID
+     * @apiParam {Number} department_id 部门ID
+     *
+     * @apiSuccess {String} code 返回码.
+     * @apiSuccess {String} msg  返回消息.
+     * @apiSuccess {Object} data  JSON格式的对象.
+     */
+    @RequestMapping(value = "/user/department", method = RequestMethod.POST)
+    public ResultEntity bindDepartment(long userId, long departmentId) {
+        ObjectMapper objectMapper = new ObjectMapper();
+    }
+
 }

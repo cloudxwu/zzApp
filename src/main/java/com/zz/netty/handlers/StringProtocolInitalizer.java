@@ -23,4 +23,7 @@ public class StringProtocolInitalizer {
     private static final String HANDLER_KEY = "handler";
     private StringEncoder encoder;
 
+    public StringEncoder getEncoder() {
+    }
+
 }

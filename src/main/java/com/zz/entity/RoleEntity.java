@@ -30,4 +30,9 @@ public class RoleEntity {
     public long getId() {
     }
 
+    @Basic
+    @Column(name = "create_time", nullable = false)
+    public String getCreateTime() {
+    }
+
 }
