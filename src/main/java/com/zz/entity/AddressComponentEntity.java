@@ -13,4 +13,7 @@ public class AddressComponentEntity {
     private String district;
     private String city;
 
+    public String getDistrict() {
+    }
+
 }

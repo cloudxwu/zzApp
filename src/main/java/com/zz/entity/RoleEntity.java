@@ -35,4 +35,7 @@ public class RoleEntity {
     public String getCreateTime() {
     }
 
+    public void setCreateTime(String createTime) {
+    }
+
 }

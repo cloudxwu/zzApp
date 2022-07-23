@@ -54,4 +54,14 @@ public class ViewGetAllDeviceInfoEntity {
     public void setBatteryKeepLiveTime(int batteryKeepLiveTime) {
     }
 
+    @Basic
+    @Column(name = "serial_number", nullable = true, length = 200)
+    public String getSerialNumber() {
+    }
+
+    @Basic
+    @Column(name = "server_ip", nullable = false)
+    public String getServerIp() {
+    }
+
 }

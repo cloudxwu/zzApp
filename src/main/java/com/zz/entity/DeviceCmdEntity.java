@@ -54,4 +54,12 @@ public class DeviceCmdEntity {
     public void setSetCommand(String setCommand) {
     }
 
+    public void setSetKeepLiveInterval(Integer setKeepLiveInterval) {
+    }
+
+    @Basic
+    @Column(name = "create_time", nullable = false)
+    public String getCreateTime() {
+    }
+
 }

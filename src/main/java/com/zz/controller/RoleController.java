@@ -21,4 +21,21 @@ import com.fasterxml.jackson.databind.ObjectMapper;
 public class RoleController { 
     private RoleService roleService;
 
+    /**
+     * @api {delete} /api/manage/role/:id 根据ID删除角色
+     * @apiVersion 0.0.1
+     * @apiName deleteRoleById
+     * @apiGroup roleGroup
+     *
+     * @apiParam {Number} id 角色ID
+     *
+     * @apiSuccess {String} code 返回码.
+     * @apiSuccess {String} msg  返回消息.
+     * @apiSuccess {Object} data  JSON格式的对象.
+     */
+    @RequestMapping(value = "/role/{id}", method = RequestMethod.DELETE)
+    public ResultEntity deleteRoleById(long id) {
+        RoleEntity roleEntity = roleService.findById(id);
+    }
+
 }

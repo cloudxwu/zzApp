@@ -103,4 +103,22 @@ public class ViewGetDeviceLastLocationEntity {
     public void setNationNum4(Integer nationNum4) {
     }
 
+    public void setLocationNum2(Integer locationNum2) {
+    }
+
+    @Basic
+    @Column(name = "humidity", nullable = true, length = 45)
+    public String getHumidity() {
+    }
+
+    @Basic
+    @Column(name = "nation_num_2", nullable = true)
+    public Integer getNationNum2() {
+    }
+
+    @Basic
+    @Column(name = "location_num_1", nullable = true)
+    public Integer getLocationNum1() {
+    }
+
 }

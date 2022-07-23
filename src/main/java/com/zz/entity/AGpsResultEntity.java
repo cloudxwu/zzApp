@@ -23,4 +23,7 @@ public class AGpsResultEntity {
     public String getRid() {
     }
 
+    public int getRadius() {
+    }
+
 }

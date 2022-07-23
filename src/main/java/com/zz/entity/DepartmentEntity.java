@@ -34,4 +34,7 @@ public class DepartmentEntity {
     public long getId() {
     }
 
+    public void setName(String name) {
+    }
+
 }

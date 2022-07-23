@@ -58,4 +58,10 @@ public class ViewBindUserDepartmentRoleEntity {
     public long getUserId() {
     }
 
+    public void setUserName(String userName) {
+    }
+
+    public void setDepartmentId(Long departmentId) {
+    }
+
 }

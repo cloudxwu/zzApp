@@ -24,4 +24,9 @@ public class UserRightRelationEntity {
     public void setUserByUserId(UserEntity userByUserId) {
     }
 
+    @ManyToOne
+    @JoinColumn(name = "user_id", referencedColumnName = "id", nullable = false, insertable = false, updatable = false)
+    public UserEntity getUserByUserId() {
+    }
+
 }

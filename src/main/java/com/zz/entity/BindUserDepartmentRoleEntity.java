@@ -34,4 +34,7 @@ public class BindUserDepartmentRoleEntity {
         }
     }
 
+    public void setId(long id) {
+    }
+
 }

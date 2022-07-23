@@ -63,4 +63,11 @@ public class DeviceEntity {
     public boolean equals(Object o) {
     }
 
+    @OneToMany(mappedBy = "deviceByDeviceId")
+    public Collection<DeviceCmdEntity> getDeviceCmdsById() {
+    }
+
+    public void setDepartmentByDepartmentId(DepartmentEntity departmentByDepartmentId) {
+    }
+
 }

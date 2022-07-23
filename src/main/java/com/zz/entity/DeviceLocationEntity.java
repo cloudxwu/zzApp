@@ -108,4 +108,25 @@ public class DeviceLocationEntity {
     public long getDeviceId() {
     }
 
+    @Basic
+    @Column(name = "latitude", nullable = true, precision = 6)
+    public BigDecimal getLatitude() {
+    }
+
+    @Basic
+    @Column(name = "signal_strength_2", nullable = true)
+    public Integer getSignalStrength2() {
+    }
+
+    public void setTemp(String temp) {
+    }
+
+    public void setAgpsStationNum(Integer agpsStationNum) {
+    }
+
+    @Basic
+    @Column(name = "nation_num_2", nullable = true)
+    public Integer getNationNum2() {
+    }
+
 }
