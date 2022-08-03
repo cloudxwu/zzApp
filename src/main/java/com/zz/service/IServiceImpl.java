@@ -14,4 +14,8 @@ public class IServiceImpl {
     public T delete(long id) {
     }
 
+    @Override
+    public List<T> findByParams(String sql, Object params) {
+    }
+
 }

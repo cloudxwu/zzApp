@@ -21,4 +21,8 @@ public class IDaoImpl {
     public List<T> findByParams(String sql, Object params) {
     }
 
+    @Override
+    public List<T> findAll() {
+    }
+
 }

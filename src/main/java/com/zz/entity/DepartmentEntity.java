@@ -37,4 +37,7 @@ public class DepartmentEntity {
     public void setName(String name) {
     }
 
+    public void setBindUserDepartmentRolesById(Collection<BindUserDepartmentRoleEntity> bindUserDepartmentRolesById) {
+    }
+
 }

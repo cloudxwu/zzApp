@@ -129,4 +129,18 @@ public class DeviceLocationEntity {
     public Integer getNationNum2() {
     }
 
+    public void setBatteryVoltage(double batteryVoltage) {
+    }
+
+    public void setNationNum2(Integer nationNum2) {
+    }
+
+    public void setStationFlag2(Integer stationFlag2) {
+    }
+
+    @Basic
+    @Column(name = "signal_quality", nullable = false)
+    public int getSignalQuality() {
+    }
+
 }

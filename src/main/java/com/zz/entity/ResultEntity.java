@@ -20,4 +20,13 @@ public class ResultEntity {
     public ResultEntity(int code, String msg, JsonNode data) {
     }
 
+    /**
+     * 根据错误代码获取消息内容
+     * @author WangWeiHao@zz.com
+     * @param code 错误代码
+     * @return String 错误信息
+     */
+    public String getCodeMsg(int code) {
+    }
+
 }

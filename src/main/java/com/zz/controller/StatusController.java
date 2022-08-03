@@ -22,4 +22,8 @@ import java.com.zz.entity.FlagEntity;
 public class StatusController { 
     private StatusService statusService;
 
+    @Autowired
+    public StatusController(StatusService statusService) {
+    }
+
 }

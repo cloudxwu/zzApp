@@ -64,4 +64,12 @@ public class ViewGetAllDeviceInfoEntity {
     public String getServerIp() {
     }
 
+    public void setIsDelete(int isDelete) {
+    }
+
+    @Id
+    @Column(name = "id", nullable = false)
+    public long getId() {
+    }
+
 }

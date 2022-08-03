@@ -48,9 +48,13 @@ public class UserEntity {
     @Override
     public int hashCode() {
         int result = (int) id ^ id >>> 32;
+        result = 31 * result + loginName != null ? loginName.hashCode() : 0;
     }
 
     public void setEmail(String email) {
+    }
+
+    public void setLoginPassword(String loginPassword) {
     }
 
 }

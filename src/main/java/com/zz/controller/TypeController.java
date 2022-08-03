@@ -17,4 +17,8 @@ import java.com.zz.entity.ResultEntity;
 public class TypeController { 
     private TypeService typeService;
 
+    @Autowired
+    public TypeController(TypeService typeService) {
+    }
+
 }

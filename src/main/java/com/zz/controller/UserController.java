@@ -39,6 +39,7 @@ public class UserController {
     @RequestMapping(value = "/user/department", method = RequestMethod.POST)
     public ResultEntity bindDepartment(long userId, long departmentId) {
         ObjectMapper objectMapper = new ObjectMapper();
+        List<BindUserDepartmentRoleEntity> bindUserDepartmentRoleEntityList = bindUserDepartmentRelationService.getBindUserDepartmentEntity(userId, departmentId);
     }
 
 }

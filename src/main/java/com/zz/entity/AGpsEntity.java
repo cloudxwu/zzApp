@@ -23,4 +23,7 @@ public class AGpsEntity {
     public BigDecimal getLongitude() {
     }
 
+    public void setCount(int count) {
+    }
+
 }

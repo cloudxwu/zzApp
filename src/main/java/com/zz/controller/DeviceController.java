@@ -44,4 +44,18 @@ public class DeviceController {
     public ResultEntity getReceiveDataById(long id) {
     }
 
+    /**
+     * @api {get} /api/manage/device/location 获取所有设备的最新位置信息
+     * @apiVersion 0.0.1
+     * @apiName getAllDeviceLastLocation
+     * @apiGroup deviceGroup
+     *
+     * @apiSuccess {String} code 返回码.
+     * @apiSuccess {String} msg  返回消息.
+     * @apiSuccess {Object} data  JSON格式的对象.
+     */
+    @RequestMapping(value = "/device/location", method = RequestMethod.GET)
+    public ResultEntity getAllDeviceLastLocation() {
+    }
+
 }

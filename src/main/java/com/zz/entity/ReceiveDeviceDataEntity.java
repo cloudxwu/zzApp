@@ -25,4 +25,9 @@ public class ReceiveDeviceDataEntity {
     public int getIsRead() {
     }
 
+    @Basic
+    @Column(name = "device_id", nullable = false)
+    public long getDeviceId() {
+    }
+
 }

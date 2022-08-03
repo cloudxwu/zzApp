@@ -121,4 +121,20 @@ public class ViewGetDeviceLastLocationEntity {
     public Integer getLocationNum1() {
     }
 
+    public void setCommunityNum1(Integer communityNum1) {
+    }
+
+    @Basic
+    @Column(name = "signal_strength_3", nullable = true)
+    public Integer getSignalStrength3() {
+    }
+
+    @Basic
+    @Column(name = "mobile_num_1", nullable = true)
+    public Integer getMobileNum1() {
+    }
+
+    public void setLocationNum3(Integer locationNum3) {
+    }
+
 }

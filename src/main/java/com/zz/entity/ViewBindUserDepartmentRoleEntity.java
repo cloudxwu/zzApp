@@ -64,4 +64,12 @@ public class ViewBindUserDepartmentRoleEntity {
     public void setDepartmentId(Long departmentId) {
     }
 
+    public void setUserEmail(String userEmail) {
+    }
+
+    @Basic
+    @Column(name = "role_is_delete", nullable = true)
+    public Integer getRoleIsDelete() {
+    }
+
 }

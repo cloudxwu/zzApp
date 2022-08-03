@@ -70,4 +70,10 @@ public class DeviceEntity {
     public void setDepartmentByDepartmentId(DepartmentEntity departmentByDepartmentId) {
     }
 
+    public void setDeviceCmdsById(Collection<DeviceCmdEntity> deviceCmdsById) {
+    }
+
+    public void setTypeByTypeId(TypeEntity typeByTypeId) {
+    }
+
 }

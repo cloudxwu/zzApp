@@ -62,4 +62,12 @@ public class DeviceCmdEntity {
     public String getCreateTime() {
     }
 
+    public void setSetDeviceIp(String setDeviceIp) {
+    }
+
+    @Basic
+    @Column(name = "device_id", nullable = false)
+    public long getDeviceId() {
+    }
+
 }

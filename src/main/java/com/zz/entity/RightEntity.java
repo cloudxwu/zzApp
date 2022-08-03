@@ -25,10 +25,14 @@ public class RightEntity {
 
     @Override
     public int hashCode() {
+        int result = (int) id ^ id >>> 32;
     }
 
     @OneToMany(mappedBy = "rightByRightId")
     public Collection<RoleRightRelationEntity> getRoleRightRelationsById() {
+    }
+
+    public void setName(String name) {
     }
 
 }
