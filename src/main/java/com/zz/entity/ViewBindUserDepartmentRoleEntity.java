@@ -72,4 +72,12 @@ public class ViewBindUserDepartmentRoleEntity {
     public Integer getRoleIsDelete() {
     }
 
+    public void setUserId(long userId) {
+    }
+
+    @Basic
+    @Column(name = "role_comment", nullable = true, length = 200)
+    public String getRoleComment() {
+    }
+
 }

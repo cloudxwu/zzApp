@@ -40,4 +40,9 @@ public class DepartmentEntity {
     public void setBindUserDepartmentRolesById(Collection<BindUserDepartmentRoleEntity> bindUserDepartmentRolesById) {
     }
 
+    @Basic
+    @Column(name = "level", nullable = false)
+    public int getLevel() {
+    }
+
 }

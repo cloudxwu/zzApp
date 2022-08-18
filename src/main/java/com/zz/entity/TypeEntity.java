@@ -24,4 +24,9 @@ public class TypeEntity {
     public int hashCode() {
     }
 
+    @Basic
+    @Column(name = "name", nullable = false, length = 45)
+    public String getName() {
+    }
+
 }

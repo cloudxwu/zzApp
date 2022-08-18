@@ -30,4 +30,7 @@ public class ReceiveDeviceDataEntity {
     public long getDeviceId() {
     }
 
+    public void setCreateTime(String createTime) {
+    }
+
 }

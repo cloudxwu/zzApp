@@ -33,4 +33,8 @@ public class WebConfig {
     public void addCorsMappings(CorsRegistry registry) {
     }
 
+    @Override
+    public void setApplicationContext(ApplicationContext applicationContext) throws BeansException {
+    }
+
 }

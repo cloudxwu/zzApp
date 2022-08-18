@@ -29,4 +29,7 @@ public class RoleRightRelationEntity {
     public void setRightId(long rightId) {
     }
 
+    public void setId(long id) {
+    }
+
 }

@@ -32,9 +32,18 @@ public class BindUserDepartmentRoleEntity {
         {
             return true;
         }
+        if (o == null || getClass() != o.getClass()) 
+        {
+            return false;
+        }
     }
 
     public void setId(long id) {
+    }
+
+    @ManyToOne
+    @JoinColumn(name = "department_id", referencedColumnName = "id", nullable = false, insertable = false, updatable = false)
+    public DepartmentEntity getDepartmentByDepartmentId() {
     }
 
 }

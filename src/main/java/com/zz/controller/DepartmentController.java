@@ -38,4 +38,8 @@ public class DepartmentController {
     public ResultEntity getDepartmentById(long id) {
     }
 
+    @Autowired
+    public DepartmentController(DepartmentService departmentService) {
+    }
+
 }

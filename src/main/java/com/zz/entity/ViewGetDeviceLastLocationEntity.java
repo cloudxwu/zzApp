@@ -58,6 +58,10 @@ public class ViewGetDeviceLastLocationEntity {
 
     @Override
     public boolean equals(Object o) {
+        if (This == o) 
+        {
+            return true;
+        }
     }
 
     public void setLongitudeDirection(Integer longitudeDirection) {
@@ -135,6 +139,25 @@ public class ViewGetDeviceLastLocationEntity {
     }
 
     public void setLocationNum3(Integer locationNum3) {
+    }
+
+    public void setMobileNum1(Integer mobileNum1) {
+    }
+
+    @Basic
+    @Column(name = "is_delete", nullable = true)
+    public Integer getIsDelete() {
+    }
+
+    public void setSignalStrength2(Integer signalStrength2) {
+    }
+
+    public void setHumidity(String humidity) {
+    }
+
+    @Basic
+    @Column(name = "location_num_4", nullable = true)
+    public Integer getLocationNum4() {
     }
 
 }

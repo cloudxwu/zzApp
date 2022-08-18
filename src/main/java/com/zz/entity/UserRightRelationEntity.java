@@ -29,4 +29,7 @@ public class UserRightRelationEntity {
     public UserEntity getUserByUserId() {
     }
 
+    public void setUserId(long userId) {
+    }
+
 }

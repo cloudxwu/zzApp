@@ -72,4 +72,12 @@ public class ViewGetAllDeviceInfoEntity {
     public long getId() {
     }
 
+    public void setType(String type) {
+    }
+
+    @Basic
+    @Column(name = "status_id", nullable = true)
+    public Long getStatusId() {
+    }
+
 }

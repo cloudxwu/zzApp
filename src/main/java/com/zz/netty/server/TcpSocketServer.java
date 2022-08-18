@@ -21,4 +21,8 @@ public class TcpSocketServer {
     public InetSocketAddress getTcpPort() {
     }
 
+    @PreDestroy
+    public void stop() throws InterruptedException {
+    }
+
 }

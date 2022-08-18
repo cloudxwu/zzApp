@@ -11,4 +11,7 @@ public class DeviceTypeClassifyEntity {
     private List<DeviceEntity> deviceEntityList;
     private TypeEntity typeEntity;
 
+    public List<DeviceEntity> getDeviceEntityList() {
+    }
+
 }

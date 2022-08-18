@@ -11,4 +11,12 @@ public class IDao {
     public T delete(long id) {
     }
 
+    /**
+     * 获取最大值
+     * @param sql SQL语句
+     * @return null表示没有找到，非null表示一组结果
+     */
+    public int findMaxValue(String sql) {
+    }
+
 }

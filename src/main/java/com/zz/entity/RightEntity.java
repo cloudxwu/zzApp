@@ -35,4 +35,7 @@ public class RightEntity {
     public void setName(String name) {
     }
 
+    public void setUserRightRelationsById(Collection<UserRightRelationEntity> userRightRelationsById) {
+    }
+
 }

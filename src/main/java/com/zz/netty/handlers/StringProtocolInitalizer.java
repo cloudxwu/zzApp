@@ -26,4 +26,9 @@ public class StringProtocolInitalizer {
     public StringEncoder getEncoder() {
     }
 
+    @Override
+    protected void initChannel(SocketChannel ch) throws Exception {
+        ChannelPipeline pipeline = ch.pipeline();
+    }
+
 }

@@ -61,6 +61,10 @@ public class DeviceEntity {
 
     @Override
     public boolean equals(Object o) {
+        if (This == o) 
+        {
+            return true;
+        }
     }
 
     @OneToMany(mappedBy = "deviceByDeviceId")
@@ -74,6 +78,19 @@ public class DeviceEntity {
     }
 
     public void setTypeByTypeId(TypeEntity typeByTypeId) {
+    }
+
+    @ManyToOne
+    @JoinColumn(name = "user_id", referencedColumnName = "id", insertable = false, updatable = false)
+    public UserEntity getUserByUserId() {
+    }
+
+    public void setUserId(Long userId) {
+    }
+
+    @Basic
+    @Column(name = "uid", nullable = true, length = 45)
+    public String getUid() {
     }
 
 }

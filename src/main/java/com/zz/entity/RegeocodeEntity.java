@@ -12,4 +12,7 @@ public class RegeocodeEntity {
     private String formattedAddress;
     private AddressComponentEntity addressComponent;
 
+    public AddressComponentEntity getAddressComponent() {
+    }
+
 }

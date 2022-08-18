@@ -143,4 +143,18 @@ public class DeviceLocationEntity {
     public int getSignalQuality() {
     }
 
+    public void setDeviceId(long deviceId) {
+    }
+
+    public void setDeviceByDeviceId(DeviceEntity deviceByDeviceId) {
+    }
+
+    @Basic
+    @Column(name = "signal_strength_1", nullable = true)
+    public Integer getSignalStrength1() {
+    }
+
+    public void setRecordTime(String recordTime) {
+    }
+
 }

@@ -17,4 +17,7 @@ public class GeocodeEntity {
     public int getInfocode() {
     }
 
+    public RegeocodeEntity getRegeocode() {
+    }
+
 }

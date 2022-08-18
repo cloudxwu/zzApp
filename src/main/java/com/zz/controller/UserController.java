@@ -42,4 +42,21 @@ public class UserController {
         List<BindUserDepartmentRoleEntity> bindUserDepartmentRoleEntityList = bindUserDepartmentRelationService.getBindUserDepartmentEntity(userId, departmentId);
     }
 
+    /**
+     * @api {delete} /api/manage/user/:id 根据ID删除用户
+     * @apiVersion 0.0.1
+     * @apiName deleteUserById
+     * @apiGroup userGroup
+     *
+     * @apiParam {Number} id 用户ID
+     *
+     * @apiSuccess {String} code 返回码.
+     * @apiSuccess {String} msg  返回消息.
+     * @apiSuccess {Object} data  JSON格式的对象.
+     */
+    @RequestMapping(value = "/user/{id}", method = RequestMethod.DELETE)
+    public ResultEntity deleteUserById(long id) {
+        UserEntity userEntity = userService.findById(id);
+    }
+
 }

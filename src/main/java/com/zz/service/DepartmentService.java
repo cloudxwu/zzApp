@@ -25,4 +25,8 @@ public class DepartmentService {
     private static final Logger LOGGER = LoggerFactory.getLogger(DepartmentService.class);
     private int maxDepartmentLevel = 0;
 
+    @Autowired
+    public DepartmentService(DepartmentDao dao) {
+    }
+
 }

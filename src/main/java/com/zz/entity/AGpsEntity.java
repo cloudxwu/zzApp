@@ -26,4 +26,7 @@ public class AGpsEntity {
     public void setCount(int count) {
     }
 
+    public int getStatus() {
+    }
+
 }

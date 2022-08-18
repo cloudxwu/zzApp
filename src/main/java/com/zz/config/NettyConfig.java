@@ -39,4 +39,8 @@ public class NettyConfig {
     public StringProtocolInitalizer protocolInitalizer(StringDecoder decoder, StringEncoder encoder, ServerHandler serverHandler) {
     }
 
+    @Bean(destroyMethod = "shutdownGracefully")
+    public NioEventLoopGroup workerGroup() {
+    }
+
 }

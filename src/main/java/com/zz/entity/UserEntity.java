@@ -38,6 +38,7 @@ public class UserEntity {
         {
             return false;
         }
+        UserEntity that = (UserEntity) o;
     }
 
     @Basic
@@ -55,6 +56,11 @@ public class UserEntity {
     }
 
     public void setLoginPassword(String loginPassword) {
+    }
+
+    @Basic
+    @Column(name = "login_name", nullable = false, length = 45)
+    public String getLoginName() {
     }
 
 }

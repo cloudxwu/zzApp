@@ -17,4 +17,8 @@ import io.netty.channel.SimpleChannelInboundHandler;
 public class ServerHandler { 
     private static final Logger LOGGER = LoggerFactory.getLogger(ServerHandler.class);
 
+    @Override
+    public void channelActive(ChannelHandlerContext ctx) throws Exception {
+    }
+
 }

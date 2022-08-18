@@ -23,4 +23,7 @@ public class StatusEntity {
     public void setName(String name) {
     }
 
+    public void setId(long id) {
+    }
+
 }

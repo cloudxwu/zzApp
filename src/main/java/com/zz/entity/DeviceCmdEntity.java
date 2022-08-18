@@ -38,6 +38,10 @@ public class DeviceCmdEntity {
 
     @Override
     public boolean equals(Object o) {
+        if (This == o) 
+        {
+            return true;
+        }
     }
 
     public void setDeviceId(long deviceId) {
@@ -68,6 +72,14 @@ public class DeviceCmdEntity {
     @Basic
     @Column(name = "device_id", nullable = false)
     public long getDeviceId() {
+    }
+
+    @Basic
+    @Column(name = "get_imsi", nullable = true)
+    public Integer getGetImsi() {
+    }
+
+    public void setResetDevice(Integer resetDevice) {
     }
 
 }

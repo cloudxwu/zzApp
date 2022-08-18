@@ -31,4 +31,9 @@ public class DatabaseConfig {
     public PersistenceAnnotationBeanPostProcessor persistenceAnnotationBeanPostProcessor() {
     }
 
+    @Bean
+    public JpaVendorAdapter jpaVendorAdapter() {
+        HibernateJpaVendorAdapter adapter = new HibernateJpaVendorAdapter();
+    }
+
 }

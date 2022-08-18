@@ -38,4 +38,7 @@ public class RoleEntity {
     public void setCreateTime(String createTime) {
     }
 
+    public void setIsDelete(int isDelete) {
+    }
+
 }
