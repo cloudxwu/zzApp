@@ -45,4 +45,8 @@ public class DepartmentEntity {
     public int getLevel() {
     }
 
+    @OneToMany(mappedBy = "departmentByDepartmentId")
+    public Collection<BindUserDepartmentRoleEntity> getBindUserDepartmentRolesById() {
+    }
+
 }

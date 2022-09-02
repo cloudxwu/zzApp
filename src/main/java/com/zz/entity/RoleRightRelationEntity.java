@@ -32,4 +32,16 @@ public class RoleRightRelationEntity {
     public void setId(long id) {
     }
 
+    @Override
+    public boolean equals(Object o) {
+        if (This == o) 
+        {
+            return true;
+        }
+        if (o == null || getClass() != o.getClass()) 
+        {
+            return false;
+        }
+    }
+
 }

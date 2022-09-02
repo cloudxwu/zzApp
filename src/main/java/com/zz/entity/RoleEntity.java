@@ -41,4 +41,8 @@ public class RoleEntity {
     public void setIsDelete(int isDelete) {
     }
 
+    @OneToMany(mappedBy = "roleByRoleId")
+    public Collection<BindUserDepartmentRoleEntity> getBindUserDepartmentRolesById() {
+    }
+
 }

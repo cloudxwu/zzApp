@@ -160,4 +160,22 @@ public class ViewGetDeviceLastLocationEntity {
     public Integer getLocationNum4() {
     }
 
+    @Basic
+    @Column(name = "longitude", nullable = true, precision = 6)
+    public BigDecimal getLongitude() {
+    }
+
+    public void setTemp(String temp) {
+    }
+
+    @Basic
+    @Column(name = "mobile_num_3", nullable = true)
+    public Integer getMobileNum3() {
+    }
+
+    @Basic
+    @Column(name = "record_time", nullable = false)
+    public String getRecordTime() {
+    }
+
 }

@@ -157,4 +157,25 @@ public class DeviceLocationEntity {
     public void setRecordTime(String recordTime) {
     }
 
+    public void setNationNum1(Integer nationNum1) {
+    }
+
+    @Basic
+    @Column(name = "community_num_2", nullable = true)
+    public Integer getCommunityNum2() {
+    }
+
+    @Basic
+    @Column(name = "signal_strength_3", nullable = true)
+    public Integer getSignalStrength3() {
+    }
+
+    @Basic
+    @Column(name = "mobile_num_4", nullable = true)
+    public Integer getMobileNum4() {
+    }
+
+    public void setSignalStrength4(Integer signalStrength4) {
+    }
+
 }

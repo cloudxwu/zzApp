@@ -32,4 +32,7 @@ public class UserRightRelationEntity {
     public void setUserId(long userId) {
     }
 
+    public void setId(long id) {
+    }
+
 }

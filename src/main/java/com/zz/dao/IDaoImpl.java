@@ -19,10 +19,17 @@ public class IDaoImpl {
 
     @Override
     public List<T> findByParams(String sql, Object params) {
+        Query query = This.entityManager.createQuery(sql);
     }
 
     @Override
     public List<T> findAll() {
+        String sql = String.format("SELECT %s FROM %s %s", This.clazz.getSimpleName().toLowerCase(), This.clazz.getSimpleName(), This.clazz.getSimpleName().toLowerCase());
+    }
+
+    @Override
+    public int findMaxValue(String sql) {
+        Query query = This.entityManager.createQuery(sql);
     }
 
 }

@@ -23,4 +23,7 @@ public class DeviceService {
     private static final String SQL_FIND_DEVICE_BY_TYPE_NULL = "SELECT device FROM DeviceEntity device WHERE device.typeId is null";
     private DeviceDao dao;
 
+    public List<DeviceEntity> findDeviceByImsi(String imsi) {
+    }
+
 }

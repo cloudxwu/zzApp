@@ -42,6 +42,7 @@ public class DeviceController {
      */
     @RequestMapping(value = "/device/command/{id}", method = RequestMethod.GET)
     public ResultEntity getReceiveDataById(long id) {
+        List<ReceiveDeviceDataEntity> dataList = This.receiveDeviceDataService.getCommandDataList(id);
     }
 
     /**
@@ -56,6 +57,22 @@ public class DeviceController {
      */
     @RequestMapping(value = "/device/location", method = RequestMethod.GET)
     public ResultEntity getAllDeviceLastLocation() {
+        List<ViewGetDeviceLastLocationEntity> deviceInfoEntityList = viewGetDeviceLastLocationService.findAll();
+    }
+
+    /**
+     * @api {get} /api/manage/device 获取所有设备信息
+     * @apiVersion 0.0.1
+     * @apiName getAllDevice
+     * @apiGroup deviceGroup
+     *
+     * @apiSuccess {String} code 返回码.
+     * @apiSuccess {String} msg  返回消息.
+     * @apiSuccess {Object} data  JSON格式的对象.
+     */
+    @RequestMapping(value = "/device", method = RequestMethod.GET)
+    public ResultEntity getAllDevice() {
+        List<ViewGetAllDeviceInfoEntity> deviceEntityList = viewGetAllDeviceInfoService.findAll();
     }
 
 }

@@ -82,4 +82,10 @@ public class DeviceCmdEntity {
     public void setResetDevice(Integer resetDevice) {
     }
 
+    public void setSetDeviceName(String setDeviceName) {
+    }
+
+    public void setGetImsi(Integer getImsi) {
+    }
+
 }

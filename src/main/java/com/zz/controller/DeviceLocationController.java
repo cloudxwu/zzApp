@@ -86,6 +86,7 @@ public class DeviceLocationController {
         simpleDateFormat.setTimeZone(TimeZone.getTimeZone("Asia/Shanghai"));
         DeviceLocationEntity deviceLocationEntity = new DeviceLocationEntity();
         deviceLocationEntity.setDeviceId(deviceId);
+        deviceLocationEntity.setRecordTime(simpleDateFormat.format(new Date()));
     }
 
 }

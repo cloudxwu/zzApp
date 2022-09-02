@@ -18,4 +18,8 @@ public class DeviceLocationService {
     public static final String SQL_GET_LOCATION_BY_DEVICE_ID = "SELECT location FROM DeviceLocationEntity location WHERE location.deviceId = ?1";
     public static final String SQL_GET_PREVIOUS_DATA_BY_DEVICE_ID = "SELECT location FROM DeviceLocationEntity location WHERE location.isDelete != 1 AND location.deviceId = ?1 AND location.id < ?2 ORDER BY location.id DESC";
 
+    @Autowired
+    public DeviceLocationService(DeviceLocationDao dao) {
+    }
+
 }

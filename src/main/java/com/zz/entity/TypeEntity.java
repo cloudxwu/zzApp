@@ -22,6 +22,7 @@ public class TypeEntity {
 
     @Override
     public int hashCode() {
+        int result = (int) id ^ id >>> 32;
     }
 
     @Basic

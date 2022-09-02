@@ -39,6 +39,10 @@ public class UserEntity {
             return false;
         }
         UserEntity that = (UserEntity) o;
+        if (id != that.id) 
+        {
+            return false;
+        }
     }
 
     @Basic
@@ -50,6 +54,7 @@ public class UserEntity {
     public int hashCode() {
         int result = (int) id ^ id >>> 32;
         result = 31 * result + loginName != null ? loginName.hashCode() : 0;
+        result = 31 * result + loginPassword != null ? loginPassword.hashCode() : 0;
     }
 
     public void setEmail(String email) {
@@ -61,6 +66,16 @@ public class UserEntity {
     @Basic
     @Column(name = "login_name", nullable = false, length = 45)
     public String getLoginName() {
+    }
+
+    @Basic
+    @Column(name = "login_password", nullable = false, length = 45)
+    public String getLoginPassword() {
+    }
+
+    @Basic
+    @Column(name = "name", nullable = false, length = 45)
+    public String getName() {
     }
 
 }

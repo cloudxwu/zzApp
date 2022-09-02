@@ -36,6 +36,30 @@ public class RoleController {
     @RequestMapping(value = "/role/{id}", method = RequestMethod.DELETE)
     public ResultEntity deleteRoleById(long id) {
         RoleEntity roleEntity = roleService.findById(id);
+        if (roleEntity == null) 
+        {
+            return This.createResultEntity(ResultEntity.DELETE_ERROR);
+        }
+    }
+
+    /**
+     * @api {post} /api/manage/role 创建角色
+     * @apiVersion 0.0.1
+     * @apiName createRole
+     * @apiGroup roleGroup
+     *
+     * @apiParam {String} name 角色名称
+     * @apiParam {String} [comment] 角色说明
+     *
+     * @apiSuccess {String} code 返回码.
+     * @apiSuccess {String} msg  返回消息.
+     * @apiSuccess {Object} data  JSON格式的对象.
+     */
+    @RequestMapping(value = "/role", method = RequestMethod.POST)
+    public ResultEntity createRole(String name, String comment) {
+        SimpleDateFormat simpleDateFormat = new SimpleDateFormat("yyyy-MM-dd HH:mm:ss");
+        simpleDateFormat.setTimeZone(TimeZone.getTimeZone("Asia/Shanghai"));
+        RoleEntity roleEntity = new RoleEntity();
     }
 
 }

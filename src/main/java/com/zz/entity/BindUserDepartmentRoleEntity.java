@@ -46,4 +46,10 @@ public class BindUserDepartmentRoleEntity {
     public DepartmentEntity getDepartmentByDepartmentId() {
     }
 
+    @Id
+    @GeneratedValue(strategy = GenerationType.IDENTITY)
+    @Column(name = "id", nullable = false)
+    public long getId() {
+    }
+
 }

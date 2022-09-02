@@ -40,6 +40,10 @@ public class UserController {
     public ResultEntity bindDepartment(long userId, long departmentId) {
         ObjectMapper objectMapper = new ObjectMapper();
         List<BindUserDepartmentRoleEntity> bindUserDepartmentRoleEntityList = bindUserDepartmentRelationService.getBindUserDepartmentEntity(userId, departmentId);
+        if (bindUserDepartmentRoleEntityList.size() > 0) 
+        {
+            return This.createResultEntity(ResultEntity.DATA_IS_EXIST, objectMapper.convertValue(bindUserDepartmentRoleEntityList.get(0), JsonNode.class));
+        }
     }
 
     /**
@@ -57,6 +61,10 @@ public class UserController {
     @RequestMapping(value = "/user/{id}", method = RequestMethod.DELETE)
     public ResultEntity deleteUserById(long id) {
         UserEntity userEntity = userService.findById(id);
+        if (userEntity == null) 
+        {
+            return This.createResultEntity(ResultEntity.DELETE_ERROR);
+        }
     }
 
 }

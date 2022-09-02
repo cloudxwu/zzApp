@@ -36,6 +36,7 @@ public class DepartmentController {
      */
     @RequestMapping(value = "/department/{id}", method = RequestMethod.GET)
     public ResultEntity getDepartmentById(long id) {
+        DepartmentEntity departmentEntity = departmentService.findById(id);
     }
 
     @Autowired

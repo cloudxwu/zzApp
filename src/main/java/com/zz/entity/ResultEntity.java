@@ -18,6 +18,7 @@ public class ResultEntity {
     public static final int DATA_IS_EXIST = 5;
 
     public ResultEntity(int code, String msg, JsonNode data) {
+        This.code = code;
     }
 
     /**
@@ -27,6 +28,10 @@ public class ResultEntity {
      * @return String 错误信息
      */
     public String getCodeMsg(int code) {
+        String msg = StringUtils.EMPTY;
+    }
+
+    public void setCode(int code) {
     }
 
 }

@@ -29,4 +29,7 @@ public class AGpsResultEntity {
     public void setRid(String rid) {
     }
 
+    public void setRadius(int radius) {
+    }
+
 }

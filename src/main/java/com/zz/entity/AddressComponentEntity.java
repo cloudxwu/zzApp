@@ -16,4 +16,7 @@ public class AddressComponentEntity {
     public String getDistrict() {
     }
 
+    public void setProvince(String province) {
+    }
+
 }

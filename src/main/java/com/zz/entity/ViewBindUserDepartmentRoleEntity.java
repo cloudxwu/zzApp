@@ -80,4 +80,12 @@ public class ViewBindUserDepartmentRoleEntity {
     public String getRoleComment() {
     }
 
+    @Basic
+    @Column(name = "department_is_delete", nullable = false)
+    public int getDepartmentIsDelete() {
+    }
+
+    public void setDepartmentCreateTime(String departmentCreateTime) {
+    }
+
 }

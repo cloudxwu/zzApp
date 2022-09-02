@@ -80,4 +80,10 @@ public class ViewGetAllDeviceInfoEntity {
     public Long getStatusId() {
     }
 
+    public void setSerialNumber(String serialNumber) {
+    }
+
+    public void setKeepLiveInterval(int keepLiveInterval) {
+    }
+
 }

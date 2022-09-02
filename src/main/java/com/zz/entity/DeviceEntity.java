@@ -93,4 +93,13 @@ public class DeviceEntity {
     public String getUid() {
     }
 
+    @Id
+    @GeneratedValue(strategy = GenerationType.IDENTITY)
+    @Column(name = "id", nullable = false)
+    public long getId() {
+    }
+
+    public void setUserByUserId(UserEntity userByUserId) {
+    }
+
 }

@@ -18,4 +18,8 @@ public class IServiceImpl {
     public List<T> findByParams(String sql, Object params) {
     }
 
+    @Override
+    public List<T> findByParams(String sql, Object params, int limit) {
+    }
+
 }
