@@ -30,4 +30,7 @@ public class TypeEntity {
     public String getName() {
     }
 
+    public void setDevicesById(Collection<DeviceEntity> devicesById) {
+    }
+
 }

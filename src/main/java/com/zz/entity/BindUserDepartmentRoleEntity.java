@@ -36,6 +36,7 @@ public class BindUserDepartmentRoleEntity {
         {
             return false;
         }
+        BindUserDepartmentRoleEntity that = (BindUserDepartmentRoleEntity) o;
     }
 
     public void setId(long id) {
@@ -50,6 +51,11 @@ public class BindUserDepartmentRoleEntity {
     @GeneratedValue(strategy = GenerationType.IDENTITY)
     @Column(name = "id", nullable = false)
     public long getId() {
+    }
+
+    @Basic
+    @Column(name = "user_id", nullable = false)
+    public long getUserId() {
     }
 
 }

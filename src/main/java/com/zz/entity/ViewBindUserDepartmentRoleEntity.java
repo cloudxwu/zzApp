@@ -88,4 +88,14 @@ public class ViewBindUserDepartmentRoleEntity {
     public void setDepartmentCreateTime(String departmentCreateTime) {
     }
 
+    @Basic
+    @Column(name = "user_name", nullable = false, length = 45)
+    public String getUserName() {
+    }
+
+    @Basic
+    @Column(name = "department_create_time", nullable = false)
+    public String getDepartmentCreateTime() {
+    }
+
 }

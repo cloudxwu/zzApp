@@ -19,4 +19,12 @@ public class IDao {
     public int findMaxValue(String sql) {
     }
 
+    /**
+     * 修改一条记录
+     * @param entity 实体对象
+     * @return 更新后的新对象
+     */
+    public T update(T entity) {
+    }
+
 }

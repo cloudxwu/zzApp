@@ -67,4 +67,34 @@ public class UserController {
         }
     }
 
+    /**
+     * @api {put} /api/manage/user 根据ID修改用户信息
+     * @apiVersion 0.0.1
+     * @apiName modifyUserById
+     * @apiGroup userGroup
+     *
+     * @apiParam {Number} id 用户id
+     * @apiParam {String} [login_name] 用户账户
+     * @apiParam {String} [login_password] 用户密码
+     * @apiParam {String} [name] 用户名称
+     * @apiParam {String} [mobile] 用户电话
+     * @apiParam {String} [email] 用户邮件
+     *
+     * @apiSuccess {String} code 返回码.
+     * @apiSuccess {String} msg  返回消息.
+     * @apiSuccess {Object} data  JSON格式的对象.
+     */
+    @RequestMapping(value = "/user", method = RequestMethod.PUT)
+    public ResultEntity modifyUserById(long id, String loginName, String loginPassword, String name, String mobile, String email) {
+        UserEntity entity = userService.findById(id);
+        if (entity == null) 
+        {
+            return This.createResultEntity(ResultEntity.NOT_FIND_ERROR);
+        }
+        if (!loginName.isEmpty()) 
+        {
+            entity.setLoginName(loginName);
+        }
+    }
+
 }

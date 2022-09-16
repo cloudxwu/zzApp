@@ -32,4 +32,7 @@ public class AGpsResultEntity {
     public void setRadius(int radius) {
     }
 
+    public BigDecimal getLng() {
+    }
+
 }

@@ -178,4 +178,18 @@ public class ViewGetDeviceLastLocationEntity {
     public String getRecordTime() {
     }
 
+    public void setSignalStrength1(Integer signalStrength1) {
+    }
+
+    public void setLatitudeDirection(Integer latitudeDirection) {
+    }
+
+    @Basic
+    @Column(name = "district", nullable = true, length = 45)
+    public String getDistrict() {
+    }
+
+    public void setDeviceId(long deviceId) {
+    }
+
 }

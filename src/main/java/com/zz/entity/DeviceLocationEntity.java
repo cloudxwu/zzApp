@@ -178,4 +178,18 @@ public class DeviceLocationEntity {
     public void setSignalStrength4(Integer signalStrength4) {
     }
 
+    public void setLocationNum1(Integer locationNum1) {
+    }
+
+    public void setHumidity(String humidity) {
+    }
+
+    public void setLocationNum3(Integer locationNum3) {
+    }
+
+    @Basic
+    @Column(name = "agps_station_num", nullable = true)
+    public Integer getAgpsStationNum() {
+    }
+
 }

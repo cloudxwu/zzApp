@@ -45,4 +45,9 @@ public class RoleEntity {
     public Collection<BindUserDepartmentRoleEntity> getBindUserDepartmentRolesById() {
     }
 
+    @Basic
+    @Column(name = "name", nullable = false, length = 45)
+    public String getName() {
+    }
+
 }

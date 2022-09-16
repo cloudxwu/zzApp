@@ -38,4 +38,17 @@ public class RightEntity {
     public void setUserRightRelationsById(Collection<UserRightRelationEntity> userRightRelationsById) {
     }
 
+    @Override
+    public boolean equals(Object o) {
+        if (This == o) 
+        {
+            return true;
+        }
+        if (o == null || getClass() != o.getClass()) 
+        {
+            return false;
+        }
+        RightEntity that = (RightEntity) o;
+    }
+
 }

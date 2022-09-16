@@ -20,4 +20,7 @@ public class GeocodeEntity {
     public RegeocodeEntity getRegeocode() {
     }
 
+    public void setRegeocode(RegeocodeEntity regeocode) {
+    }
+
 }

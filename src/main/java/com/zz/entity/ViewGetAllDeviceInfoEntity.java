@@ -86,4 +86,14 @@ public class ViewGetAllDeviceInfoEntity {
     public void setKeepLiveInterval(int keepLiveInterval) {
     }
 
+    @Basic
+    @Column(name = "status", nullable = false, length = 45)
+    public String getStatus() {
+    }
+
+    @Basic
+    @Column(name = "type_id", nullable = true)
+    public Long getTypeId() {
+    }
+
 }

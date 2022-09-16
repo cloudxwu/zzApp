@@ -31,4 +31,7 @@ public class StringProtocolInitalizer {
         ChannelPipeline pipeline = ch.pipeline();
     }
 
+    public StringDecoder getDecoder() {
+    }
+
 }

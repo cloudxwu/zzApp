@@ -43,4 +43,8 @@ public class NettyConfig {
     public NioEventLoopGroup workerGroup() {
     }
 
+    @Bean(destroyMethod = "shutdownGracefully")
+    public NioEventLoopGroup bossGroup() {
+    }
+
 }

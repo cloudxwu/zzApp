@@ -29,4 +29,7 @@ public class AGpsEntity {
     public int getStatus() {
     }
 
+    public int getMatch() {
+    }
+
 }

@@ -88,4 +88,10 @@ public class DeviceCmdEntity {
     public void setGetImsi(Integer getImsi) {
     }
 
+    public void setSetBatterySleepTime(Integer setBatterySleepTime) {
+    }
+
+    public void setSetBatteryKeepLiveTime(Integer setBatteryKeepLiveTime) {
+    }
+
 }

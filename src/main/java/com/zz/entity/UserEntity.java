@@ -78,4 +78,7 @@ public class UserEntity {
     public String getName() {
     }
 
+    public void setIsDelete(int isDelete) {
+    }
+
 }

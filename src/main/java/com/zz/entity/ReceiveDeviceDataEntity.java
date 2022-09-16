@@ -33,4 +33,9 @@ public class ReceiveDeviceDataEntity {
     public void setCreateTime(String createTime) {
     }
 
+    @Basic
+    @Column(name = "create_time", nullable = false)
+    public String getCreateTime() {
+    }
+
 }

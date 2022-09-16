@@ -26,4 +26,7 @@ public class StatusEntity {
     public void setId(long id) {
     }
 
+    public void setDevicesById(Collection<DeviceEntity> devicesById) {
+    }
+
 }

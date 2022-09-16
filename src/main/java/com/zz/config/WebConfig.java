@@ -37,4 +37,8 @@ public class WebConfig {
     public void setApplicationContext(ApplicationContext applicationContext) throws BeansException {
     }
 
+    @Bean
+    public MultipartResolver multipartResolver() {
+    }
+
 }

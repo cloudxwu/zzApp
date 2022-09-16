@@ -102,4 +102,12 @@ public class DeviceEntity {
     public void setUserByUserId(UserEntity userByUserId) {
     }
 
+    @Basic
+    @Column(name = "server_ip", nullable = false)
+    public String getServerIp() {
+    }
+
+    public void setDepartmentId(Long departmentId) {
+    }
+
 }
