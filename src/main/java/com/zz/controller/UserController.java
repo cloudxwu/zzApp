@@ -95,6 +95,10 @@ public class UserController {
         {
             entity.setLoginName(loginName);
         }
+        if (!loginPassword.isEmpty()) 
+        {
+            entity.setLoginPassword(loginPassword);
+        }
     }
 
 }

@@ -192,4 +192,16 @@ public class ViewGetDeviceLastLocationEntity {
     public void setDeviceId(long deviceId) {
     }
 
+    public void setStationFlag1(Integer stationFlag1) {
+    }
+
+    public void setStationFlag3(Integer stationFlag3) {
+    }
+
+    public void setLatitude(BigDecimal latitude) {
+    }
+
+    public void setNationNum3(Integer nationNum3) {
+    }
+
 }

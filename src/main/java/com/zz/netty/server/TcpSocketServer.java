@@ -25,4 +25,7 @@ public class TcpSocketServer {
     public void stop() throws InterruptedException {
     }
 
+    public ServerBootstrap getBootstrap() {
+    }
+
 }

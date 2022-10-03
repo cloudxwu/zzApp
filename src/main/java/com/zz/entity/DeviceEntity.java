@@ -110,4 +110,12 @@ public class DeviceEntity {
     public void setDepartmentId(Long departmentId) {
     }
 
+    @Basic
+    @Column(name = "department_id", nullable = true)
+    public Long getDepartmentId() {
+    }
+
+    public void setBatteryKeepLiveTime(int batteryKeepLiveTime) {
+    }
+
 }

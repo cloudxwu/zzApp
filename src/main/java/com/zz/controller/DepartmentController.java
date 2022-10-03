@@ -43,4 +43,32 @@ public class DepartmentController {
     public DepartmentController(DepartmentService departmentService) {
     }
 
+    /**
+     * @api {put} /api/manage/department 根据ID修改部门信息
+     * @apiVersion 0.0.1
+     * @apiName modifyDepartmentById
+     * @apiGroup departmentGroup
+     *
+     * @apiParam {Number} id 部门id
+     * @apiParam {String} [name] 部门名称
+     * @apiParam {Number} [level] 部门层级
+     * @apiParam {Number} [parent_id] 上级部门ID
+     *
+     * @apiSuccess {String} code 返回码.
+     * @apiSuccess {String} msg  返回消息.
+     * @apiSuccess {Object} data  JSON格式的对象.
+     */
+    @RequestMapping(value = "/department", method = RequestMethod.PUT)
+    public ResultEntity modifyDepartmentById(long id, String name, int level, long parentId) {
+        DepartmentEntity entity = departmentService.findById(id);
+        if (entity == null) 
+        {
+            return This.createResultEntity(ResultEntity.NOT_FIND_ERROR);
+        }
+        if (!name.isEmpty()) 
+        {
+            entity.setName(name);
+        }
+    }
+
 }

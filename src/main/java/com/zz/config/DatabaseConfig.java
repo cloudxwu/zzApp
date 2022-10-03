@@ -37,4 +37,10 @@ public class DatabaseConfig {
         adapter.setDatabase(Database.MYSQL);
     }
 
+    @Bean
+    public LocalContainerEntityManagerFactoryBean entityManagerFactoryBean(DataSource dataSource, JpaVendorAdapter jpaVendorAdapter) {
+        LocalContainerEntityManagerFactoryBean localContainerEntityManagerFactoryBean = new LocalContainerEntityManagerFactoryBean();
+        localContainerEntityManagerFactoryBean.setDataSource(dataSource);
+    }
+
 }

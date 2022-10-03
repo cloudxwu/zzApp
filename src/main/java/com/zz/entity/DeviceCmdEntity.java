@@ -94,4 +94,12 @@ public class DeviceCmdEntity {
     public void setSetBatteryKeepLiveTime(Integer setBatteryKeepLiveTime) {
     }
 
+    @Basic
+    @Column(name = "reset_device", nullable = true)
+    public Integer getResetDevice() {
+    }
+
+    public void setId(long id) {
+    }
+
 }

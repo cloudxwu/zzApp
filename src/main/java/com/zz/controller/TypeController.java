@@ -21,4 +21,25 @@ public class TypeController {
     public TypeController(TypeService typeService) {
     }
 
+    /**
+     * @api {delete} /api/manage/type/:id 根据ID删除设备类型
+     * @apiVersion 0.0.1
+     * @apiName deleteTypeById
+     * @apiGroup typeGroup
+     *
+     * @apiParam {Number} id 类型ID
+     *
+     * @apiSuccess {String} code 返回码.
+     * @apiSuccess {String} msg  返回消息.
+     * @apiSuccess {Object} data  JSON格式的对象.
+     */
+    @RequestMapping(value = "/type/{id}", method = RequestMethod.DELETE)
+    public ResultEntity deleteTypeById(long id) {
+        TypeEntity typeEntity = typeService.findById(id);
+        if (typeEntity == null) 
+        {
+            return This.createResultEntity(ResultEntity.DELETE_ERROR);
+        }
+    }
+
 }

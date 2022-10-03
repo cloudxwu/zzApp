@@ -60,6 +60,7 @@ public class RoleController {
         SimpleDateFormat simpleDateFormat = new SimpleDateFormat("yyyy-MM-dd HH:mm:ss");
         simpleDateFormat.setTimeZone(TimeZone.getTimeZone("Asia/Shanghai"));
         RoleEntity roleEntity = new RoleEntity();
+        roleEntity.setName(name);
     }
 
 }

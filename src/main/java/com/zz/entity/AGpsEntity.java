@@ -32,4 +32,7 @@ public class AGpsEntity {
     public int getMatch() {
     }
 
+    public void setResult(List<AGpsResultEntity> result) {
+    }
+
 }

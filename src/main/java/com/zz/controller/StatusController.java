@@ -26,4 +26,25 @@ public class StatusController {
     public StatusController(StatusService statusService) {
     }
 
+    /**
+     * @api {delete} /api/manage/status/:id 根据ID删除设备状态
+     * @apiVersion 0.0.1
+     * @apiName deleteStatusById
+     * @apiGroup statusGroup
+     *
+     * @apiParam {Number} id 状态ID
+     *
+     * @apiSuccess {String} code 返回码.
+     * @apiSuccess {String} msg  返回消息.
+     * @apiSuccess {Object} data  JSON格式的对象.
+     */
+    @RequestMapping(value = "/status/{id}", method = RequestMethod.DELETE)
+    public ResultEntity deleteStatusById(long id) {
+        StatusEntity statusEntity = statusService.findById(id);
+        if (statusEntity == null) 
+        {
+            return This.createResultEntity(ResultEntity.DELETE_ERROR);
+        }
+    }
+
 }

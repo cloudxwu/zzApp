@@ -49,4 +49,21 @@ public class DepartmentEntity {
     public Collection<BindUserDepartmentRoleEntity> getBindUserDepartmentRolesById() {
     }
 
+    @Override
+    public boolean equals(Object o) {
+        if (This == o) 
+        {
+            return true;
+        }
+        if (o == null || getClass() != o.getClass()) 
+        {
+            return false;
+        }
+        DepartmentEntity that = (DepartmentEntity) o;
+        if (id != that.id) 
+        {
+            return false;
+        }
+    }
+
 }

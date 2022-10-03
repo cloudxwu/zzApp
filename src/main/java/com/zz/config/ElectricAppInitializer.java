@@ -21,4 +21,9 @@ public class ElectricAppInitializer {
     protected Class<?> getServletConfigClasses() {
     }
 
+    @Override
+    protected void customizeRegistration(ServletRegistration registration) {
+        super.customizeRegistration(registration);
+    }
+
 }

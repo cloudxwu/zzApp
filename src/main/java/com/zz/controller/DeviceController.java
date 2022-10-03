@@ -75,4 +75,46 @@ public class DeviceController {
         List<ViewGetAllDeviceInfoEntity> deviceEntityList = viewGetAllDeviceInfoService.findAll();
     }
 
+    /**
+     * @api {post} /api/manage/device 创建新设备
+     * @apiVersion 0.0.1
+     * @apiName createDevice
+     * @apiGroup deviceGroup
+     *
+     * @apiParam {String} imsi 手机卡IMSI
+     * @apiParam {String} [uid] 自定义ID
+     * @apiParam {String} [name] 设备名称
+     * @apiParam {String} [serial_number] 设备序列号
+     * @apiParam {Number} [type_id] 设备类型ID
+     * @apiParam {Number} [status_id] 设备状态ID
+     * @apiParam {Number} [user_id] 保管员用户ID
+     * @apiParam {Number} [department_id] 设备所属部门ID
+     * @apiParam {String} [comment] 设备说明
+     * @apiParam {Number} [keep_live_interval=60] 设备心跳间隔（单位：秒）
+     * @apiParam {Number} [battery_sleep_time=180] 电源供电时的休眠时间（单位：分钟）
+     * @apiParam {Number} [battery_keep_live_time=300] 电池供电时心跳包发送后保持连接的时间（单位：秒）
+     *
+     * @apiSuccess {String} code 返回码.
+     * @apiSuccess {String} msg  返回消息.
+     * @apiSuccess {Object} data  JSON格式的对象.
+     */
+    @RequestMapping(value = "/device", method = RequestMethod.POST)
+    public ResultEntity createDevice(String imsi, String uid, String name, String serialNumber, long typeId, long statusId, long userId, long departmentId, String comment, int keepLiveInterval, int batterySleepTime, int batteryKeepLiveTime) throws UnknownHostException {
+        ObjectMapper objectMapper = new ObjectMapper();
+        List<DeviceEntity> deviceEntityList = deviceService.findDeviceByImsi(imsi);
+        DeviceCmdEntity deviceCmdEntity = new DeviceCmdEntity();
+        if (deviceEntityList.size() > 0) 
+        {
+            return This.createResultEntity(ResultEntity.DATA_IS_EXIST, objectMapper.convertValue(deviceEntityList.get(0), JsonNode.class));
+        }
+        SimpleDateFormat simpleDateFormat = new SimpleDateFormat("yyyy-MM-dd HH:mm:ss");
+        simpleDateFormat.setTimeZone(TimeZone.getTimeZone("Asia/Shanghai"));
+        DeviceEntity deviceEntity = new DeviceEntity();
+        deviceEntity.setImsi(imsi);
+        deviceEntity.setIsDelete(FlagEntity.NO_DELETE);
+        deviceEntity.setCreateTime(simpleDateFormat.format(new Date()));
+        deviceEntity.setKeepLiveInterval(keepLiveInterval);
+        deviceEntity.setBatterySleepTime(batterySleepTime);
+    }
+
 }

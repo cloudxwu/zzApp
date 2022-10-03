@@ -42,6 +42,12 @@ public class RoleRightRelationEntity {
         {
             return false;
         }
+        RoleRightRelationEntity that = (RoleRightRelationEntity) o;
+    }
+
+    @Basic
+    @Column(name = "right_id", nullable = false)
+    public long getRightId() {
     }
 
 }

@@ -96,4 +96,12 @@ public class ViewGetAllDeviceInfoEntity {
     public Long getTypeId() {
     }
 
+    @Basic
+    @Column(name = "battery_keep_live_time", nullable = false)
+    public int getBatteryKeepLiveTime() {
+    }
+
+    public void setName(String name) {
+    }
+
 }

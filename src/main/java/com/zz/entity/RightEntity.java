@@ -26,6 +26,7 @@ public class RightEntity {
     @Override
     public int hashCode() {
         int result = (int) id ^ id >>> 32;
+        result = 31 * result + name != null ? name.hashCode() : 0;
     }
 
     @OneToMany(mappedBy = "rightByRightId")
@@ -49,6 +50,11 @@ public class RightEntity {
             return false;
         }
         RightEntity that = (RightEntity) o;
+    }
+
+    @Basic
+    @Column(name = "parent_id", nullable = false)
+    public long getParentId() {
     }
 
 }

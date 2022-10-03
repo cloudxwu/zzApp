@@ -43,6 +43,10 @@ public class UserEntity {
         {
             return false;
         }
+        if (isDelete != that.isDelete) 
+        {
+            return false;
+        }
     }
 
     @Basic
@@ -79,6 +83,9 @@ public class UserEntity {
     }
 
     public void setIsDelete(int isDelete) {
+    }
+
+    public void setLoginName(String loginName) {
     }
 
 }

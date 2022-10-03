@@ -192,4 +192,18 @@ public class DeviceLocationEntity {
     public Integer getAgpsStationNum() {
     }
 
+    public void setCity(String city) {
+    }
+
+    @Basic
+    @Column(name = "district", nullable = true, length = 45)
+    public String getDistrict() {
+    }
+
+    public void setCommunityNum1(Integer communityNum1) {
+    }
+
+    public void setMobileNum1(Integer mobileNum1) {
+    }
+
 }

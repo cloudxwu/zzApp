@@ -98,4 +98,13 @@ public class ViewBindUserDepartmentRoleEntity {
     public String getDepartmentCreateTime() {
     }
 
+    @Override
+    public int hashCode() {
+    }
+
+    @Basic
+    @Column(name = "department_name", nullable = false, length = 255)
+    public String getDepartmentName() {
+    }
+
 }

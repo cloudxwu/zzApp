@@ -87,6 +87,7 @@ public class DeviceLocationController {
         DeviceLocationEntity deviceLocationEntity = new DeviceLocationEntity();
         deviceLocationEntity.setDeviceId(deviceId);
         deviceLocationEntity.setRecordTime(simpleDateFormat.format(new Date()));
+        deviceLocationEntity.setDeviceTime(deviceTime);
     }
 
 }
