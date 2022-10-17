@@ -59,6 +59,7 @@ public class UserEntity {
         int result = (int) id ^ id >>> 32;
         result = 31 * result + loginName != null ? loginName.hashCode() : 0;
         result = 31 * result + loginPassword != null ? loginPassword.hashCode() : 0;
+        result = 31 * result + name != null ? name.hashCode() : 0;
     }
 
     public void setEmail(String email) {
@@ -86,6 +87,9 @@ public class UserEntity {
     }
 
     public void setLoginName(String loginName) {
+    }
+
+    public void setCreateTime(String createTime) {
     }
 
 }

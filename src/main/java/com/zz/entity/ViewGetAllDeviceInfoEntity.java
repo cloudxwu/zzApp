@@ -104,4 +104,10 @@ public class ViewGetAllDeviceInfoEntity {
     public void setName(String name) {
     }
 
+    public void setUser(String user) {
+    }
+
+    public void setComment(String comment) {
+    }
+
 }

@@ -35,4 +35,7 @@ public class AGpsResultEntity {
     public BigDecimal getLng() {
     }
 
+    public void setId(String id) {
+    }
+
 }

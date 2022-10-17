@@ -32,4 +32,9 @@ public class IDaoImpl {
         Query query = This.entityManager.createQuery(sql);
     }
 
+    @Override
+    public T delete(long id) {
+        T obj = This.findById(id);
+    }
+
 }

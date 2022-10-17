@@ -206,4 +206,21 @@ public class DeviceLocationEntity {
     public void setMobileNum1(Integer mobileNum1) {
     }
 
+    @Override
+    public int hashCode() {
+    }
+
+    public void setCommunityNum3(Integer communityNum3) {
+    }
+
+    @Basic
+    @Column(name = "latitude_direction", nullable = true)
+    public Integer getLatitudeDirection() {
+    }
+
+    @Basic
+    @Column(name = "station_flag_4", nullable = true)
+    public Integer getStationFlag4() {
+    }
+
 }

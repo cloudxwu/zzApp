@@ -115,6 +115,11 @@ public class DeviceController {
         deviceEntity.setCreateTime(simpleDateFormat.format(new Date()));
         deviceEntity.setKeepLiveInterval(keepLiveInterval);
         deviceEntity.setBatterySleepTime(batterySleepTime);
+        deviceEntity.setBatteryKeepLiveTime(batteryKeepLiveTime);
+        if (!uid.isEmpty()) 
+        {
+            deviceEntity.setUid(uid);
+        }
     }
 
 }

@@ -58,4 +58,9 @@ public class BindUserDepartmentRoleEntity {
     public long getUserId() {
     }
 
+    @ManyToOne
+    @JoinColumn(name = "user_id", referencedColumnName = "id", nullable = false, insertable = false, updatable = false)
+    public UserEntity getUserByUserId() {
+    }
+
 }

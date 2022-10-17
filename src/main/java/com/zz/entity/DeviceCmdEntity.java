@@ -102,4 +102,14 @@ public class DeviceCmdEntity {
     public void setId(long id) {
     }
 
+    @Basic
+    @Column(name = "get_keep_live_interval", nullable = true)
+    public Integer getGetKeepLiveInterval() {
+    }
+
+    @Basic
+    @Column(name = "get_device_ip", nullable = true)
+    public Integer getGetDeviceIp() {
+    }
+
 }

@@ -204,4 +204,24 @@ public class ViewGetDeviceLastLocationEntity {
     public void setNationNum3(Integer nationNum3) {
     }
 
+    @Basic
+    @Column(name = "signal_strength_4", nullable = true)
+    public Integer getSignalStrength4() {
+    }
+
+    @Basic
+    @Column(name = "temp", nullable = true, length = 45)
+    public String getTemp() {
+    }
+
+    @Basic
+    @Column(name = "nation_num_4", nullable = true)
+    public Integer getNationNum4() {
+    }
+
+    @Basic
+    @Column(name = "community_num_1", nullable = true)
+    public Integer getCommunityNum1() {
+    }
+
 }

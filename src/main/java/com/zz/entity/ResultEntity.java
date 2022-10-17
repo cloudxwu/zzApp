@@ -34,4 +34,7 @@ public class ResultEntity {
     public void setCode(int code) {
     }
 
+    public int getCode() {
+    }
+
 }

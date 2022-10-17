@@ -44,6 +44,7 @@ public class UserController {
         {
             return This.createResultEntity(ResultEntity.DATA_IS_EXIST, objectMapper.convertValue(bindUserDepartmentRoleEntityList.get(0), JsonNode.class));
         }
+        BindUserDepartmentRoleEntity entity = new BindUserDepartmentRoleEntity();
     }
 
     /**

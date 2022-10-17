@@ -118,4 +118,12 @@ public class DeviceEntity {
     public void setBatteryKeepLiveTime(int batteryKeepLiveTime) {
     }
 
+    public void setTypeId(Long typeId) {
+    }
+
+    @Basic
+    @Column(name = "is_delete", nullable = false)
+    public int getIsDelete() {
+    }
+
 }

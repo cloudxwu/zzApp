@@ -50,4 +50,21 @@ public class RoleEntity {
     public String getName() {
     }
 
+    @Override
+    public boolean equals(Object o) {
+        if (This == o) 
+        {
+            return true;
+        }
+        if (o == null || getClass() != o.getClass()) 
+        {
+            return false;
+        }
+        RoleEntity that = (RoleEntity) o;
+        if (id != that.id) 
+        {
+            return false;
+        }
+    }
+
 }
