@@ -223,4 +223,23 @@ public class DeviceLocationEntity {
     public Integer getStationFlag4() {
     }
 
+    @Basic
+    @Column(name = "city", nullable = true, length = 45)
+    public String getCity() {
+    }
+
+    public void setCommunityNum2(Integer communityNum2) {
+    }
+
+    public void setId(long id) {
+    }
+
+    public void setStationFlag3(Integer stationFlag3) {
+    }
+
+    @Basic
+    @Column(name = "weather", nullable = true, length = 45)
+    public String getWeather() {
+    }
+
 }

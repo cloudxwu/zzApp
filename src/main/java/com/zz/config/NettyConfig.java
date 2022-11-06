@@ -47,4 +47,14 @@ public class NettyConfig {
     public NioEventLoopGroup bossGroup() {
     }
 
+    /**
+     * 初始化服务器引导对象
+     * @author ZhaoLeiMing@zz.com
+     * @return 服务器引导对象
+     */
+    @Bean
+    public ServerBootstrap serverBootstrap(StringProtocolInitalizer protocolInitalizer) {
+        ServerBootstrap bootstrap = new ServerBootstrap();
+    }
+
 }

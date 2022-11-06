@@ -27,6 +27,14 @@ public class DepartmentService {
 
     @Autowired
     public DepartmentService(DepartmentDao dao) {
+        super(dao);
+    }
+
+    /**
+     * 获取层级的最大值，从0开始
+     * @return 最大值层级值
+     */
+    private int maxDepartmentLevel() {
     }
 
 }

@@ -15,4 +15,8 @@ import org.springframework.web.bind.annotation;
 public class LoginController { 
     private UserService userService;
 
+    @Autowired
+    public LoginController(UserService userService) {
+    }
+
 }

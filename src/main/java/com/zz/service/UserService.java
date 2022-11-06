@@ -20,4 +20,9 @@ public class UserService {
     public static final String SQL_LOGIN_CHECK = "SELECT user FROM UserEntity user WHERE user.loginName = ?1 AND user.loginPassword = ?2";
     private UserDao userDao = null;
 
+    @Autowired
+    public UserService(UserDao userDao) {
+        super(userDao);
+    }
+
 }

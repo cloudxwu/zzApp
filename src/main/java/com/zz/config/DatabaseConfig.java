@@ -35,12 +35,14 @@ public class DatabaseConfig {
     public JpaVendorAdapter jpaVendorAdapter() {
         HibernateJpaVendorAdapter adapter = new HibernateJpaVendorAdapter();
         adapter.setDatabase(Database.MYSQL);
+        adapter.setShowSql(true);
     }
 
     @Bean
     public LocalContainerEntityManagerFactoryBean entityManagerFactoryBean(DataSource dataSource, JpaVendorAdapter jpaVendorAdapter) {
         LocalContainerEntityManagerFactoryBean localContainerEntityManagerFactoryBean = new LocalContainerEntityManagerFactoryBean();
         localContainerEntityManagerFactoryBean.setDataSource(dataSource);
+        localContainerEntityManagerFactoryBean.setJpaVendorAdapter(jpaVendorAdapter);
     }
 
 }

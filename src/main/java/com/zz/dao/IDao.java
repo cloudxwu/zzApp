@@ -27,4 +27,12 @@ public class IDao {
     public T update(T entity) {
     }
 
+    /**
+     * 增加一条记录
+     * @author WangWeiHao@zz.com
+     * @param entity 实体对象
+     */
+    public void save(T entity) {
+    }
+
 }

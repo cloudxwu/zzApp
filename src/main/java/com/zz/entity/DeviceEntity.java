@@ -65,6 +65,10 @@ public class DeviceEntity {
         {
             return true;
         }
+        if (o == null || getClass() != o.getClass()) 
+        {
+            return false;
+        }
     }
 
     @OneToMany(mappedBy = "deviceByDeviceId")
@@ -124,6 +128,19 @@ public class DeviceEntity {
     @Basic
     @Column(name = "is_delete", nullable = false)
     public int getIsDelete() {
+    }
+
+    public void setImsi(String imsi) {
+    }
+
+    @Basic
+    @Column(name = "comment", nullable = true, length = 200)
+    public String getComment() {
+    }
+
+    @ManyToOne
+    @JoinColumn(name = "type_id", referencedColumnName = "id", insertable = false, updatable = false)
+    public TypeEntity getTypeByTypeId() {
     }
 
 }

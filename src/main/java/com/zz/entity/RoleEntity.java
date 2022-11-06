@@ -67,4 +67,7 @@ public class RoleEntity {
         }
     }
 
+    public void setId(long id) {
+    }
+
 }

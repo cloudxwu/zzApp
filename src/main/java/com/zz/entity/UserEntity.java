@@ -47,6 +47,10 @@ public class UserEntity {
         {
             return false;
         }
+        if (loginName != null ? !loginName.equals(that.loginName) : that.loginName != null) 
+        {
+            return false;
+        }
     }
 
     @Basic
@@ -90,6 +94,12 @@ public class UserEntity {
     }
 
     public void setCreateTime(String createTime) {
+    }
+
+    @Id
+    @GeneratedValue(strategy = GenerationType.IDENTITY)
+    @Column(name = "id", nullable = false)
+    public long getId() {
     }
 
 }

@@ -69,6 +69,10 @@ public class DepartmentController {
         {
             entity.setName(name);
         }
+        if (level != 1) 
+        {
+            entity.setLevel(level);
+        }
     }
 
 }

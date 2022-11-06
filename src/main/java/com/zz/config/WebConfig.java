@@ -41,4 +41,9 @@ public class WebConfig {
     public MultipartResolver multipartResolver() {
     }
 
+    @Override
+    public void configureDefaultServletHandling(DefaultServletHandlerConfigurer configurer) {
+        super.configureDefaultServletHandling(configurer);
+    }
+
 }

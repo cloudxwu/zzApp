@@ -38,4 +38,7 @@ public class AGpsResultEntity {
     public void setId(String id) {
     }
 
+    public BigDecimal getLat() {
+    }
+
 }

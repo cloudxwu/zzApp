@@ -37,6 +37,10 @@ public class BindUserDepartmentRoleEntity {
             return false;
         }
         BindUserDepartmentRoleEntity that = (BindUserDepartmentRoleEntity) o;
+        if (id != that.id) 
+        {
+            return false;
+        }
     }
 
     public void setId(long id) {
@@ -61,6 +65,12 @@ public class BindUserDepartmentRoleEntity {
     @ManyToOne
     @JoinColumn(name = "user_id", referencedColumnName = "id", nullable = false, insertable = false, updatable = false)
     public UserEntity getUserByUserId() {
+    }
+
+    @Override
+    public int hashCode() {
+        int result = (int) id ^ id >>> 32;
+        result = 31 * result + (int) userId ^ userId >>> 32;
     }
 
 }

@@ -20,4 +20,8 @@ public class ViewBindUserDepartmentRoleService {
     private ViewBindUserDepartmentRoleDao dao;
     public static final String SQL_FIND_BY_DEPARTMENT_ID = "SELECT bind FROM ViewBindUserDepartmentRoleEntity bind WHERE bind.departmentId = ?1";
 
+    public List<ViewBindUserDepartmentRoleEntity> getUserByDepartmentId(Long departmentId) {
+        List<ViewBindUserDepartmentRoleEntity> userList = This.dao.findByParams(SQL_FIND_BY_DEPARTMENT_ID, new Object[]{departmentId});
+    }
+
 }

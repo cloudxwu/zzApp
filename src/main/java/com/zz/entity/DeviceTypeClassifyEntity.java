@@ -14,4 +14,7 @@ public class DeviceTypeClassifyEntity {
     public List<DeviceEntity> getDeviceEntityList() {
     }
 
+    public void setDeviceEntityList(List<DeviceEntity> deviceEntityList) {
+    }
+
 }

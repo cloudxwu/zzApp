@@ -9,4 +9,10 @@ import java.com.zz.entity.ResultEntity;
  */
 public abstract class IControllerImpl { 
 
+    @Override
+    public ResultEntity createResultEntity(int resCode, JsonNode data) {
+        ResultEntity resultEntity = new ResultEntity();
+        resultEntity.setCode(resCode);
+    }
+
 }

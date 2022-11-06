@@ -20,4 +20,9 @@ public class BindUserDepartmentRoleService {
     private BindUserDepartmentRoleDao dao;
     public static final String SQL_FIND_BY_USER_DEPARTMENT = "SELECT bind FROM BindUserDepartmentRoleEntity bind WHERE bind.userId = ?1 AND bind.departmentId = ?2";
 
+    @Autowired
+    public BindUserDepartmentRoleService(BindUserDepartmentRoleDao dao) {
+        super(dao);
+    }
+
 }

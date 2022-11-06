@@ -120,6 +120,37 @@ public class DeviceController {
         {
             deviceEntity.setUid(uid);
         }
+        if (!name.isEmpty()) 
+        {
+            deviceEntity.setName(name);
+            deviceCmdEntity.setSetDeviceName(name);
+        }
+    }
+
+    /**
+     * @api {post} /api/manage/device/command 向设备添加通用指令
+     * @apiVersion 0.0.1
+     * @apiName createCommand
+     * @apiGroup deviceGroup
+     *
+     * @apiParam {Number} id 设备ID
+     * @apiParam {String} command  指令内容
+     *
+     * @apiSuccess {String} code 返回码.
+     * @apiSuccess {String} msg  返回消息.
+     * @apiSuccess {Object} data  JSON格式的对象.
+     */
+    @RequestMapping(value = "/device/command", method = RequestMethod.POST)
+    public ResultEntity createCommand(long id, String command) {
+        ObjectMapper objectMapper = new ObjectMapper();
+        SimpleDateFormat simpleDateFormat = new SimpleDateFormat("yyyy-MM-dd HH:mm:ss");
+        simpleDateFormat.setTimeZone(TimeZone.getTimeZone("Asia/Shanghai"));
+        DeviceCmdEntity deviceCmdEntity = new DeviceCmdEntity();
+        DeviceEntity entity = deviceService.findById(id);
+        if (entity == null) 
+        {
+            return This.createResultEntity(ResultEntity.NOT_FIND_ERROR);
+        }
     }
 
 }

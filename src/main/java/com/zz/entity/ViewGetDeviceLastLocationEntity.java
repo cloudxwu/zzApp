@@ -62,6 +62,10 @@ public class ViewGetDeviceLastLocationEntity {
         {
             return true;
         }
+        if (o == null || getClass() != o.getClass()) 
+        {
+            return false;
+        }
     }
 
     public void setLongitudeDirection(Integer longitudeDirection) {
@@ -222,6 +226,26 @@ public class ViewGetDeviceLastLocationEntity {
     @Basic
     @Column(name = "community_num_1", nullable = true)
     public Integer getCommunityNum1() {
+    }
+
+    @Basic
+    @Column(name = "station_flag_3", nullable = true)
+    public Integer getStationFlag3() {
+    }
+
+    @Basic
+    @Column(name = "station_flag_4", nullable = true)
+    public Integer getStationFlag4() {
+    }
+
+    public void setBatteryVoltage(double batteryVoltage) {
+    }
+
+    public void setMobileNum2(Integer mobileNum2) {
+    }
+
+    @Override
+    public int hashCode() {
     }
 
 }

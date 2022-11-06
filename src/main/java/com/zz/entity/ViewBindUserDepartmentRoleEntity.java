@@ -113,4 +113,7 @@ public class ViewBindUserDepartmentRoleEntity {
     public void setUserLoginName(String userLoginName) {
     }
 
+    public void setDepartmentIsDelete(int departmentIsDelete) {
+    }
+
 }

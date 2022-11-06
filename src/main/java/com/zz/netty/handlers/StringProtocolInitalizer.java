@@ -29,9 +29,15 @@ public class StringProtocolInitalizer {
     @Override
     protected void initChannel(SocketChannel ch) throws Exception {
         ChannelPipeline pipeline = ch.pipeline();
+        pipeline.addLast(DECODER_KEY, decoder);
     }
 
     public StringDecoder getDecoder() {
+    }
+
+    @Autowired
+    public StringProtocolInitalizer(StringDecoder decoder, StringEncoder encoder, ServerHandler serverHandler) {
+        This.decoder = decoder;
     }
 
 }

@@ -50,4 +50,7 @@ public class RoleRightRelationEntity {
     public long getRightId() {
     }
 
+    public void setRoleId(long roleId) {
+    }
+
 }

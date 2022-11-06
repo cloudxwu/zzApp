@@ -42,6 +42,10 @@ public class DeviceCmdEntity {
         {
             return true;
         }
+        if (o == null || getClass() != o.getClass()) 
+        {
+            return false;
+        }
     }
 
     public void setDeviceId(long deviceId) {
@@ -110,6 +114,12 @@ public class DeviceCmdEntity {
     @Basic
     @Column(name = "get_device_ip", nullable = true)
     public Integer getGetDeviceIp() {
+    }
+
+    @Id
+    @GeneratedValue(strategy = GenerationType.IDENTITY)
+    @Column(name = "id", nullable = false)
+    public long getId() {
     }
 
 }

@@ -50,11 +50,18 @@ public class RightEntity {
             return false;
         }
         RightEntity that = (RightEntity) o;
+        if (id != that.id) 
+        {
+            return false;
+        }
     }
 
     @Basic
     @Column(name = "parent_id", nullable = false)
     public long getParentId() {
+    }
+
+    public void setParentId(long parentId) {
     }
 
 }

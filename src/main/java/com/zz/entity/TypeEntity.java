@@ -33,4 +33,10 @@ public class TypeEntity {
     public void setDevicesById(Collection<DeviceEntity> devicesById) {
     }
 
+    @Id
+    @GeneratedValue(strategy = GenerationType.IDENTITY)
+    @Column(name = "id", nullable = false)
+    public long getId() {
+    }
+
 }

@@ -40,4 +40,9 @@ public class UserRightRelationEntity {
     public RightEntity getRightByRightId() {
     }
 
+    @Basic
+    @Column(name = "right_id", nullable = false)
+    public long getRightId() {
+    }
+
 }

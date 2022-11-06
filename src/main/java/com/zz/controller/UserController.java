@@ -66,6 +66,7 @@ public class UserController {
         {
             return This.createResultEntity(ResultEntity.DELETE_ERROR);
         }
+        userEntity.setIsDelete(FlagEntity.DELETE);
     }
 
     /**
@@ -100,6 +101,36 @@ public class UserController {
         {
             entity.setLoginPassword(loginPassword);
         }
+        if (!name.isEmpty()) 
+        {
+            entity.setName(name);
+        }
+    }
+
+    /**
+     * @api {post} /api/manage/user 创建新用户
+     * @apiVersion 0.0.1
+     * @apiName createUser
+     * @apiGroup userGroup
+     *
+     * @apiParam {String} login_name 用户账号
+     * @apiParam {String} login_password 用户密码
+     * @apiParam {String} name 用户名
+     * @apiParam {String} [mobile] 用户手机号
+     * @apiParam {String} [email] 用户邮箱
+     *
+     * @apiSuccess {String} code 返回码.
+     * @apiSuccess {String} msg  返回消息.
+     * @apiSuccess {Object} data  JSON格式的对象.
+     */
+    @RequestMapping(value = "/user", method = RequestMethod.POST)
+    public ResultEntity createUser(String loginName, String loginPassword, String name, String mobile, String email) {
+        SimpleDateFormat simpleDateFormat = new SimpleDateFormat("yyyy-MM-dd HH:mm:ss");
+        simpleDateFormat.setTimeZone(TimeZone.getTimeZone("Asia/Shanghai"));
+        UserEntity userEntity = new UserEntity();
+        userEntity.setLoginName(loginName);
+        userEntity.setLoginPassword(loginPassword);
+        userEntity.setName(name);
     }
 
 }

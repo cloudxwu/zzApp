@@ -35,4 +35,7 @@ public class AGpsEntity {
     public void setResult(List<AGpsResultEntity> result) {
     }
 
+    public void setMsg(String msg) {
+    }
+
 }

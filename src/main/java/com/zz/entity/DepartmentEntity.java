@@ -64,6 +64,10 @@ public class DepartmentEntity {
         {
             return false;
         }
+        if (level != that.level) 
+        {
+            return false;
+        }
     }
 
     @Override
@@ -71,6 +75,9 @@ public class DepartmentEntity {
         int result = (int) id ^ id >>> 32;
         result = 31 * result + name != null ? name.hashCode() : 0;
         result = 31 * result + level;
+    }
+
+    public void setParentId(long parentId) {
     }
 
 }

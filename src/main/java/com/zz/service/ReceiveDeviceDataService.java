@@ -16,4 +16,7 @@ public class ReceiveDeviceDataService {
     public static final String SQL_FIND_COMMAND_BY_DEVICE = "SELECT receive FROM ReceiveDeviceDataEntity receive WHERE receive.deviceId = ?1 AND receive.isRead = 0 ORDER BY receive.createTime ASC";
     private ReceiveDeviceDataDao dao;
 
+    public List<ReceiveDeviceDataEntity> getCommandDataList(Long deviceId) {
+    }
+
 }

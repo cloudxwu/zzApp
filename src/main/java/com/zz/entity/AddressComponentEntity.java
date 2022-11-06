@@ -19,4 +19,7 @@ public class AddressComponentEntity {
     public void setProvince(String province) {
     }
 
+    public void setCity(String city) {
+    }
+
 }

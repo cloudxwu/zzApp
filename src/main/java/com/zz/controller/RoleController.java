@@ -40,6 +40,7 @@ public class RoleController {
         {
             return This.createResultEntity(ResultEntity.DELETE_ERROR);
         }
+        roleEntity.setIsDelete(FlagEntity.DELETE);
     }
 
     /**
@@ -61,6 +62,24 @@ public class RoleController {
         simpleDateFormat.setTimeZone(TimeZone.getTimeZone("Asia/Shanghai"));
         RoleEntity roleEntity = new RoleEntity();
         roleEntity.setName(name);
+        roleEntity.setCreateTime(simpleDateFormat.format(new Date()));
+    }
+
+    /**
+     * @api {get} /api/manage/role/:id 根据ID获取角色信息
+     * @apiVersion 0.0.1
+     * @apiName getRoleById
+     * @apiGroup roleGroup
+     *
+     * @apiParam {Number} id 用户ID
+     *
+     * @apiSuccess {String} code 返回码.
+     * @apiSuccess {String} msg  返回消息.
+     * @apiSuccess {Object} data  JSON格式的对象.
+     */
+    @RequestMapping(value = "/role/{id}", method = RequestMethod.GET)
+    public ResultEntity getRoleById(long id) {
+        RoleEntity roleEntity = roleService.findById(id);
     }
 
 }

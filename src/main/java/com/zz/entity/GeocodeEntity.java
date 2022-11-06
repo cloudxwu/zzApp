@@ -23,4 +23,7 @@ public class GeocodeEntity {
     public void setRegeocode(RegeocodeEntity regeocode) {
     }
 
+    public void setInfo(String info) {
+    }
+
 }

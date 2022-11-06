@@ -20,6 +20,7 @@ public class DeviceLocationService {
 
     @Autowired
     public DeviceLocationService(DeviceLocationDao dao) {
+        super(dao);
     }
 
 }

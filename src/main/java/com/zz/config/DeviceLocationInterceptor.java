@@ -11,4 +11,12 @@ import org.hibernate.EmptyInterceptor;
  */
 public class DeviceLocationInterceptor { 
 
+    @Override
+    public boolean onSave(Object entity, Serializable id, Object state, String propertyNames, Type types) {
+        if (entity instanceof DeviceLocationEntity) 
+        {
+            System.out.println("=====DeviceLocationEntity=====");
+        }
+    }
+
 }

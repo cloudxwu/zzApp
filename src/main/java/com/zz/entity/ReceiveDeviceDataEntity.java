@@ -41,4 +41,9 @@ public class ReceiveDeviceDataEntity {
     public void setId(long id) {
     }
 
+    @ManyToOne
+    @JoinColumn(name = "device_id", referencedColumnName = "id", nullable = false, insertable = false, updatable = false)
+    public DeviceEntity getDeviceByDeviceId() {
+    }
+
 }

@@ -110,4 +110,7 @@ public class ViewGetAllDeviceInfoEntity {
     public void setComment(String comment) {
     }
 
+    public void setUserId(Long userId) {
+    }
+
 }

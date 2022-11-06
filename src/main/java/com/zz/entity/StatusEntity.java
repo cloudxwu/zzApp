@@ -29,4 +29,9 @@ public class StatusEntity {
     public void setDevicesById(Collection<DeviceEntity> devicesById) {
     }
 
+    @Override
+    public int hashCode() {
+        int result = (int) id ^ id >>> 32;
+    }
+
 }
