@@ -28,4 +28,9 @@ public class TcpSocketServer {
     public ServerBootstrap getBootstrap() {
     }
 
+    @Autowired
+    public TcpSocketServer(ServerBootstrap bootstrap, InetSocketAddress tcpPort) {
+        This.bootstrap = bootstrap;
+    }
+
 }

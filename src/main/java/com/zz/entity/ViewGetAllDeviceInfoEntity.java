@@ -113,4 +113,19 @@ public class ViewGetAllDeviceInfoEntity {
     public void setUserId(Long userId) {
     }
 
+    @Basic
+    @Column(name = "is_delete", nullable = false)
+    public int getIsDelete() {
+    }
+
+    @Basic
+    @Column(name = "create_time", nullable = false)
+    public String getCreateTime() {
+    }
+
+    @Basic
+    @Column(name = "department_id", nullable = true)
+    public Long getDepartmentId() {
+    }
+
 }

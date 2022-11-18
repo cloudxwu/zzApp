@@ -116,4 +116,17 @@ public class ViewBindUserDepartmentRoleEntity {
     public void setDepartmentIsDelete(int departmentIsDelete) {
     }
 
+    @Basic
+    @Column(name = "role_name", nullable = true, length = 45)
+    public String getRoleName() {
+    }
+
+    public void setDepartmentLevel(int departmentLevel) {
+    }
+
+    @Basic
+    @Column(name = "role_id", nullable = true)
+    public Long getRoleId() {
+    }
+
 }

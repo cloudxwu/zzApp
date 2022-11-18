@@ -37,4 +37,7 @@ public class ResultEntity {
     public int getCode() {
     }
 
+    public ResultEntity() {
+    }
+
 }

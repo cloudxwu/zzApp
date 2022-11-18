@@ -73,4 +73,7 @@ public class BindUserDepartmentRoleEntity {
         result = 31 * result + (int) userId ^ userId >>> 32;
     }
 
+    public void setUserByUserId(UserEntity userByUserId) {
+    }
+
 }

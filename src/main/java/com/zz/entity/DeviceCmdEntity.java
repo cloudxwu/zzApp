@@ -122,4 +122,10 @@ public class DeviceCmdEntity {
     public long getId() {
     }
 
+    public void setGetKeepLiveInterval(Integer getKeepLiveInterval) {
+    }
+
+    public void setCreateTime(String createTime) {
+    }
+
 }

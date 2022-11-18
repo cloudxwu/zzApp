@@ -45,4 +45,10 @@ public class DatabaseConfig {
         localContainerEntityManagerFactoryBean.setJpaVendorAdapter(jpaVendorAdapter);
     }
 
+    private Properties databaseProperties() {
+        Properties properties = new Properties();
+        properties.setProperty(AvailableSettings.DIALECT, "org.hibernate.dialect.MySQL5Dialect");
+        properties.setProperty(AvailableSettings.SHOW_SQL, "true");
+    }
+
 }

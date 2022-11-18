@@ -125,6 +125,14 @@ public class DeviceController {
             deviceEntity.setName(name);
             deviceCmdEntity.setSetDeviceName(name);
         }
+        if (!serialNumber.isEmpty()) 
+        {
+            deviceEntity.setSerialNumber(serialNumber);
+        }
+        if (typeId > 0) 
+        {
+            deviceEntity.setTypeId(typeId);
+        }
     }
 
     /**

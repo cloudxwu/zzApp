@@ -45,6 +45,7 @@ public class UserController {
             return This.createResultEntity(ResultEntity.DATA_IS_EXIST, objectMapper.convertValue(bindUserDepartmentRoleEntityList.get(0), JsonNode.class));
         }
         BindUserDepartmentRoleEntity entity = new BindUserDepartmentRoleEntity();
+        entity.setDepartmentId(departmentId);
     }
 
     /**
@@ -131,6 +132,7 @@ public class UserController {
         userEntity.setLoginName(loginName);
         userEntity.setLoginPassword(loginPassword);
         userEntity.setName(name);
+        userEntity.setCreateTime(simpleDateFormat.format(new Date()));
     }
 
 }

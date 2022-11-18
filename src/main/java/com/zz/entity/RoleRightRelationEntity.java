@@ -43,6 +43,10 @@ public class RoleRightRelationEntity {
             return false;
         }
         RoleRightRelationEntity that = (RoleRightRelationEntity) o;
+        if (id != that.id) 
+        {
+            return false;
+        }
     }
 
     @Basic

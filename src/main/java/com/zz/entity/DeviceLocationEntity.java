@@ -242,4 +242,20 @@ public class DeviceLocationEntity {
     public String getWeather() {
     }
 
+    public void setSignalStrength2(Integer signalStrength2) {
+    }
+
+    @Basic
+    @Column(name = "province", nullable = true, length = 45)
+    public String getProvince() {
+    }
+
+    public void setProvince(String province) {
+    }
+
+    @Basic
+    @Column(name = "mobile_num_1", nullable = true)
+    public Integer getMobileNum1() {
+    }
+
 }

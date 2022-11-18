@@ -75,4 +75,26 @@ public class DepartmentController {
         }
     }
 
+    /**
+     * @api {delete} /api/manage/department/:id 根据ID删除部门
+     * @apiVersion 0.0.1
+     * @apiName deleteDepartmentById
+     * @apiGroup departmentGroup
+     *
+     * @apiParam {Number} id 部门ID
+     *
+     * @apiSuccess {String} code 返回码.
+     * @apiSuccess {String} msg  返回消息.
+     * @apiSuccess {Object} data  JSON格式的对象.
+     */
+    @RequestMapping(value = "/department/{id}", method = RequestMethod.DELETE)
+    public ResultEntity deleteDepartmentById(long id) {
+        DepartmentEntity departmentEntity = departmentService.findById(id);
+        if (departmentEntity == null) 
+        {
+            return This.createResultEntity(ResultEntity.DELETE_ERROR);
+        }
+        departmentEntity.setIsDelete(FlagEntity.DELETE);
+    }
+
 }

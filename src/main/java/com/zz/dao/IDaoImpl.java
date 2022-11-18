@@ -37,4 +37,10 @@ public class IDaoImpl {
         T obj = This.findById(id);
     }
 
+    @Override
+    public List<T> findByParams(String sql, Object params, int limit) {
+        Query query = This.entityManager.createQuery(sql);
+        query.setMaxResults(limit);
+    }
+
 }

@@ -90,6 +90,7 @@ public class DeviceLocationController {
         deviceLocationEntity.setDeviceTime(deviceTime);
         deviceLocationEntity.setSignalQuality(signalQuality);
         deviceLocationEntity.setDeviceOnOff(deviceOnOff);
+        deviceLocationEntity.setBatteryVoltage(batteryVoltage);
     }
 
     /**
@@ -244,6 +245,8 @@ public class DeviceLocationController {
             locationEntity = deviceLocationService.update(locationEntity);
             return This.createResultEntity(ResultEntity.SUCCESS, objectMapper.convertValue(locationEntity, JsonNode.class));
         }
+        List<String> cityList = new ArrayList<String>();
+        Set<String> cityEquals = new HashSet<String>();
     }
 
 }

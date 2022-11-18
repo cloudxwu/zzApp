@@ -65,9 +65,17 @@ public class RoleEntity {
         {
             return false;
         }
+        if (isDelete != that.isDelete) 
+        {
+            return false;
+        }
     }
 
     public void setId(long id) {
+    }
+
+    @OneToMany(mappedBy = "roleByRoleId")
+    public Collection<RoleRightRelationEntity> getRoleRightRelationsById() {
     }
 
 }

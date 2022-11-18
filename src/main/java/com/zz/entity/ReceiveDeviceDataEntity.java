@@ -46,4 +46,8 @@ public class ReceiveDeviceDataEntity {
     public DeviceEntity getDeviceByDeviceId() {
     }
 
+    @Override
+    public int hashCode() {
+    }
+
 }

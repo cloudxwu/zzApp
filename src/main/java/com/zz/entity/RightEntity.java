@@ -64,4 +64,7 @@ public class RightEntity {
     public void setParentId(long parentId) {
     }
 
+    public void setRoleRightRelationsById(Collection<RoleRightRelationEntity> roleRightRelationsById) {
+    }
+
 }

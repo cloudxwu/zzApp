@@ -38,4 +38,7 @@ public class AGpsEntity {
     public void setMsg(String msg) {
     }
 
+    public void setLongitude(BigDecimal longitude) {
+    }
+
 }

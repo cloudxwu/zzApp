@@ -75,9 +75,15 @@ public class DepartmentEntity {
         int result = (int) id ^ id >>> 32;
         result = 31 * result + name != null ? name.hashCode() : 0;
         result = 31 * result + level;
+        result = 31 * result + createTime != null ? createTime.hashCode() : 0;
     }
 
     public void setParentId(long parentId) {
+    }
+
+    @Basic
+    @Column(name = "is_delete", nullable = false)
+    public int getIsDelete() {
     }
 
 }

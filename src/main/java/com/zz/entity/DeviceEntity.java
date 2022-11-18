@@ -143,4 +143,12 @@ public class DeviceEntity {
     public TypeEntity getTypeByTypeId() {
     }
 
+    public void setBatterySleepTime(int batterySleepTime) {
+    }
+
+    @ManyToOne
+    @JoinColumn(name = "department_id", referencedColumnName = "id", insertable = false, updatable = false)
+    public DepartmentEntity getDepartmentByDepartmentId() {
+    }
+
 }

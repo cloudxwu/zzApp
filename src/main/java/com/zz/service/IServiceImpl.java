@@ -26,4 +26,8 @@ public class IServiceImpl {
     public T findById(long id) {
     }
 
+    @Override
+    public int findMaxValue(String sql) {
+    }
+
 }

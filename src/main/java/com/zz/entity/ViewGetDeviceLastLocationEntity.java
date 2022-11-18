@@ -248,4 +248,20 @@ public class ViewGetDeviceLastLocationEntity {
     public int hashCode() {
     }
 
+    @Basic
+    @Column(name = "device_time", nullable = false)
+    public String getDeviceTime() {
+    }
+
+    @Basic
+    @Column(name = "location_num_2", nullable = true)
+    public Integer getLocationNum2() {
+    }
+
+    public void setLocationNum1(Integer locationNum1) {
+    }
+
+    public void setId(long id) {
+    }
+
 }

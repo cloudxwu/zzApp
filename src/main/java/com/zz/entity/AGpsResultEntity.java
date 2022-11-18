@@ -41,4 +41,7 @@ public class AGpsResultEntity {
     public BigDecimal getLat() {
     }
 
+    public String getRoads() {
+    }
+
 }

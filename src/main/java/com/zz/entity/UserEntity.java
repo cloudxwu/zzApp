@@ -64,6 +64,7 @@ public class UserEntity {
         result = 31 * result + loginName != null ? loginName.hashCode() : 0;
         result = 31 * result + loginPassword != null ? loginPassword.hashCode() : 0;
         result = 31 * result + name != null ? name.hashCode() : 0;
+        result = 31 * result + createTime != null ? createTime.hashCode() : 0;
     }
 
     public void setEmail(String email) {
@@ -100,6 +101,9 @@ public class UserEntity {
     @GeneratedValue(strategy = GenerationType.IDENTITY)
     @Column(name = "id", nullable = false)
     public long getId() {
+    }
+
+    public void setMobile(String mobile) {
     }
 
 }
