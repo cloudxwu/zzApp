@@ -57,4 +57,9 @@ public class RoleRightRelationEntity {
     public void setRoleId(long roleId) {
     }
 
+    @Basic
+    @Column(name = "role_id", nullable = false)
+    public long getRoleId() {
+    }
+
 }

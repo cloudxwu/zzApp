@@ -71,6 +71,7 @@ public class BindUserDepartmentRoleEntity {
     public int hashCode() {
         int result = (int) id ^ id >>> 32;
         result = 31 * result + (int) userId ^ userId >>> 32;
+        result = 31 * result + (int) departmentId ^ departmentId >>> 32;
     }
 
     public void setUserByUserId(UserEntity userByUserId) {

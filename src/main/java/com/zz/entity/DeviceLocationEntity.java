@@ -258,4 +258,24 @@ public class DeviceLocationEntity {
     public Integer getMobileNum1() {
     }
 
+    @Basic
+    @Column(name = "is_delete", nullable = true)
+    public Integer getIsDelete() {
+    }
+
+    @Basic
+    @Column(name = "mobile_num_2", nullable = true)
+    public Integer getMobileNum2() {
+    }
+
+    @Basic
+    @Column(name = "location_num_4", nullable = true)
+    public Integer getLocationNum4() {
+    }
+
+    @ManyToOne
+    @JoinColumn(name = "device_id", referencedColumnName = "id", nullable = false, insertable = false, updatable = false)
+    public DeviceEntity getDeviceByDeviceId() {
+    }
+
 }

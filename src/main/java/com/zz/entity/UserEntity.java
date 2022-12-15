@@ -51,6 +51,10 @@ public class UserEntity {
         {
             return false;
         }
+        if (loginPassword != null ? !loginPassword.equals(that.loginPassword) : that.loginPassword != null) 
+        {
+            return false;
+        }
     }
 
     @Basic
@@ -104,6 +108,11 @@ public class UserEntity {
     }
 
     public void setMobile(String mobile) {
+    }
+
+    @Basic
+    @Column(name = "create_time", nullable = false)
+    public String getCreateTime() {
     }
 
 }

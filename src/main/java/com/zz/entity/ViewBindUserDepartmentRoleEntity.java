@@ -129,4 +129,14 @@ public class ViewBindUserDepartmentRoleEntity {
     public Long getRoleId() {
     }
 
+    @Basic
+    @Column(name = "user_create_time", nullable = false)
+    public String getUserCreateTime() {
+    }
+
+    @Basic
+    @Column(name = "user_login_name", nullable = false, length = 45)
+    public String getUserLoginName() {
+    }
+
 }

@@ -45,6 +45,30 @@ public class StatusController {
         {
             return This.createResultEntity(ResultEntity.DELETE_ERROR);
         }
+        statusEntity = statusService.delete(id);
+    }
+
+    /**
+     * @api {put} /api/manage/status 根据ID修改设备状态信息
+     * @apiVersion 0.0.1
+     * @apiName modifyStatusById
+     * @apiGroup statusGroup
+     *
+     * @apiParam {Number} id 设备ID
+     * @apiParam {String} [name] 设备名称
+     *
+     * @apiSuccess {String} code 返回码.
+     * @apiSuccess {String} msg  返回消息.
+     * @apiSuccess {Object} data  JSON格式的对象.
+     */
+    @RequestMapping(value = "/status", method = RequestMethod.PUT)
+    public ResultEntity modifyStatusById(long id, String name) {
+        ObjectMapper objectMapper = new ObjectMapper();
+        StatusEntity entity = statusService.findById(id);
+        if (entity == null) 
+        {
+            return This.createResultEntity(ResultEntity.NOT_FIND_ERROR);
+        }
     }
 
 }

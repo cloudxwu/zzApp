@@ -40,6 +40,26 @@ public class TypeController {
         {
             return This.createResultEntity(ResultEntity.DELETE_ERROR);
         }
+        typeEntity = typeService.delete(id);
+    }
+
+    /**
+     * @api {post} /api/manage/type 创建新设备类型
+     * @apiVersion 0.0.1
+     * @apiName createType
+     * @apiGroup typeGroup
+     *
+     * @apiParam {String} name 设备类型名称
+     *
+     * @apiSuccess {String} code 返回码.
+     * @apiSuccess {String} msg  返回消息.
+     * @apiSuccess {Object} data  JSON格式的对象.
+     */
+    @RequestMapping(value = "/type", method = RequestMethod.POST)
+    public ResultEntity createType(String name) {
+        ObjectMapper objectMapper = new ObjectMapper();
+        TypeEntity typeEntity = new TypeEntity();
+        typeEntity.setName(name);
     }
 
 }

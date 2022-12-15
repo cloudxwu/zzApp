@@ -106,6 +106,10 @@ public class UserController {
         {
             entity.setName(name);
         }
+        if (!mobile.isEmpty()) 
+        {
+            entity.setMobile(mobile);
+        }
     }
 
     /**
@@ -133,6 +137,10 @@ public class UserController {
         userEntity.setLoginPassword(loginPassword);
         userEntity.setName(name);
         userEntity.setCreateTime(simpleDateFormat.format(new Date()));
+        if (!mobile.isEmpty()) 
+        {
+            userEntity.setMobile(mobile);
+        }
     }
 
 }

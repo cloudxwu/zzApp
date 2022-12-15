@@ -133,6 +133,10 @@ public class DeviceController {
         {
             deviceEntity.setTypeId(typeId);
         }
+        if (statusId > 0) 
+        {
+            deviceEntity.setStatusId(statusId);
+        }
     }
 
     /**
@@ -159,6 +163,33 @@ public class DeviceController {
         {
             return This.createResultEntity(ResultEntity.NOT_FIND_ERROR);
         }
+        deviceCmdEntity.setDeviceId(id);
+    }
+
+    /**
+     * @api {get} /api/manage/device/type 根据设备类型进行分类获取所有设备
+     * @apiVersion 0.0.1
+     * @apiName getAllDeviceByTypeClassify
+     * @apiGroup deviceGroup
+     *
+     * @apiSuccess {String} code 返回码.
+     * @apiSuccess {String} msg  返回消息.
+     * @apiSuccess {Object} data  JSON格式的对象.
+     */
+    @RequestMapping(value = "/device/type", method = RequestMethod.GET)
+    public ResultEntity getAllDeviceByTypeClassify() {
+        List<TypeEntity> typeEntityList = This.typeService.findAll();
+        List<DeviceTypeClassifyEntity> deviceTypeClassifyEntityList = new ArrayList<DeviceTypeClassifyEntity>();
+        for (typeEntityList : TypeEntity typeEntity){
+            DeviceTypeClassifyEntity deviceTypeClassifyEntity = new DeviceTypeClassifyEntity();
+            deviceTypeClassifyEntity.setTypeEntity(typeEntity);
+            List<DeviceEntity> deviceEntityList = deviceService.findDeviceByType(typeEntity.getId());
+            deviceTypeClassifyEntity.setDeviceEntityList(deviceEntityList);
+            deviceTypeClassifyEntityList.add(deviceTypeClassifyEntity);
+        }
+        DeviceTypeClassifyEntity deviceTypeClassifyEntity = new DeviceTypeClassifyEntity();
+        List<DeviceEntity> nullDeviceEntityList = deviceService.findDeviceByType(null);
+        TypeEntity nullTypeEntity = new TypeEntity();
     }
 
 }

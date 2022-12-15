@@ -68,6 +68,10 @@ public class DepartmentEntity {
         {
             return false;
         }
+        if (isDelete != that.isDelete) 
+        {
+            return false;
+        }
     }
 
     @Override
@@ -84,6 +88,9 @@ public class DepartmentEntity {
     @Basic
     @Column(name = "is_delete", nullable = false)
     public int getIsDelete() {
+    }
+
+    public void setIsDelete(int isDelete) {
     }
 
 }

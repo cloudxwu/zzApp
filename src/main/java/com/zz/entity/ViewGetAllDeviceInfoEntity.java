@@ -128,4 +128,14 @@ public class ViewGetAllDeviceInfoEntity {
     public Long getDepartmentId() {
     }
 
+    @Basic
+    @Column(name = "battery_sleep_time", nullable = false)
+    public int getBatterySleepTime() {
+    }
+
+    @Basic
+    @Column(name = "user", nullable = false, length = 45)
+    public String getUser() {
+    }
+
 }

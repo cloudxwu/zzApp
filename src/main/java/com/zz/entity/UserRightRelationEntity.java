@@ -45,4 +45,9 @@ public class UserRightRelationEntity {
     public long getRightId() {
     }
 
+    @Basic
+    @Column(name = "user_id", nullable = false)
+    public long getUserId() {
+    }
+
 }

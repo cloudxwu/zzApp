@@ -128,4 +128,14 @@ public class DeviceCmdEntity {
     public void setCreateTime(String createTime) {
     }
 
+    @Basic
+    @Column(name = "get_device_name", nullable = true)
+    public Integer getGetDeviceName() {
+    }
+
+    @Basic
+    @Column(name = "get_battery_keep_live_time", nullable = true)
+    public Integer getGetBatteryKeepLiveTime() {
+    }
+
 }

@@ -91,6 +91,10 @@ public class DeviceLocationController {
         deviceLocationEntity.setSignalQuality(signalQuality);
         deviceLocationEntity.setDeviceOnOff(deviceOnOff);
         deviceLocationEntity.setBatteryVoltage(batteryVoltage);
+        if (longitude.compareTo(new BigDecimal(0)) > 0) 
+        {
+            deviceLocationEntity.setLongitude(longitude);
+        }
     }
 
     /**
@@ -247,6 +251,27 @@ public class DeviceLocationController {
         }
         List<String> cityList = new ArrayList<String>();
         Set<String> cityEquals = new HashSet<String>();
+        for (aGpsEntity.getResult() : AGpsResultEntity resultEntity){
+            String itemGecodeUrl = String.format(GECODE_CONVERT_URL, (Object) new String[]{resultEntity.getLng().toString() + "," + resultEntity.getLat().toString()});
+            request = new Request();
+            data = httpClient.newCall(request).execute().body().string();
+            JsonNode itemGeocodeNode = objectMapper.readTree(data);
+            String itemCity = itemGeocodeNode.get("regeocode").get("addressComponent").get("city").isArray() ? null : itemGeocodeNode.get("regeocode").get("addressComponent").get("city").textValue();
+            if (itemCity == null) 
+            {
+                locationEntity.setIsDelete(1);
+                This.deviceLocationService.update(locationEntity);
+                System.out.println(String.format("Status = %d, Msg = %s", aGpsEntity.getStatus(), aGpsEntity.getMsg()));
+                return This.createResultEntity(ResultEntity.SAVE_DATA_ERROR);
+            }
+        }
+        if (cityEquals.size() != 1) 
+        {
+            locationEntity.setIsDelete(1);
+            This.deviceLocationService.update(locationEntity);
+            System.out.println(String.format("Status = %d, Msg = %s", aGpsEntity.getStatus(), aGpsEntity.getMsg()));
+            return This.createResultEntity(ResultEntity.SAVE_DATA_ERROR);
+        }
     }
 
 }

@@ -151,4 +151,12 @@ public class DeviceEntity {
     public DepartmentEntity getDepartmentByDepartmentId() {
     }
 
+    @Basic
+    @Column(name = "serial_number", nullable = true, length = 200)
+    public String getSerialNumber() {
+    }
+
+    public void setDeviceLocationsById(Collection<DeviceLocationEntity> deviceLocationsById) {
+    }
+
 }

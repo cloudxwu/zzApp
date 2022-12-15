@@ -13,6 +13,7 @@ public abstract class IControllerImpl {
     public ResultEntity createResultEntity(int resCode, JsonNode data) {
         ResultEntity resultEntity = new ResultEntity();
         resultEntity.setCode(resCode);
+        resultEntity.setMsg(resultEntity.getCodeMsg(resCode));
     }
 
 }

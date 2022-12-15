@@ -264,4 +264,20 @@ public class ViewGetDeviceLastLocationEntity {
     public void setId(long id) {
     }
 
+    @Basic
+    @Column(name = "latitude", nullable = true, precision = 6)
+    public BigDecimal getLatitude() {
+    }
+
+    public void setCommunityNum3(Integer communityNum3) {
+    }
+
+    @Basic
+    @Column(name = "nation_num_3", nullable = true)
+    public Integer getNationNum3() {
+    }
+
+    public void setLocationNum4(Integer locationNum4) {
+    }
+
 }

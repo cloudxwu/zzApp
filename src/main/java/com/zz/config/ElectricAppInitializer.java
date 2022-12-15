@@ -26,4 +26,8 @@ public class ElectricAppInitializer {
         super.customizeRegistration(registration);
     }
 
+    @Override
+    protected Class<?> getRootConfigClasses() {
+    }
+
 }

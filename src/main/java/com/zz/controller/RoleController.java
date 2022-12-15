@@ -63,6 +63,10 @@ public class RoleController {
         RoleEntity roleEntity = new RoleEntity();
         roleEntity.setName(name);
         roleEntity.setCreateTime(simpleDateFormat.format(new Date()));
+        if (!comment.isEmpty()) 
+        {
+            roleEntity.setComment(comment);
+        }
     }
 
     /**
