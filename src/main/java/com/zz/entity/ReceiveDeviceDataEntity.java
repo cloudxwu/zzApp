@@ -50,4 +50,9 @@ public class ReceiveDeviceDataEntity {
     public int hashCode() {
     }
 
+    @Basic
+    @Column(name = "receive_data", nullable = false, length = 45)
+    public String getReceiveData() {
+    }
+
 }

@@ -138,4 +138,14 @@ public class ViewGetAllDeviceInfoEntity {
     public String getUser() {
     }
 
+    @Basic
+    @Column(name = "department", nullable = false, length = 255)
+    public String getDepartment() {
+    }
+
+    @Basic
+    @Column(name = "comment", nullable = true, length = 200)
+    public String getComment() {
+    }
+
 }

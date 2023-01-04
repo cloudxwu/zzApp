@@ -26,4 +26,11 @@ public class DeviceService {
     public List<DeviceEntity> findDeviceByImsi(String imsi) {
     }
 
+    public List<DeviceEntity> findDeviceByType(Long typeId) {
+        if (typeId != null) 
+        {
+            return This.dao.findByParams(SQL_FIND_DEVICE_BY_TYPE, new Object[]{typeId});
+        }
+    }
+
 }

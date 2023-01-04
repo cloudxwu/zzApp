@@ -159,4 +159,10 @@ public class DeviceEntity {
     public void setDeviceLocationsById(Collection<DeviceLocationEntity> deviceLocationsById) {
     }
 
+    public void setKeepLiveInterval(int keepLiveInterval) {
+    }
+
+    public void setSerialNumber(String serialNumber) {
+    }
+
 }

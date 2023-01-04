@@ -60,6 +60,7 @@ public class TypeController {
         ObjectMapper objectMapper = new ObjectMapper();
         TypeEntity typeEntity = new TypeEntity();
         typeEntity.setName(name);
+        typeService.save(typeEntity);
     }
 
 }

@@ -55,6 +55,10 @@ public class RightEntity {
         {
             return false;
         }
+        if (parentId != that.parentId) 
+        {
+            return false;
+        }
     }
 
     @Basic
@@ -66,6 +70,11 @@ public class RightEntity {
     }
 
     public void setRoleRightRelationsById(Collection<RoleRightRelationEntity> roleRightRelationsById) {
+    }
+
+    @Basic
+    @Column(name = "name", nullable = false, length = 45)
+    public String getName() {
     }
 
 }

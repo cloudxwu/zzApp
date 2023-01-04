@@ -22,4 +22,7 @@ public class AddressComponentEntity {
     public void setCity(String city) {
     }
 
+    public void setDistrict(String district) {
+    }
+
 }

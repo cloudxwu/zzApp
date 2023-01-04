@@ -69,6 +69,10 @@ public class RoleEntity {
         {
             return false;
         }
+        if (name != null ? !name.equals(that.name) : that.name != null) 
+        {
+            return false;
+        }
     }
 
     public void setId(long id) {
@@ -76,6 +80,11 @@ public class RoleEntity {
 
     @OneToMany(mappedBy = "roleByRoleId")
     public Collection<RoleRightRelationEntity> getRoleRightRelationsById() {
+    }
+
+    @Basic
+    @Column(name = "comment", nullable = true, length = 200)
+    public String getComment() {
     }
 
 }

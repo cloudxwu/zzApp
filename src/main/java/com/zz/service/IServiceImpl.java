@@ -30,4 +30,8 @@ public class IServiceImpl {
     public int findMaxValue(String sql) {
     }
 
+    @Override
+    public void save(T entity) {
+    }
+
 }

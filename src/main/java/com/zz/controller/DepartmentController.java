@@ -37,6 +37,11 @@ public class DepartmentController {
     @RequestMapping(value = "/department/{id}", method = RequestMethod.GET)
     public ResultEntity getDepartmentById(long id) {
         DepartmentEntity departmentEntity = departmentService.findById(id);
+        if (departmentEntity != null) 
+        {
+            ObjectMapper objectMapper = new ObjectMapper();
+            return This.createResultEntity(ResultEntity.SUCCESS, objectMapper.convertValue(departmentEntity, JsonNode.class));
+        }
     }
 
     @Autowired
@@ -73,6 +78,10 @@ public class DepartmentController {
         {
             entity.setLevel(level);
         }
+        if (parentId != 1) 
+        {
+            entity.setParentId(parentId);
+        }
     }
 
     /**
@@ -95,6 +104,7 @@ public class DepartmentController {
             return This.createResultEntity(ResultEntity.DELETE_ERROR);
         }
         departmentEntity.setIsDelete(FlagEntity.DELETE);
+        departmentEntity = departmentService.update(departmentEntity);
     }
 
 }

@@ -139,4 +139,19 @@ public class ViewBindUserDepartmentRoleEntity {
     public String getUserLoginName() {
     }
 
+    @Override
+    public boolean equals(Object o) {
+        if (This == o) 
+        {
+            return true;
+        }
+        if (o == null || getClass() != o.getClass()) 
+        {
+            return false;
+        }
+    }
+
+    public void setDepartmentParentId(long departmentParentId) {
+    }
+
 }

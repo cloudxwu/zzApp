@@ -138,4 +138,14 @@ public class DeviceCmdEntity {
     public Integer getGetBatteryKeepLiveTime() {
     }
 
+    @Basic
+    @Column(name = "set_battery_keep_live_time", nullable = true)
+    public Integer getSetBatteryKeepLiveTime() {
+    }
+
+    @Basic
+    @Column(name = "is_send", nullable = true)
+    public Integer getIsSend() {
+    }
+
 }

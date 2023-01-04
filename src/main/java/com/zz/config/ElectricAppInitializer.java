@@ -24,6 +24,7 @@ public class ElectricAppInitializer {
     @Override
     protected void customizeRegistration(ServletRegistration registration) {
         super.customizeRegistration(registration);
+        MultipartConfigElement multipartConfigElement = new MultipartConfigElement("", MAX_UPLOAD_SIZE, MAX_REQUEST_SIZE, 0);
     }
 
     @Override

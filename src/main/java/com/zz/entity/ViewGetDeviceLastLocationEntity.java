@@ -280,4 +280,18 @@ public class ViewGetDeviceLastLocationEntity {
     public void setLocationNum4(Integer locationNum4) {
     }
 
+    public void setDeviceTime(String deviceTime) {
+    }
+
+    public void setCity(String city) {
+    }
+
+    public void setStationFlag4(Integer stationFlag4) {
+    }
+
+    @Basic
+    @Column(name = "community_num_2", nullable = true)
+    public Integer getCommunityNum2() {
+    }
+
 }

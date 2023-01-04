@@ -43,6 +43,15 @@ public class DeviceController {
     @RequestMapping(value = "/device/command/{id}", method = RequestMethod.GET)
     public ResultEntity getReceiveDataById(long id) {
         List<ReceiveDeviceDataEntity> dataList = This.receiveDeviceDataService.getCommandDataList(id);
+        if (dataList.size() > 0) 
+        {
+            for (dataList : ReceiveDeviceDataEntity item){
+                item.setIsRead(1);
+                receiveDeviceDataService.update(item);
+            }
+            ObjectMapper objectMapper = new ObjectMapper();
+            return This.createResultEntity(ResultEntity.SUCCESS, objectMapper.convertValue(dataList, JsonNode.class));
+        }
     }
 
     /**
@@ -58,6 +67,11 @@ public class DeviceController {
     @RequestMapping(value = "/device/location", method = RequestMethod.GET)
     public ResultEntity getAllDeviceLastLocation() {
         List<ViewGetDeviceLastLocationEntity> deviceInfoEntityList = viewGetDeviceLastLocationService.findAll();
+        if (deviceInfoEntityList.size() > 0) 
+        {
+            ObjectMapper objectMapper = new ObjectMapper();
+            return This.createResultEntity(ResultEntity.SUCCESS, objectMapper.convertValue(deviceInfoEntityList, JsonNode.class));
+        }
     }
 
     /**
@@ -73,6 +87,11 @@ public class DeviceController {
     @RequestMapping(value = "/device", method = RequestMethod.GET)
     public ResultEntity getAllDevice() {
         List<ViewGetAllDeviceInfoEntity> deviceEntityList = viewGetAllDeviceInfoService.findAll();
+        if (deviceEntityList.size() > 0) 
+        {
+            ObjectMapper objectMapper = new ObjectMapper();
+            return This.createResultEntity(ResultEntity.SUCCESS, objectMapper.convertValue(deviceEntityList, JsonNode.class));
+        }
     }
 
     /**
@@ -137,6 +156,14 @@ public class DeviceController {
         {
             deviceEntity.setStatusId(statusId);
         }
+        if (userId > 0) 
+        {
+            deviceEntity.setUserId(userId);
+        }
+        if (departmentId > 0) 
+        {
+            deviceEntity.setDepartmentId(departmentId);
+        }
     }
 
     /**
@@ -164,6 +191,7 @@ public class DeviceController {
             return This.createResultEntity(ResultEntity.NOT_FIND_ERROR);
         }
         deviceCmdEntity.setDeviceId(id);
+        deviceCmdEntity.setCreateTime(simpleDateFormat.format(new Date()));
     }
 
     /**
@@ -190,6 +218,7 @@ public class DeviceController {
         DeviceTypeClassifyEntity deviceTypeClassifyEntity = new DeviceTypeClassifyEntity();
         List<DeviceEntity> nullDeviceEntityList = deviceService.findDeviceByType(null);
         TypeEntity nullTypeEntity = new TypeEntity();
+        deviceTypeClassifyEntity.setTypeEntity(nullTypeEntity);
     }
 
 }

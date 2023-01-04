@@ -26,4 +26,7 @@ public class GeocodeEntity {
     public void setInfo(String info) {
     }
 
+    public int getStatus() {
+    }
+
 }

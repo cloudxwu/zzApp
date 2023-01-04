@@ -69,6 +69,7 @@ public class StatusController {
         {
             return This.createResultEntity(ResultEntity.NOT_FIND_ERROR);
         }
+        entity.setName(name);
     }
 
 }

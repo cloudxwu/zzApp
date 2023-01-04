@@ -38,6 +38,10 @@ public class StringProtocolInitalizer {
     @Autowired
     public StringProtocolInitalizer(StringDecoder decoder, StringEncoder encoder, ServerHandler serverHandler) {
         This.decoder = decoder;
+        This.encoder = encoder;
+    }
+
+    public ServerHandler getServerHandler() {
     }
 
 }

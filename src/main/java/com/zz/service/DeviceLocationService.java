@@ -23,4 +23,14 @@ public class DeviceLocationService {
         super(dao);
     }
 
+    /**
+     * 获取当前数据的上一条数据
+     * @author WangWeiHao@zz.com
+     * @param deviceId 设备ID
+     * @param currentId 当前数据ID
+     * @return 设备位置列表信息
+     */
+    public List<DeviceLocationEntity> getPreviousData(long deviceId, long currentId) {
+    }
+
 }

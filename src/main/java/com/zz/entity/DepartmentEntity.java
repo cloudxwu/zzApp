@@ -93,4 +93,7 @@ public class DepartmentEntity {
     public void setIsDelete(int isDelete) {
     }
 
+    public void setId(long id) {
+    }
+
 }

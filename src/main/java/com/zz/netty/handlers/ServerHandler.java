@@ -20,6 +20,7 @@ public class ServerHandler {
     @Override
     public void channelActive(ChannelHandlerContext ctx) throws Exception {
         super.channelActive(ctx);
+        LOGGER.info("Remote Address : " + ctx.channel().remoteAddress() + " active !");
     }
 
     @Override

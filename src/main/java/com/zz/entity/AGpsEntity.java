@@ -41,4 +41,7 @@ public class AGpsEntity {
     public void setLongitude(BigDecimal longitude) {
     }
 
+    public void setStatus(int status) {
+    }
+
 }

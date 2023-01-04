@@ -46,6 +46,7 @@ public class UserController {
         }
         BindUserDepartmentRoleEntity entity = new BindUserDepartmentRoleEntity();
         entity.setDepartmentId(departmentId);
+        entity.setUserId(userId);
     }
 
     /**
@@ -68,6 +69,7 @@ public class UserController {
             return This.createResultEntity(ResultEntity.DELETE_ERROR);
         }
         userEntity.setIsDelete(FlagEntity.DELETE);
+        userEntity = userService.update(userEntity);
     }
 
     /**
@@ -140,6 +142,28 @@ public class UserController {
         if (!mobile.isEmpty()) 
         {
             userEntity.setMobile(mobile);
+        }
+    }
+
+    /**
+     * @api {get} /api/manage/user/:id 根据ID获取用户信息
+     * @apiVersion 0.0.1
+     * @apiName getUserById
+     * @apiGroup userGroup
+     *
+     * @apiParam {Number} id 用户ID
+     *
+     * @apiSuccess {String} code 返回码.
+     * @apiSuccess {String} msg  返回消息.
+     * @apiSuccess {Object} data  JSON格式的对象.
+     */
+    @RequestMapping(value = "/user/{id}", method = RequestMethod.GET)
+    public ResultEntity getUserById(long id) {
+        UserEntity userEntity = userService.findById(id);
+        if (userEntity != null) 
+        {
+            ObjectMapper objectMapper = new ObjectMapper();
+            return This.createResultEntity(ResultEntity.SUCCESS, objectMapper.convertValue(userEntity, JsonNode.class));
         }
     }
 

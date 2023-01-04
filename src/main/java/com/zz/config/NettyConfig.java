@@ -55,6 +55,11 @@ public class NettyConfig {
     @Bean
     public ServerBootstrap serverBootstrap(StringProtocolInitalizer protocolInitalizer) {
         ServerBootstrap bootstrap = new ServerBootstrap();
+        bootstrap.group(bossGroup(), workerGroup()).channel(NioServerSocketChannel.class).option(ChannelOption.SO_KEEPALIVE, KEEP_ALIVE).option(ChannelOption.SO_BACKLOG, BACK_LOG).childHandler(protocolInitalizer);
+    }
+
+    @Bean
+    public InetSocketAddress tcpPort() {
     }
 
 }

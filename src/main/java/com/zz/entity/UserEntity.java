@@ -55,6 +55,10 @@ public class UserEntity {
         {
             return false;
         }
+        if (name != null ? !name.equals(that.name) : that.name != null) 
+        {
+            return false;
+        }
     }
 
     @Basic
@@ -69,6 +73,7 @@ public class UserEntity {
         result = 31 * result + loginPassword != null ? loginPassword.hashCode() : 0;
         result = 31 * result + name != null ? name.hashCode() : 0;
         result = 31 * result + createTime != null ? createTime.hashCode() : 0;
+        result = 31 * result + mobile != null ? mobile.hashCode() : 0;
     }
 
     public void setEmail(String email) {
@@ -113,6 +118,13 @@ public class UserEntity {
     @Basic
     @Column(name = "create_time", nullable = false)
     public String getCreateTime() {
+    }
+
+    @OneToMany(mappedBy = "userByUserId")
+    public Collection<UserRightRelationEntity> getUserRightRelationsById() {
+    }
+
+    public void setId(long id) {
     }
 
 }

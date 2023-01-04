@@ -41,6 +41,7 @@ public class RoleController {
             return This.createResultEntity(ResultEntity.DELETE_ERROR);
         }
         roleEntity.setIsDelete(FlagEntity.DELETE);
+        roleEntity = roleService.update(roleEntity);
     }
 
     /**
@@ -84,6 +85,42 @@ public class RoleController {
     @RequestMapping(value = "/role/{id}", method = RequestMethod.GET)
     public ResultEntity getRoleById(long id) {
         RoleEntity roleEntity = roleService.findById(id);
+        if (roleEntity != null) 
+        {
+            ObjectMapper objectMapper = new ObjectMapper();
+            return This.createResultEntity(ResultEntity.SUCCESS, objectMapper.convertValue(roleEntity, JsonNode.class));
+        }
+    }
+
+    /**
+     * @api {put} /api/manage/role 根据ID修改角色信息
+     * @apiVersion 0.0.1
+     * @apiName modifyRoleById
+     * @apiGroup roleGroup
+     *
+     * @apiParam {Number} id 角色id
+     * @apiParam {String} [name] 角色名称
+     * @apiParam {String} [comment] 角色说明
+     *
+     * @apiSuccess {String} code 返回码.
+     * @apiSuccess {String} msg  返回消息.
+     * @apiSuccess {Object} data  JSON格式的对象.
+     */
+    @RequestMapping(value = "/role", method = RequestMethod.PUT)
+    public ResultEntity modifyRoleById(long id, String name, String comment) {
+        RoleEntity entity = roleService.findById(id);
+        if (entity == null) 
+        {
+            return This.createResultEntity(ResultEntity.NOT_FIND_ERROR);
+        }
+        if (!name.isEmpty()) 
+        {
+            entity.setName(name);
+        }
+        if (!comment.isEmpty()) 
+        {
+            entity.setComment(comment);
+        }
     }
 
 }

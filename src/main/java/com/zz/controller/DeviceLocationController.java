@@ -95,6 +95,10 @@ public class DeviceLocationController {
         {
             deviceLocationEntity.setLongitude(longitude);
         }
+        if (longitudeDirection > 0) 
+        {
+            deviceLocationEntity.setLongitudeDirection(longitudeDirection);
+        }
     }
 
     /**
@@ -272,6 +276,8 @@ public class DeviceLocationController {
             System.out.println(String.format("Status = %d, Msg = %s", aGpsEntity.getStatus(), aGpsEntity.getMsg()));
             return This.createResultEntity(ResultEntity.SAVE_DATA_ERROR);
         }
+        locationEntity.setProvince(province);
+        locationEntity.setCity(city);
     }
 
 }

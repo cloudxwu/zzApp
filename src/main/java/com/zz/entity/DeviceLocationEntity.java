@@ -278,4 +278,27 @@ public class DeviceLocationEntity {
     public DeviceEntity getDeviceByDeviceId() {
     }
 
+    @Basic
+    @Column(name = "station_flag_3", nullable = true)
+    public Integer getStationFlag3() {
+    }
+
+    @Basic
+    @Column(name = "community_num_1", nullable = true)
+    public Integer getCommunityNum1() {
+    }
+
+    @Basic
+    @Column(name = "community_num_4", nullable = true)
+    public Integer getCommunityNum4() {
+    }
+
+    @Basic
+    @Column(name = "longitude_direction", nullable = true)
+    public Integer getLongitudeDirection() {
+    }
+
+    public void setStationFlag1(Integer stationFlag1) {
+    }
+
 }

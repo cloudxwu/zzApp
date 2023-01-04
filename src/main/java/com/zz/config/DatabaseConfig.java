@@ -36,6 +36,7 @@ public class DatabaseConfig {
         HibernateJpaVendorAdapter adapter = new HibernateJpaVendorAdapter();
         adapter.setDatabase(Database.MYSQL);
         adapter.setShowSql(true);
+        adapter.setGenerateDdl(false);
     }
 
     @Bean
@@ -43,12 +44,14 @@ public class DatabaseConfig {
         LocalContainerEntityManagerFactoryBean localContainerEntityManagerFactoryBean = new LocalContainerEntityManagerFactoryBean();
         localContainerEntityManagerFactoryBean.setDataSource(dataSource);
         localContainerEntityManagerFactoryBean.setJpaVendorAdapter(jpaVendorAdapter);
+        localContainerEntityManagerFactoryBean.setJpaProperties(databaseProperties());
     }
 
     private Properties databaseProperties() {
         Properties properties = new Properties();
         properties.setProperty(AvailableSettings.DIALECT, "org.hibernate.dialect.MySQL5Dialect");
         properties.setProperty(AvailableSettings.SHOW_SQL, "true");
+        properties.setProperty(AvailableSettings.FORMAT_SQL, "true");
     }
 
 }

@@ -20,27 +20,40 @@ public class IDaoImpl {
     @Override
     public List<T> findByParams(String sql, Object params) {
         Query query = This.entityManager.createQuery(sql);
+        for (int i = 1; params != null && i <= params.length; i++){
+            query.setParameter(i, params);
+        }
     }
 
     @Override
     public List<T> findAll() {
         String sql = String.format("SELECT %s FROM %s %s", This.clazz.getSimpleName().toLowerCase(), This.clazz.getSimpleName(), This.clazz.getSimpleName().toLowerCase());
+        Query query = This.entityManager.createQuery(sql);
     }
 
     @Override
     public int findMaxValue(String sql) {
         Query query = This.entityManager.createQuery(sql);
+        List resultList = query.getResultList();
     }
 
     @Override
     public T delete(long id) {
         T obj = This.findById(id);
+        if (obj != null) 
+        {
+            This.entityManager.remove(obj);
+        }
     }
 
     @Override
     public List<T> findByParams(String sql, Object params, int limit) {
         Query query = This.entityManager.createQuery(sql);
         query.setMaxResults(limit);
+    }
+
+    @Override
+    public T findById(long id) {
     }
 
 }

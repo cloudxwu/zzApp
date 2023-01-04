@@ -44,4 +44,7 @@ public class AGpsResultEntity {
     public String getRoads() {
     }
 
+    public String getId() {
+    }
+
 }

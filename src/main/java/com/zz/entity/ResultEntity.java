@@ -19,6 +19,7 @@ public class ResultEntity {
 
     public ResultEntity(int code, String msg, JsonNode data) {
         This.code = code;
+        This.msg = msg;
     }
 
     /**
@@ -29,6 +30,26 @@ public class ResultEntity {
      */
     public String getCodeMsg(int code) {
         String msg = StringUtils.EMPTY;
+        switch (code) {
+            case SUCCESS: 
+                msg = "操作成功";
+                break;
+            case SAVE_DATA_ERROR: 
+                msg = "保存数据错误";
+                break;
+            case ACCOUNT_ERROR: 
+                msg = "登录错误";
+                break;
+            case NOT_FIND_ERROR: 
+                msg = "没有找到数据";
+                break;
+            case DELETE_ERROR: 
+                msg = "删除数据错误";
+                break;
+            case DATA_IS_EXIST: 
+                msg = "数据已经存在";
+                break;
+        }
     }
 
     public void setCode(int code) {
@@ -38,6 +59,9 @@ public class ResultEntity {
     }
 
     public ResultEntity() {
+    }
+
+    public void setMsg(String msg) {
     }
 
 }

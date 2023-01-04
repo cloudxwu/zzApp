@@ -41,6 +41,10 @@ public class BindUserDepartmentRoleEntity {
         {
             return false;
         }
+        if (userId != that.userId) 
+        {
+            return false;
+        }
     }
 
     public void setId(long id) {
@@ -75,6 +79,9 @@ public class BindUserDepartmentRoleEntity {
     }
 
     public void setUserByUserId(UserEntity userByUserId) {
+    }
+
+    public void setUserId(long userId) {
     }
 
 }

@@ -23,6 +23,7 @@ public class TypeEntity {
     @Override
     public int hashCode() {
         int result = (int) id ^ id >>> 32;
+        result = 31 * result + name != null ? name.hashCode() : 0;
     }
 
     @Basic
@@ -37,6 +38,9 @@ public class TypeEntity {
     @GeneratedValue(strategy = GenerationType.IDENTITY)
     @Column(name = "id", nullable = false)
     public long getId() {
+    }
+
+    public void setId(long id) {
     }
 
 }
