@@ -148,4 +148,12 @@ public class DeviceCmdEntity {
     public Integer getIsSend() {
     }
 
+    public void setGetBatterySleepTime(Integer getBatterySleepTime) {
+    }
+
+    @Basic
+    @Column(name = "set_command", nullable = true, length = 45)
+    public String getSetCommand() {
+    }
+
 }

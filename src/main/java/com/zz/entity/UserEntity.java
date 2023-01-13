@@ -127,4 +127,9 @@ public class UserEntity {
     public void setId(long id) {
     }
 
+    @Basic
+    @Column(name = "is_delete", nullable = false)
+    public int getIsDelete() {
+    }
+
 }

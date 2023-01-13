@@ -165,4 +165,12 @@ public class DeviceEntity {
     public void setSerialNumber(String serialNumber) {
     }
 
+    @ManyToOne
+    @JoinColumn(name = "status_id", referencedColumnName = "id", insertable = false, updatable = false)
+    public StatusEntity getStatusByStatusId() {
+    }
+
+    public void setServerIp(String serverIp) {
+    }
+
 }

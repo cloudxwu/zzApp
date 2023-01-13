@@ -87,4 +87,7 @@ public class RoleEntity {
     public String getComment() {
     }
 
+    public void setRoleRightRelationsById(Collection<RoleRightRelationEntity> roleRightRelationsById) {
+    }
+
 }

@@ -164,6 +164,10 @@ public class DeviceController {
         {
             deviceEntity.setDepartmentId(departmentId);
         }
+        if (!comment.isEmpty()) 
+        {
+            deviceEntity.setComment(comment);
+        }
     }
 
     /**
@@ -219,6 +223,85 @@ public class DeviceController {
         List<DeviceEntity> nullDeviceEntityList = deviceService.findDeviceByType(null);
         TypeEntity nullTypeEntity = new TypeEntity();
         deviceTypeClassifyEntity.setTypeEntity(nullTypeEntity);
+    }
+
+    /**
+     * @api {put} /api/manage/device 根据ID修改设备信息
+     * @apiVersion 0.0.1
+     * @apiName modifyDeviceById
+     * @apiGroup deviceGroup
+     *
+     * @apiParam {Number} id 设备ID
+     * @apiParam {String} [uid] 自定义ID
+     * @apiParam {String} [name] 设备名称
+     * @apiParam {String} [serial_number] 设备序列号
+     * @apiParam {Number} [type_id] 设备类型ID
+     * @apiParam {Number} [status_id] 设备状态ID
+     * @apiParam {Number} [user_id] 保管员用户ID
+     * @apiParam {Number} [department_id] 设备所属部门ID
+     * @apiParam {String} [comment] 设备说明
+     * @apiParam {Number} [keep_live_interval=60] 设备心跳间隔（单位：秒）
+     * @apiParam {Number} [battery_sleep_time=180] 电源供电时的休眠时间（单位：分钟）
+     * @apiParam {Number} [battery_keep_live_time=300] 电池供电时心跳包发送后保持连接的时间（单位：秒）
+     * @apiParam {String} [server_ip] 设备连接服务器的地址
+     *
+     * @apiSuccess {String} code 返回码.
+     * @apiSuccess {String} msg  返回消息.
+     * @apiSuccess {Object} data  JSON格式的对象.
+     */
+    @RequestMapping(value = "/device", method = RequestMethod.PUT)
+    public ResultEntity modifyDeviceById(long id, String uid, String name, String serialNumber, long typeId, long statusId, long userId, long departmentId, String comment, int keepLiveInterval, int batterySleepTime, int batteryKeepLiveTime, String serverIp) {
+        ObjectMapper objectMapper = new ObjectMapper();
+        SimpleDateFormat simpleDateFormat = new SimpleDateFormat("yyyy-MM-dd HH:mm:ss");
+        simpleDateFormat.setTimeZone(TimeZone.getTimeZone("Asia/Shanghai"));
+        DeviceCmdEntity deviceCmdEntity = new DeviceCmdEntity();
+        DeviceEntity entity = deviceService.findById(id);
+        if (entity == null) 
+        {
+            return This.createResultEntity(ResultEntity.NOT_FIND_ERROR);
+        }
+        deviceCmdEntity.setDeviceId(id);
+        deviceCmdEntity.setCreateTime(simpleDateFormat.format(new Date()));
+        if (keepLiveInterval > 0) 
+        {
+            entity.setKeepLiveInterval(keepLiveInterval);
+            deviceCmdEntity.setSetKeepLiveInterval(keepLiveInterval);
+        }
+        if (batterySleepTime > 0) 
+        {
+            entity.setBatterySleepTime(batterySleepTime);
+            deviceCmdEntity.setSetBatterySleepTime(batterySleepTime);
+        }
+        if (batteryKeepLiveTime > 0) 
+        {
+            entity.setBatteryKeepLiveTime(batteryKeepLiveTime);
+            deviceCmdEntity.setSetBatteryKeepLiveTime(batteryKeepLiveTime);
+        }
+        if (!uid.isEmpty()) 
+        {
+            entity.setUid(uid);
+        }
+        if (!name.isEmpty()) 
+        {
+            entity.setName(name);
+            deviceCmdEntity.setSetDeviceName(name);
+        }
+        if (!serialNumber.isEmpty()) 
+        {
+            entity.setSerialNumber(serialNumber);
+        }
+        if (typeId > 0) 
+        {
+            entity.setTypeId(typeId);
+        }
+        if (statusId > 0) 
+        {
+            entity.setStatusId(statusId);
+        }
+        if (userId > 0) 
+        {
+            entity.setUserId(userId);
+        }
     }
 
 }

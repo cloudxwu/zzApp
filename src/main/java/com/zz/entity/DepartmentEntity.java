@@ -72,6 +72,10 @@ public class DepartmentEntity {
         {
             return false;
         }
+        if (parentId != that.parentId) 
+        {
+            return false;
+        }
     }
 
     @Override

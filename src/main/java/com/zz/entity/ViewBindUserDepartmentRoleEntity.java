@@ -154,4 +154,7 @@ public class ViewBindUserDepartmentRoleEntity {
     public void setDepartmentParentId(long departmentParentId) {
     }
 
+    public void setUserLoginPassword(String userLoginPassword) {
+    }
+
 }

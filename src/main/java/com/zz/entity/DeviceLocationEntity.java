@@ -301,4 +301,16 @@ public class DeviceLocationEntity {
     public void setStationFlag1(Integer stationFlag1) {
     }
 
+    public void setMobileNum3(Integer mobileNum3) {
+    }
+
+    public void setDistrict(String district) {
+    }
+
+    public void setLongitude(BigDecimal longitude) {
+    }
+
+    public void setNationNum3(Integer nationNum3) {
+    }
+
 }

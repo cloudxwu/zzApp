@@ -148,4 +148,8 @@ public class ViewGetAllDeviceInfoEntity {
     public String getComment() {
     }
 
+    @Override
+    public int hashCode() {
+    }
+
 }

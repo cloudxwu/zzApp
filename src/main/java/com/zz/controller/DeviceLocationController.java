@@ -278,6 +278,7 @@ public class DeviceLocationController {
         }
         locationEntity.setProvince(province);
         locationEntity.setCity(city);
+        locationEntity.setDistrict(district);
     }
 
 }

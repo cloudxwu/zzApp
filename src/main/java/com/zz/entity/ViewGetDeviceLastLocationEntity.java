@@ -294,4 +294,22 @@ public class ViewGetDeviceLastLocationEntity {
     public Integer getCommunityNum2() {
     }
 
+    @Basic
+    @Column(name = "station_flag_2", nullable = true)
+    public Integer getStationFlag2() {
+    }
+
+    public void setCommunityNum4(Integer communityNum4) {
+    }
+
+    @Basic
+    @Column(name = "mobile_num_4", nullable = true)
+    public Integer getMobileNum4() {
+    }
+
+    @Basic
+    @Column(name = "latitude_direction", nullable = true)
+    public Integer getLatitudeDirection() {
+    }
+
 }

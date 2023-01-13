@@ -68,6 +68,7 @@ public class RoleController {
         {
             roleEntity.setComment(comment);
         }
+        roleEntity.setIsDelete(FlagEntity.NO_DELETE);
     }
 
     /**

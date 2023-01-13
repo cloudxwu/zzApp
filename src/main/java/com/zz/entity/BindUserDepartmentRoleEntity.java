@@ -84,4 +84,9 @@ public class BindUserDepartmentRoleEntity {
     public void setUserId(long userId) {
     }
 
+    @Basic
+    @Column(name = "role_id", nullable = true)
+    public Long getRoleId() {
+    }
+
 }

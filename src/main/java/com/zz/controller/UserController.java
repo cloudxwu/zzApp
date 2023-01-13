@@ -112,6 +112,10 @@ public class UserController {
         {
             entity.setMobile(mobile);
         }
+        if (!email.isEmpty()) 
+        {
+            entity.setEmail(email);
+        }
     }
 
     /**
@@ -142,6 +146,10 @@ public class UserController {
         if (!mobile.isEmpty()) 
         {
             userEntity.setMobile(mobile);
+        }
+        if (!email.isEmpty()) 
+        {
+            userEntity.setEmail(email);
         }
     }
 
