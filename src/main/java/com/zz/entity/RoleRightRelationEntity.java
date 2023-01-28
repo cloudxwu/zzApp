@@ -47,6 +47,10 @@ public class RoleRightRelationEntity {
         {
             return false;
         }
+        if (roleId != that.roleId) 
+        {
+            return false;
+        }
     }
 
     @Basic
@@ -63,6 +67,13 @@ public class RoleRightRelationEntity {
     }
 
     public void setRoleByRoleId(RoleEntity roleByRoleId) {
+    }
+
+    @Override
+    public int hashCode() {
+        int result = (int) id ^ id >>> 32;
+        result = 31 * result + (int) roleId ^ roleId >>> 32;
+        result = 31 * result + (int) rightId ^ rightId >>> 32;
     }
 
 }

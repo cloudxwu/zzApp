@@ -50,4 +50,7 @@ public class AGpsResultEntity {
     public void setLat(BigDecimal lat) {
     }
 
+    public String getAddress() {
+    }
+
 }

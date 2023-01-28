@@ -33,4 +33,7 @@ public class TcpSocketServer {
         This.bootstrap = bootstrap;
     }
 
+    public void setTcpPort(InetSocketAddress tcpPort) {
+    }
+
 }

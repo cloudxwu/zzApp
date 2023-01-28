@@ -44,4 +44,7 @@ public class AGpsEntity {
     public void setStatus(int status) {
     }
 
+    public void setMatch(int match) {
+    }
+
 }

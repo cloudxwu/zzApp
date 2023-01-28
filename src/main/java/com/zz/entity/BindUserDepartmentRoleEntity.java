@@ -45,6 +45,10 @@ public class BindUserDepartmentRoleEntity {
         {
             return false;
         }
+        if (departmentId != that.departmentId) 
+        {
+            return false;
+        }
     }
 
     public void setId(long id) {
@@ -87,6 +91,9 @@ public class BindUserDepartmentRoleEntity {
     @Basic
     @Column(name = "role_id", nullable = true)
     public Long getRoleId() {
+    }
+
+    public void setRoleByRoleId(RoleEntity roleByRoleId) {
     }
 
 }

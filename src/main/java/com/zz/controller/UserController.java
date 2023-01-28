@@ -175,4 +175,26 @@ public class UserController {
         }
     }
 
+    /**
+     * @api {get} /api/manage/user/department/:id 根据部门ID获取归属的用户
+     * @apiVersion 0.0.1
+     * @apiName getUserListByDepartmentId
+     * @apiGroup userGroup
+     *
+     * @apiParam {Number} id 部门ID
+     *
+     * @apiSuccess {String} code 返回码.
+     * @apiSuccess {String} msg  返回消息.
+     * @apiSuccess {Object} data  JSON格式的对象.
+     */
+    @RequestMapping(value = "/user/department/{id}", method = RequestMethod.GET)
+    public ResultEntity getUserListByDepartmentId(long departmentId) {
+        List<ViewBindUserDepartmentRoleEntity> userList = viewBindUserDepartmentRoleService.getUserByDepartmentId(departmentId);
+        if (userList.size() > 0) 
+        {
+            ObjectMapper objectMapper = new ObjectMapper();
+            return This.createResultEntity(ResultEntity.SUCCESS, objectMapper.convertValue(userList, JsonNode.class));
+        }
+    }
+
 }

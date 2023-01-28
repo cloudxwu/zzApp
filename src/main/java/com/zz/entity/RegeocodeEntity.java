@@ -18,4 +18,7 @@ public class RegeocodeEntity {
     public String getFormattedAddress() {
     }
 
+    public void setAddressComponent(AddressComponentEntity addressComponent) {
+    }
+
 }

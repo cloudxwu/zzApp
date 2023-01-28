@@ -313,4 +313,22 @@ public class DeviceLocationEntity {
     public void setNationNum3(Integer nationNum3) {
     }
 
+    @Basic
+    @Column(name = "community_num_3", nullable = true)
+    public Integer getCommunityNum3() {
+    }
+
+    public void setWeather(String weather) {
+    }
+
+    @Basic
+    @Column(name = "humidity", nullable = true, length = 45)
+    public String getHumidity() {
+    }
+
+    @Basic
+    @Column(name = "location_num_3", nullable = true)
+    public Integer getLocationNum3() {
+    }
+
 }

@@ -46,6 +46,7 @@ public class DeviceCmdEntity {
         {
             return false;
         }
+        DeviceCmdEntity that = (DeviceCmdEntity) o;
     }
 
     public void setDeviceId(long deviceId) {
@@ -154,6 +155,15 @@ public class DeviceCmdEntity {
     @Basic
     @Column(name = "set_command", nullable = true, length = 45)
     public String getSetCommand() {
+    }
+
+    @Override
+    public int hashCode() {
+    }
+
+    @ManyToOne
+    @JoinColumn(name = "device_id", referencedColumnName = "id", nullable = false, insertable = false, updatable = false)
+    public DeviceEntity getDeviceByDeviceId() {
     }
 
 }

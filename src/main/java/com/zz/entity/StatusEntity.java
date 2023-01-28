@@ -39,4 +39,10 @@ public class StatusEntity {
     public Collection<DeviceEntity> getDevicesById() {
     }
 
+    @Id
+    @GeneratedValue(strategy = GenerationType.IDENTITY)
+    @Column(name = "id", nullable = false)
+    public long getId() {
+    }
+
 }

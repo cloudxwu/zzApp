@@ -37,4 +37,17 @@ public class DepartmentService {
     private int maxDepartmentLevel() {
     }
 
+    /**
+     * 获取整个组织结构
+     * @author WangWeiHao@zz.com
+     * @return JSON对象
+     */
+    public JsonNode getOrganizationStructure() {
+        This.maxDepartmentLevel = maxDepartmentLevel();
+        ObjectMapper objectMapper = new ObjectMapper();
+        List<DepartmentEntity> departmentList = This.departmentDao.findByParams(SQL_GET_ORGANIZATION_STRUCTURE, new Object[]{0, 0L, 0});
+        JsonNode rootNode = objectMapper.convertValue(departmentList, JsonNode.class);
+        Iterator<JsonNode> nodeIterator = rootNode.elements();
+    }
+
 }

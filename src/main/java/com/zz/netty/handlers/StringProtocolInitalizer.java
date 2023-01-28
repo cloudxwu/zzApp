@@ -30,6 +30,7 @@ public class StringProtocolInitalizer {
     protected void initChannel(SocketChannel ch) throws Exception {
         ChannelPipeline pipeline = ch.pipeline();
         pipeline.addLast(DECODER_KEY, decoder);
+        pipeline.addLast(ENCODER_KEY, encoder);
     }
 
     public StringDecoder getDecoder() {
@@ -42,6 +43,9 @@ public class StringProtocolInitalizer {
     }
 
     public ServerHandler getServerHandler() {
+    }
+
+    public void setDecoder(StringDecoder decoder) {
     }
 
 }

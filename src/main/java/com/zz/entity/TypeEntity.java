@@ -43,4 +43,8 @@ public class TypeEntity {
     public void setId(long id) {
     }
 
+    @OneToMany(mappedBy = "typeByTypeId")
+    public Collection<DeviceEntity> getDevicesById() {
+    }
+
 }

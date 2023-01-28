@@ -59,6 +59,10 @@ public class RightEntity {
         {
             return false;
         }
+        if (name != null ? !name.equals(that.name) : that.name != null) 
+        {
+            return false;
+        }
     }
 
     @Basic
@@ -75,6 +79,11 @@ public class RightEntity {
     @Basic
     @Column(name = "name", nullable = false, length = 45)
     public String getName() {
+    }
+
+    @Basic
+    @Column(name = "description", nullable = false, length = 200)
+    public String getDescription() {
     }
 
 }

@@ -82,6 +82,7 @@ public class DepartmentController {
         {
             entity.setParentId(parentId);
         }
+        entity = departmentService.update(entity);
     }
 
     /**
@@ -105,6 +106,31 @@ public class DepartmentController {
         }
         departmentEntity.setIsDelete(FlagEntity.DELETE);
         departmentEntity = departmentService.update(departmentEntity);
+    }
+
+    /**
+     * @api {post} /api/manage/department 创建新部门
+     * @apiVersion 0.0.1
+     * @apiName createDepartment
+     * @apiGroup departmentGroup
+     *
+     * @apiParam {String} name 部门名称
+     * @apiParam {Number} level 部门层级
+     * @apiParam {Number} parent_id="0" 父部门ID
+     *
+     * @apiSuccess {String} code 返回码.
+     * @apiSuccess {String} msg  返回消息.
+     * @apiSuccess {Object} data  JSON格式的对象.
+     */
+    @RequestMapping(value = "/department", method = RequestMethod.POST)
+    public ResultEntity createDepartment(String name, int level, long parentId) {
+        SimpleDateFormat simpleDateFormat = new SimpleDateFormat("yyyy-MM-dd HH:mm:ss");
+        simpleDateFormat.setTimeZone(TimeZone.getTimeZone("Asia/Shanghai"));
+        DepartmentEntity departmentEntity = new DepartmentEntity();
+        departmentEntity.setName(name);
+        departmentEntity.setLevel(level);
+        departmentEntity.setCreateTime(simpleDateFormat.format(new Date()));
+        departmentEntity.setParentId(parentId);
     }
 
 }

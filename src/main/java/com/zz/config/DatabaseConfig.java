@@ -54,4 +54,10 @@ public class DatabaseConfig {
         properties.setProperty(AvailableSettings.FORMAT_SQL, "true");
     }
 
+    @Bean
+    public JpaTransactionManager jpaTransactionManager(EntityManagerFactory entityManagerFactory) {
+        JpaTransactionManager jpaTransactionManager = new JpaTransactionManager();
+        jpaTransactionManager.setEntityManagerFactory(entityManagerFactory);
+    }
+
 }

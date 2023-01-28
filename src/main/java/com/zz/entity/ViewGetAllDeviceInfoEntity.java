@@ -152,4 +152,17 @@ public class ViewGetAllDeviceInfoEntity {
     public int hashCode() {
     }
 
+    public void setDepartmentId(Long departmentId) {
+    }
+
+    @Basic
+    @Column(name = "imsi", nullable = false, length = 45)
+    public String getImsi() {
+    }
+
+    @Basic
+    @Column(name = "user_id", nullable = true)
+    public Long getUserId() {
+    }
+
 }

@@ -59,6 +59,10 @@ public class UserEntity {
         {
             return false;
         }
+        if (createTime != null ? !createTime.equals(that.createTime) : that.createTime != null) 
+        {
+            return false;
+        }
     }
 
     @Basic
@@ -130,6 +134,9 @@ public class UserEntity {
     @Basic
     @Column(name = "is_delete", nullable = false)
     public int getIsDelete() {
+    }
+
+    public void setName(String name) {
     }
 
 }

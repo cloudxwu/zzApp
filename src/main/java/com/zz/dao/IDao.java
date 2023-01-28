@@ -43,4 +43,13 @@ public class IDao {
     public T findById(long id) {
     }
 
+    /**
+     * 根据条件查询一组记录
+     * @param sql SQL语句
+     * @param params 参数列表
+     * @return null表示没有找到，非null表示一组结果
+     */
+    public List<T> findByParams(String sql, Object params) {
+    }
+
 }

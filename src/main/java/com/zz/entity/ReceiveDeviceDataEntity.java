@@ -55,4 +55,9 @@ public class ReceiveDeviceDataEntity {
     public String getReceiveData() {
     }
 
+    @Id
+    @Column(name = "id", nullable = false)
+    public long getId() {
+    }
+
 }

@@ -62,4 +62,8 @@ public class NettyConfig {
     public InetSocketAddress tcpPort() {
     }
 
+    @Bean
+    public StringDecoder stringDecoder() {
+    }
+
 }

@@ -84,6 +84,7 @@ public class DepartmentEntity {
         result = 31 * result + name != null ? name.hashCode() : 0;
         result = 31 * result + level;
         result = 31 * result + createTime != null ? createTime.hashCode() : 0;
+        result = 31 * result + isDelete;
     }
 
     public void setParentId(long parentId) {
@@ -98,6 +99,9 @@ public class DepartmentEntity {
     }
 
     public void setId(long id) {
+    }
+
+    public void setLevel(int level) {
     }
 
 }

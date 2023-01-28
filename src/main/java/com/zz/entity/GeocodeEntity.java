@@ -29,4 +29,7 @@ public class GeocodeEntity {
     public int getStatus() {
     }
 
+    public void setStatus(int status) {
+    }
+
 }

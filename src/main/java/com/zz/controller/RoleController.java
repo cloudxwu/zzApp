@@ -122,6 +122,7 @@ public class RoleController {
         {
             entity.setComment(comment);
         }
+        entity = roleService.update(entity);
     }
 
 }

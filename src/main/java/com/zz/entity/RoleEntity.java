@@ -90,4 +90,7 @@ public class RoleEntity {
     public void setRoleRightRelationsById(Collection<RoleRightRelationEntity> roleRightRelationsById) {
     }
 
+    public void setName(String name) {
+    }
+
 }

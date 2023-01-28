@@ -50,6 +50,9 @@ public class IDaoImpl {
     public List<T> findByParams(String sql, Object params, int limit) {
         Query query = This.entityManager.createQuery(sql);
         query.setMaxResults(limit);
+        for (int i = 1; params != null && i <= params.length; i++){
+            query.setParameter(i, params);
+        }
     }
 
     @Override

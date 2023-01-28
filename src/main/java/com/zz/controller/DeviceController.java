@@ -168,6 +168,7 @@ public class DeviceController {
         {
             deviceEntity.setComment(comment);
         }
+        deviceCmdEntity.setCreateTime(deviceEntity.getCreateTime());
     }
 
     /**
@@ -196,6 +197,10 @@ public class DeviceController {
         }
         deviceCmdEntity.setDeviceId(id);
         deviceCmdEntity.setCreateTime(simpleDateFormat.format(new Date()));
+        if (!command.isEmpty()) 
+        {
+            deviceCmdEntity.setSetCommand(command);
+        }
     }
 
     /**
@@ -223,6 +228,7 @@ public class DeviceController {
         List<DeviceEntity> nullDeviceEntityList = deviceService.findDeviceByType(null);
         TypeEntity nullTypeEntity = new TypeEntity();
         deviceTypeClassifyEntity.setTypeEntity(nullTypeEntity);
+        deviceTypeClassifyEntity.setDeviceEntityList(nullDeviceEntityList);
     }
 
     /**
@@ -301,6 +307,10 @@ public class DeviceController {
         if (userId > 0) 
         {
             entity.setUserId(userId);
+        }
+        if (departmentId > 0) 
+        {
+            entity.setDepartmentId(departmentId);
         }
     }
 

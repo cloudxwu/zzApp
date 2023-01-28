@@ -28,4 +28,10 @@ public class ServerHandler {
         super.channelInactive(ctx);
     }
 
+    @Override
+    public void exceptionCaught(ChannelHandlerContext ctx, Throwable cause) throws Exception {
+        super.exceptionCaught(ctx, cause);
+        cause.printStackTrace();
+    }
+
 }

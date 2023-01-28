@@ -69,6 +69,7 @@ public class DeviceEntity {
         {
             return false;
         }
+        DeviceEntity that = (DeviceEntity) o;
     }
 
     @OneToMany(mappedBy = "deviceByDeviceId")
@@ -171,6 +172,16 @@ public class DeviceEntity {
     }
 
     public void setServerIp(String serverIp) {
+    }
+
+    @OneToMany(mappedBy = "deviceByDeviceId")
+    public Collection<DeviceLocationEntity> getDeviceLocationsById() {
+    }
+
+    public void setStatusByStatusId(StatusEntity statusByStatusId) {
+    }
+
+    public void setComment(String comment) {
     }
 
 }

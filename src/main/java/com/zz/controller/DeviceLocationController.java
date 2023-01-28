@@ -99,6 +99,10 @@ public class DeviceLocationController {
         {
             deviceLocationEntity.setLongitudeDirection(longitudeDirection);
         }
+        if (latitude.compareTo(new BigDecimal(0)) > 0) 
+        {
+            deviceLocationEntity.setLatitude(latitude);
+        }
     }
 
     /**
@@ -279,6 +283,30 @@ public class DeviceLocationController {
         locationEntity.setProvince(province);
         locationEntity.setCity(city);
         locationEntity.setDistrict(district);
+        locationEntity.setLongitude(aGpsEntity.getLongitude());
+        locationEntity.setLatitude(aGpsEntity.getLatitude());
+    }
+
+    /**
+     * @api {get} /api/manage/location/:id 根据ID获取设备位置数据
+     * @apiVersion 0.0.1
+     * @apiName getDeviceLocationById
+     * @apiGroup deviceLocationGroup
+     *
+     * @apiParam {Number} id 设备ID
+     *
+     * @apiSuccess {String} code 返回码.
+     * @apiSuccess {String} msg  返回消息.
+     * @apiSuccess {Object} data  JSON格式的对象.
+     */
+    @RequestMapping(value = "/location/{id}", method = RequestMethod.GET)
+    public ResultEntity getDeviceLocationById(long id) {
+        List<DeviceLocationEntity> deviceLocationEntityList = deviceLocationService.getLocationHistory(id);
+        if (deviceLocationEntityList.size() > 0) 
+        {
+            ObjectMapper objectMapper = new ObjectMapper();
+            return This.createResultEntity(ResultEntity.SUCCESS, objectMapper.convertValue(deviceLocationEntityList, JsonNode.class));
+        }
     }
 
 }

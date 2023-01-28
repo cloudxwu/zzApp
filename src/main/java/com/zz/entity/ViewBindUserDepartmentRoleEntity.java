@@ -149,12 +149,22 @@ public class ViewBindUserDepartmentRoleEntity {
         {
             return false;
         }
+        ViewBindUserDepartmentRoleEntity that = (ViewBindUserDepartmentRoleEntity) o;
     }
 
     public void setDepartmentParentId(long departmentParentId) {
     }
 
     public void setUserLoginPassword(String userLoginPassword) {
+    }
+
+    public void setDepartmentName(String departmentName) {
+    }
+
+    public void setRoleId(Long roleId) {
+    }
+
+    public void setRoleName(String roleName) {
     }
 
 }

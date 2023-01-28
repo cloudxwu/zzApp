@@ -66,6 +66,7 @@ public class ViewGetDeviceLastLocationEntity {
         {
             return false;
         }
+        ViewGetDeviceLastLocationEntity that = (ViewGetDeviceLastLocationEntity) o;
     }
 
     public void setLongitudeDirection(Integer longitudeDirection) {
@@ -310,6 +311,27 @@ public class ViewGetDeviceLastLocationEntity {
     @Basic
     @Column(name = "latitude_direction", nullable = true)
     public Integer getLatitudeDirection() {
+    }
+
+    public void setMobileNum3(Integer mobileNum3) {
+    }
+
+    @Basic
+    @Column(name = "weather", nullable = true, length = 45)
+    public String getWeather() {
+    }
+
+    @Basic
+    @Column(name = "nation_num_1", nullable = true)
+    public Integer getNationNum1() {
+    }
+
+    public void setRecordTime(String recordTime) {
+    }
+
+    @Basic
+    @Column(name = "location_num_3", nullable = true)
+    public Integer getLocationNum3() {
     }
 
 }

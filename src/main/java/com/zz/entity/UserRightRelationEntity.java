@@ -54,6 +54,10 @@ public class UserRightRelationEntity {
     public int hashCode() {
         int result = (int) id ^ id >>> 32;
         result = 31 * result + (int) userId ^ userId >>> 32;
+        result = 31 * result + (int) rightId ^ rightId >>> 32;
+    }
+
+    public void setRightByRightId(RightEntity rightByRightId) {
     }
 
 }
