@@ -78,6 +78,7 @@ public class UserEntity {
         result = 31 * result + name != null ? name.hashCode() : 0;
         result = 31 * result + createTime != null ? createTime.hashCode() : 0;
         result = 31 * result + mobile != null ? mobile.hashCode() : 0;
+        result = 31 * result + email != null ? email.hashCode() : 0;
     }
 
     public void setEmail(String email) {
@@ -137,6 +138,10 @@ public class UserEntity {
     }
 
     public void setName(String name) {
+    }
+
+    @OneToMany(mappedBy = "userByUserId")
+    public Collection<BindUserDepartmentRoleEntity> getBindUserDepartmentRolesById() {
     }
 
 }

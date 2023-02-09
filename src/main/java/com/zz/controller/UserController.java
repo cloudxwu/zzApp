@@ -47,6 +47,7 @@ public class UserController {
         BindUserDepartmentRoleEntity entity = new BindUserDepartmentRoleEntity();
         entity.setDepartmentId(departmentId);
         entity.setUserId(userId);
+        bindUserDepartmentRelationService.save(entity);
     }
 
     /**
@@ -116,6 +117,7 @@ public class UserController {
         {
             entity.setEmail(email);
         }
+        entity = userService.update(entity);
     }
 
     /**
@@ -151,6 +153,7 @@ public class UserController {
         {
             userEntity.setEmail(email);
         }
+        userEntity.setIsDelete(FlagEntity.NO_DELETE);
     }
 
     /**

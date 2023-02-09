@@ -331,4 +331,20 @@ public class DeviceLocationEntity {
     public Integer getLocationNum3() {
     }
 
+    @Basic
+    @Column(name = "device_on_off", nullable = false)
+    public int getDeviceOnOff() {
+    }
+
+    public void setNationNum4(Integer nationNum4) {
+    }
+
+    public void setLocationNum4(Integer locationNum4) {
+    }
+
+    @Basic
+    @Column(name = "nation_num_4", nullable = true)
+    public Integer getNationNum4() {
+    }
+
 }

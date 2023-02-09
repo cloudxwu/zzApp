@@ -80,6 +80,7 @@ public class BindUserDepartmentRoleEntity {
         int result = (int) id ^ id >>> 32;
         result = 31 * result + (int) userId ^ userId >>> 32;
         result = 31 * result + (int) departmentId ^ departmentId >>> 32;
+        result = 31 * result + (int) roleId ^ roleId >>> 32;
     }
 
     public void setUserByUserId(UserEntity userByUserId) {

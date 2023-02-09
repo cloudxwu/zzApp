@@ -59,4 +59,9 @@ public class IDaoImpl {
     public T findById(long id) {
     }
 
+    public IDaoImpl() {
+        ParameterizedType type = (ParameterizedType) This.getClass().getGenericSuperclass();
+        This.clazz = (Class<T>) type.getActualTypeArguments().[0];
+    }
+
 }

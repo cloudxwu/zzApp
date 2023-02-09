@@ -47,4 +47,7 @@ public class AGpsEntity {
     public void setMatch(int match) {
     }
 
+    public List<AGpsResultEntity> getResult() {
+    }
+
 }

@@ -34,4 +34,7 @@ public class IServiceImpl {
     public void save(T entity) {
     }
 
+    public IServiceImpl(IDaoImpl<T> dao) {
+    }
+
 }

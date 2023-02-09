@@ -28,6 +28,7 @@ public class RightEntity {
         int result = (int) id ^ id >>> 32;
         result = 31 * result + name != null ? name.hashCode() : 0;
         result = 31 * result + description != null ? description.hashCode() : 0;
+        result = 31 * result + (int) parentId ^ parentId >>> 32;
     }
 
     @OneToMany(mappedBy = "rightByRightId")
@@ -84,6 +85,9 @@ public class RightEntity {
     @Basic
     @Column(name = "description", nullable = false, length = 200)
     public String getDescription() {
+    }
+
+    public void setId(long id) {
     }
 
 }

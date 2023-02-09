@@ -334,4 +334,20 @@ public class ViewGetDeviceLastLocationEntity {
     public Integer getLocationNum3() {
     }
 
+    public void setSignalStrength3(Integer signalStrength3) {
+    }
+
+    @Id
+    @Column(name = "id", nullable = false)
+    public long getId() {
+    }
+
+    @Basic
+    @Column(name = "device_on_off", nullable = false)
+    public int getDeviceOnOff() {
+    }
+
+    public void setLongitude(BigDecimal longitude) {
+    }
+
 }

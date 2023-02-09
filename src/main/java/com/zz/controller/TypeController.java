@@ -41,6 +41,7 @@ public class TypeController {
             return This.createResultEntity(ResultEntity.DELETE_ERROR);
         }
         typeEntity = typeService.delete(id);
+        ObjectMapper objectMapper = new ObjectMapper();
     }
 
     /**
@@ -61,6 +62,26 @@ public class TypeController {
         TypeEntity typeEntity = new TypeEntity();
         typeEntity.setName(name);
         typeService.save(typeEntity);
+    }
+
+    /**
+     * @api {get} /api/manage/type 获取所有设备类型信息
+     * @apiVersion 0.0.1
+     * @apiName getAllType
+     * @apiGroup typeGroup
+     *
+     * @apiSuccess {String} code 返回码.
+     * @apiSuccess {String} msg  返回消息.
+     * @apiSuccess {Object} data  JSON格式的对象.
+     */
+    @RequestMapping(value = "/type", method = RequestMethod.GET)
+    public ResultEntity getAllType() {
+        List<TypeEntity> typeEntityList = typeService.findAll();
+        if (typeEntityList.size() > 0) 
+        {
+            ObjectMapper objectMapper = new ObjectMapper();
+            return This.createResultEntity(ResultEntity.SUCCESS, objectMapper.convertValue(typeEntityList, JsonNode.class));
+        }
     }
 
 }

@@ -31,4 +31,11 @@ public class ElectricAppInitializer {
     protected Class<?> getRootConfigClasses() {
     }
 
+    @Override
+    protected Filter getServletFilters() {
+        CharacterEncodingFilter characterEncodingFilter = new CharacterEncodingFilter();
+        characterEncodingFilter.setEncoding("UTF-8");
+        HttpPutFormContentFilter httpPutFormContentFilter = new HttpPutFormContentFilter();
+    }
+
 }

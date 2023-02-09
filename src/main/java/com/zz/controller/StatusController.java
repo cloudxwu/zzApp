@@ -46,6 +46,7 @@ public class StatusController {
             return This.createResultEntity(ResultEntity.DELETE_ERROR);
         }
         statusEntity = statusService.delete(id);
+        ObjectMapper objectMapper = new ObjectMapper();
     }
 
     /**
@@ -70,6 +71,26 @@ public class StatusController {
             return This.createResultEntity(ResultEntity.NOT_FIND_ERROR);
         }
         entity.setName(name);
+    }
+
+    /**
+     * @api {get} /api/manage/status 获取所有设备状态信息
+     * @apiVersion 0.0.1
+     * @apiName getAllStatus
+     * @apiGroup statusGroup
+     *
+     * @apiSuccess {String} code 返回码.
+     * @apiSuccess {String} msg  返回消息.
+     * @apiSuccess {Object} data  JSON格式的对象.
+     */
+    @RequestMapping(value = "/status", method = RequestMethod.GET)
+    public ResultEntity getAllStatus() {
+        List<StatusEntity> statusEntityList = statusService.findAll();
+        if (statusEntityList.size() > 0) 
+        {
+            ObjectMapper objectMapper = new ObjectMapper();
+            return This.createResultEntity(ResultEntity.SUCCESS, objectMapper.convertValue(statusEntityList, JsonNode.class));
+        }
     }
 
 }

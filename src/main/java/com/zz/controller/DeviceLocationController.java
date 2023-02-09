@@ -103,6 +103,10 @@ public class DeviceLocationController {
         {
             deviceLocationEntity.setLatitude(latitude);
         }
+        if (latitudeDirection > 0) 
+        {
+            deviceLocationEntity.setLatitudeDirection(latitudeDirection);
+        }
     }
 
     /**
@@ -285,6 +289,14 @@ public class DeviceLocationController {
         locationEntity.setDistrict(district);
         locationEntity.setLongitude(aGpsEntity.getLongitude());
         locationEntity.setLatitude(aGpsEntity.getLatitude());
+        if (aGpsEntity.getLongitude().compareTo(new BigDecimal(0)) > 0) 
+        {
+            locationEntity.setLongitudeDirection((int) 'E');
+        }
+        if (aGpsEntity.getLatitude().compareTo(new BigDecimal(0)) > 0) 
+        {
+            locationEntity.setLatitudeDirection((int) 'N');
+        }
     }
 
     /**

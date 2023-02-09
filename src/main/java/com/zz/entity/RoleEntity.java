@@ -73,6 +73,10 @@ public class RoleEntity {
         {
             return false;
         }
+        if (createTime != null ? !createTime.equals(that.createTime) : that.createTime != null) 
+        {
+            return false;
+        }
     }
 
     public void setId(long id) {

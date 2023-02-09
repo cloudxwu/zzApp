@@ -165,4 +165,10 @@ public class ViewGetAllDeviceInfoEntity {
     public Long getUserId() {
     }
 
+    public void setCreateTime(String createTime) {
+    }
+
+    public void setServerIp(String serverIp) {
+    }
+
 }

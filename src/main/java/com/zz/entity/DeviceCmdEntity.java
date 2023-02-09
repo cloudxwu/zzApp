@@ -166,4 +166,12 @@ public class DeviceCmdEntity {
     public DeviceEntity getDeviceByDeviceId() {
     }
 
+    public void setGetBatteryKeepLiveTime(Integer getBatteryKeepLiveTime) {
+    }
+
+    @Basic
+    @Column(name = "get_battery_sleep_time", nullable = true)
+    public Integer getGetBatterySleepTime() {
+    }
+
 }

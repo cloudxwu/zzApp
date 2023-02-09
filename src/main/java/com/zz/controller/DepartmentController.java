@@ -131,6 +131,7 @@ public class DepartmentController {
         departmentEntity.setLevel(level);
         departmentEntity.setCreateTime(simpleDateFormat.format(new Date()));
         departmentEntity.setParentId(parentId);
+        departmentService.save(departmentEntity);
     }
 
 }

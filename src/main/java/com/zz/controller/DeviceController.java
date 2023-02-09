@@ -169,6 +169,8 @@ public class DeviceController {
             deviceEntity.setComment(comment);
         }
         deviceCmdEntity.setCreateTime(deviceEntity.getCreateTime());
+        deviceCmdEntity.setSetDeviceIp(InetAddress.getLocalHost().getHostAddress() + ":8090");
+        deviceCmdEntity.setSetKeepLiveInterval(keepLiveInterval);
     }
 
     /**
@@ -311,6 +313,32 @@ public class DeviceController {
         if (departmentId > 0) 
         {
             entity.setDepartmentId(departmentId);
+        }
+        if (!comment.isEmpty()) 
+        {
+            entity.setComment(comment);
+        }
+    }
+
+    /**
+     * @api {get} /api/manage/device/:id 根据ID获取设备信息
+     * @apiVersion 0.0.1
+     * @apiName getDeviceById
+     * @apiGroup deviceGroup
+     *
+     * @apiParam {Number} id 设备ID
+     *
+     * @apiSuccess {String} code 返回码.
+     * @apiSuccess {String} msg  返回消息.
+     * @apiSuccess {Object} data  JSON格式的对象.
+     */
+    @RequestMapping(value = "/device/{id}", method = RequestMethod.GET)
+    public ResultEntity getDeviceById(long id) {
+        DeviceEntity deviceEntity = deviceService.findById(id);
+        if (deviceEntity != null) 
+        {
+            ObjectMapper objectMapper = new ObjectMapper();
+            return This.createResultEntity(ResultEntity.SUCCESS, objectMapper.convertValue(deviceEntity, JsonNode.class));
         }
     }
 

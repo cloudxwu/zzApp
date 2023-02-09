@@ -14,6 +14,7 @@ public abstract class IControllerImpl {
         ResultEntity resultEntity = new ResultEntity();
         resultEntity.setCode(resCode);
         resultEntity.setMsg(resultEntity.getCodeMsg(resCode));
+        resultEntity.setData(data);
     }
 
 }

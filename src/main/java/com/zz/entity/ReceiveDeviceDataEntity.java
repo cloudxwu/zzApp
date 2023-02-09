@@ -60,4 +60,7 @@ public class ReceiveDeviceDataEntity {
     public long getId() {
     }
 
+    public void setDeviceId(long deviceId) {
+    }
+
 }

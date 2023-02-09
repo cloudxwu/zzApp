@@ -167,4 +167,12 @@ public class ViewBindUserDepartmentRoleEntity {
     public void setRoleName(String roleName) {
     }
 
+    @Basic
+    @Column(name = "user_is_delete", nullable = false)
+    public int getUserIsDelete() {
+    }
+
+    public void setUserMobile(String userMobile) {
+    }
+
 }

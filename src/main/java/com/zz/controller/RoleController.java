@@ -69,6 +69,7 @@ public class RoleController {
             roleEntity.setComment(comment);
         }
         roleEntity.setIsDelete(FlagEntity.NO_DELETE);
+        This.roleService.save(roleEntity);
     }
 
     /**

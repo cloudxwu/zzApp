@@ -76,6 +76,10 @@ public class DepartmentEntity {
         {
             return false;
         }
+        if (name != null ? !name.equals(that.name) : that.name != null) 
+        {
+            return false;
+        }
     }
 
     @Override
@@ -102,6 +106,9 @@ public class DepartmentEntity {
     }
 
     public void setLevel(int level) {
+    }
+
+    public void setCreateTime(String createTime) {
     }
 
 }

@@ -64,4 +64,7 @@ public class ResultEntity {
     public void setMsg(String msg) {
     }
 
+    public void setData(JsonNode data) {
+    }
+
 }

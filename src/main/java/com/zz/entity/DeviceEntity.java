@@ -184,4 +184,11 @@ public class DeviceEntity {
     public void setComment(String comment) {
     }
 
+    public void setId(long id) {
+    }
+
+    @Override
+    public int hashCode() {
+    }
+
 }
