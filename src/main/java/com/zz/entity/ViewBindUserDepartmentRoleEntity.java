@@ -175,4 +175,14 @@ public class ViewBindUserDepartmentRoleEntity {
     public void setUserMobile(String userMobile) {
     }
 
+    @Basic
+    @Column(name = "department_id", nullable = true)
+    public Long getDepartmentId() {
+    }
+
+    @Basic
+    @Column(name = "user_email", nullable = true, length = 45)
+    public String getUserEmail() {
+    }
+
 }

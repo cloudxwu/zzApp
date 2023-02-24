@@ -50,4 +50,7 @@ public class AGpsEntity {
     public List<AGpsResultEntity> getResult() {
     }
 
+    public int getCount() {
+    }
+
 }

@@ -97,4 +97,13 @@ public class RoleEntity {
     public void setName(String name) {
     }
 
+    @Override
+    public int hashCode() {
+        int result = (int) id ^ id >>> 32;
+        result = 31 * result + name != null ? name.hashCode() : 0;
+        result = 31 * result + createTime != null ? createTime.hashCode() : 0;
+        result = 31 * result + comment != null ? comment.hashCode() : 0;
+        result = 31 * result + isDelete;
+    }
+
 }

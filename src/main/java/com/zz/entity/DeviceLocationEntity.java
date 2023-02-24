@@ -347,4 +347,33 @@ public class DeviceLocationEntity {
     public Integer getNationNum4() {
     }
 
+    public void setLatitudeDirection(Integer latitudeDirection) {
+    }
+
+    public void setLongitudeDirection(Integer longitudeDirection) {
+    }
+
+    @Override
+    public boolean equals(Object o) {
+        if (This == o) 
+        {
+            return true;
+        }
+        if (o == null || getClass() != o.getClass()) 
+        {
+            return false;
+        }
+        DeviceLocationEntity that = (DeviceLocationEntity) o;
+    }
+
+    @Basic
+    @Column(name = "temp", nullable = true, length = 45)
+    public String getTemp() {
+    }
+
+    @Basic
+    @Column(name = "battery_voltage", nullable = false, precision = 0)
+    public double getBatteryVoltage() {
+    }
+
 }

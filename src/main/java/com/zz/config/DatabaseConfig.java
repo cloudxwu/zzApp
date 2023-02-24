@@ -37,6 +37,7 @@ public class DatabaseConfig {
         adapter.setDatabase(Database.MYSQL);
         adapter.setShowSql(true);
         adapter.setGenerateDdl(false);
+        adapter.setDatabasePlatform("org.hibernate.dialect.MySQL5Dialect");
     }
 
     @Bean
@@ -45,6 +46,7 @@ public class DatabaseConfig {
         localContainerEntityManagerFactoryBean.setDataSource(dataSource);
         localContainerEntityManagerFactoryBean.setJpaVendorAdapter(jpaVendorAdapter);
         localContainerEntityManagerFactoryBean.setJpaProperties(databaseProperties());
+        localContainerEntityManagerFactoryBean.setPackagesToScan("java.com.zz.entity");
     }
 
     private Properties databaseProperties() {
@@ -52,12 +54,17 @@ public class DatabaseConfig {
         properties.setProperty(AvailableSettings.DIALECT, "org.hibernate.dialect.MySQL5Dialect");
         properties.setProperty(AvailableSettings.SHOW_SQL, "true");
         properties.setProperty(AvailableSettings.FORMAT_SQL, "true");
+        properties.setProperty(AvailableSettings.INTERCEPTOR, DeviceLocationInterceptor.class);
     }
 
     @Bean
     public JpaTransactionManager jpaTransactionManager(EntityManagerFactory entityManagerFactory) {
         JpaTransactionManager jpaTransactionManager = new JpaTransactionManager();
         jpaTransactionManager.setEntityManagerFactory(entityManagerFactory);
+    }
+
+    @Bean
+    public BeanPostProcessor persistenceTranslation() {
     }
 
 }

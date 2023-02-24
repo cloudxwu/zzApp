@@ -106,6 +106,7 @@ public class DepartmentController {
         }
         departmentEntity.setIsDelete(FlagEntity.DELETE);
         departmentEntity = departmentService.update(departmentEntity);
+        ObjectMapper objectMapper = new ObjectMapper();
     }
 
     /**
@@ -132,6 +133,20 @@ public class DepartmentController {
         departmentEntity.setCreateTime(simpleDateFormat.format(new Date()));
         departmentEntity.setParentId(parentId);
         departmentService.save(departmentEntity);
+    }
+
+    /**
+     * @api {get} /api/manage/department/structure 获取部门组织结构
+     * @apiVersion 0.0.1
+     * @apiName getDepartmentStructure
+     * @apiGroup departmentGroup
+     *
+     * @apiSuccess {String} code 返回码.
+     * @apiSuccess {String} msg  返回消息.
+     * @apiSuccess {Object} data  JSON格式的对象.
+     */
+    @RequestMapping(value = "/department/structure", method = RequestMethod.GET)
+    public ResultEntity getDepartmentStructure() {
     }
 
 }

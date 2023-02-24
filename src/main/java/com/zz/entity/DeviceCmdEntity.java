@@ -174,4 +174,12 @@ public class DeviceCmdEntity {
     public Integer getGetBatterySleepTime() {
     }
 
+    public void setGetDeviceName(Integer getDeviceName) {
+    }
+
+    @Basic
+    @Column(name = "set_device_ip", nullable = true, length = 45)
+    public String getSetDeviceIp() {
+    }
+
 }

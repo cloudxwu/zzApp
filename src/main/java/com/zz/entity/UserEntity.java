@@ -63,6 +63,10 @@ public class UserEntity {
         {
             return false;
         }
+        if (mobile != null ? !mobile.equals(that.mobile) : that.mobile != null) 
+        {
+            return false;
+        }
     }
 
     @Basic
@@ -142,6 +146,11 @@ public class UserEntity {
 
     @OneToMany(mappedBy = "userByUserId")
     public Collection<BindUserDepartmentRoleEntity> getBindUserDepartmentRolesById() {
+    }
+
+    @Basic
+    @Column(name = "mobile", nullable = true, length = 45)
+    public String getMobile() {
     }
 
 }

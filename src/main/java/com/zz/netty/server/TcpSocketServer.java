@@ -36,4 +36,9 @@ public class TcpSocketServer {
     public void setTcpPort(InetSocketAddress tcpPort) {
     }
 
+    @PostConstruct
+    public void start() throws InterruptedException {
+        System.out.println("Starting server at " + tcpPort);
+    }
+
 }

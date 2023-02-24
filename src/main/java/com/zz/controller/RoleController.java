@@ -42,6 +42,7 @@ public class RoleController {
         }
         roleEntity.setIsDelete(FlagEntity.DELETE);
         roleEntity = roleService.update(roleEntity);
+        ObjectMapper objectMapper = new ObjectMapper();
     }
 
     /**
@@ -124,6 +125,11 @@ public class RoleController {
             entity.setComment(comment);
         }
         entity = roleService.update(entity);
+        ObjectMapper objectMapper = new ObjectMapper();
+    }
+
+    @Autowired
+    public RoleController(RoleService roleService) {
     }
 
 }

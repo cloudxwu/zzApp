@@ -90,4 +90,10 @@ public class RightEntity {
     public void setId(long id) {
     }
 
+    @Id
+    @GeneratedValue(strategy = GenerationType.IDENTITY)
+    @Column(name = "id", nullable = false)
+    public long getId() {
+    }
+
 }

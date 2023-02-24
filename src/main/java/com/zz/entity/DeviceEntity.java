@@ -191,4 +191,14 @@ public class DeviceEntity {
     public int hashCode() {
     }
 
+    @Basic
+    @Column(name = "imsi", nullable = false, length = 45)
+    public String getImsi() {
+    }
+
+    @Basic
+    @Column(name = "status_id", nullable = true)
+    public Long getStatusId() {
+    }
+
 }

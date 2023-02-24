@@ -71,6 +71,7 @@ public class UserController {
         }
         userEntity.setIsDelete(FlagEntity.DELETE);
         userEntity = userService.update(userEntity);
+        ObjectMapper objectMapper = new ObjectMapper();
     }
 
     /**
@@ -154,6 +155,7 @@ public class UserController {
             userEntity.setEmail(email);
         }
         userEntity.setIsDelete(FlagEntity.NO_DELETE);
+        This.userService.save(userEntity);
     }
 
     /**

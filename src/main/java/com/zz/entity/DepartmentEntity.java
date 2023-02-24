@@ -89,6 +89,7 @@ public class DepartmentEntity {
         result = 31 * result + level;
         result = 31 * result + createTime != null ? createTime.hashCode() : 0;
         result = 31 * result + isDelete;
+        result = 31 * result + (int) parentId ^ parentId >>> 32;
     }
 
     public void setParentId(long parentId) {
@@ -109,6 +110,11 @@ public class DepartmentEntity {
     }
 
     public void setCreateTime(String createTime) {
+    }
+
+    @Basic
+    @Column(name = "name", nullable = false, length = 255)
+    public String getName() {
     }
 
 }

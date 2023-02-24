@@ -171,4 +171,10 @@ public class ViewGetAllDeviceInfoEntity {
     public void setServerIp(String serverIp) {
     }
 
+    public void setImsi(String imsi) {
+    }
+
+    public void setUid(String uid) {
+    }
+
 }

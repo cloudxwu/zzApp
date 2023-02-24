@@ -62,6 +62,10 @@ public class TypeController {
         TypeEntity typeEntity = new TypeEntity();
         typeEntity.setName(name);
         typeService.save(typeEntity);
+        if (typeEntity.getId() > 0) 
+        {
+            return This.createResultEntity(ResultEntity.SUCCESS, objectMapper.convertValue(typeEntity, JsonNode.class));
+        }
     }
 
     /**

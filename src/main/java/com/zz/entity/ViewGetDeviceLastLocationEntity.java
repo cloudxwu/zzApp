@@ -350,4 +350,18 @@ public class ViewGetDeviceLastLocationEntity {
     public void setLongitude(BigDecimal longitude) {
     }
 
+    public void setIsDelete(Integer isDelete) {
+    }
+
+    @Basic
+    @Column(name = "signal_strength_1", nullable = true)
+    public Integer getSignalStrength1() {
+    }
+
+    public void setMobileNum4(Integer mobileNum4) {
+    }
+
+    public void setCommunityNum2(Integer communityNum2) {
+    }
+
 }

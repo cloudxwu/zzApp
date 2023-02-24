@@ -53,4 +53,7 @@ public class AGpsResultEntity {
     public String getAddress() {
     }
 
+    public String getRids() {
+    }
+
 }

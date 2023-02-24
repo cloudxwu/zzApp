@@ -48,6 +48,15 @@ public class DepartmentService {
         List<DepartmentEntity> departmentList = This.departmentDao.findByParams(SQL_GET_ORGANIZATION_STRUCTURE, new Object[]{0, 0L, 0});
         JsonNode rootNode = objectMapper.convertValue(departmentList, JsonNode.class);
         Iterator<JsonNode> nodeIterator = rootNode.elements();
+        while (nodeIterator.hasNext()) 
+        {
+            ObjectNode node = (ObjectNode) nodeIterator.next();
+            JsonNode nodeList = listChildren(node);
+            if (nodeList != null) 
+            {
+                node.set("children", listChildren(node));
+            }
+        }
     }
 
 }

@@ -171,6 +171,7 @@ public class DeviceController {
         deviceCmdEntity.setCreateTime(deviceEntity.getCreateTime());
         deviceCmdEntity.setSetDeviceIp(InetAddress.getLocalHost().getHostAddress() + ":8090");
         deviceCmdEntity.setSetKeepLiveInterval(keepLiveInterval);
+        deviceCmdEntity.setSetBatterySleepTime(batterySleepTime);
     }
 
     /**
@@ -203,6 +204,7 @@ public class DeviceController {
         {
             deviceCmdEntity.setSetCommand(command);
         }
+        deviceCmdService.save(deviceCmdEntity);
     }
 
     /**
@@ -231,6 +233,7 @@ public class DeviceController {
         TypeEntity nullTypeEntity = new TypeEntity();
         deviceTypeClassifyEntity.setTypeEntity(nullTypeEntity);
         deviceTypeClassifyEntity.setDeviceEntityList(nullDeviceEntityList);
+        deviceTypeClassifyEntityList.add(deviceTypeClassifyEntity);
     }
 
     /**
@@ -317,6 +320,11 @@ public class DeviceController {
         if (!comment.isEmpty()) 
         {
             entity.setComment(comment);
+        }
+        if (!serverIp.equals("172.81.239.174:65001")) 
+        {
+            entity.setServerIp(serverIp);
+            deviceCmdEntity.setSetDeviceIp(serverIp);
         }
     }
 

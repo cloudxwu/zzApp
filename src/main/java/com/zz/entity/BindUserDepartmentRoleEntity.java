@@ -97,4 +97,7 @@ public class BindUserDepartmentRoleEntity {
     public void setRoleByRoleId(RoleEntity roleByRoleId) {
     }
 
+    public void setRoleId(Long roleId) {
+    }
+
 }

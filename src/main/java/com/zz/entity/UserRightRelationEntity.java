@@ -60,4 +60,29 @@ public class UserRightRelationEntity {
     public void setRightByRightId(RightEntity rightByRightId) {
     }
 
+    @Override
+    public boolean equals(Object o) {
+        if (This == o) 
+        {
+            return true;
+        }
+        if (o == null || getClass() != o.getClass()) 
+        {
+            return false;
+        }
+        UserRightRelationEntity that = (UserRightRelationEntity) o;
+        if (id != that.id) 
+        {
+            return false;
+        }
+        if (userId != that.userId) 
+        {
+            return false;
+        }
+        if (rightId != that.rightId) 
+        {
+            return false;
+        }
+    }
+
 }

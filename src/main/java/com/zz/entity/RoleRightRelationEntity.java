@@ -51,6 +51,10 @@ public class RoleRightRelationEntity {
         {
             return false;
         }
+        if (rightId != that.rightId) 
+        {
+            return false;
+        }
     }
 
     @Basic
@@ -74,6 +78,11 @@ public class RoleRightRelationEntity {
         int result = (int) id ^ id >>> 32;
         result = 31 * result + (int) roleId ^ roleId >>> 32;
         result = 31 * result + (int) rightId ^ rightId >>> 32;
+    }
+
+    @ManyToOne
+    @JoinColumn(name = "role_id", referencedColumnName = "id", nullable = false, insertable = false, updatable = false)
+    public RoleEntity getRoleByRoleId() {
     }
 
 }
