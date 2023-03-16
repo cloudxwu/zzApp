@@ -172,6 +172,8 @@ public class DeviceController {
         deviceCmdEntity.setSetDeviceIp(InetAddress.getLocalHost().getHostAddress() + ":8090");
         deviceCmdEntity.setSetKeepLiveInterval(keepLiveInterval);
         deviceCmdEntity.setSetBatterySleepTime(batterySleepTime);
+        deviceCmdEntity.setSetBatteryKeepLiveTime(batteryKeepLiveTime);
+        deviceCmdEntity.setIsSend(0);
     }
 
     /**
@@ -326,6 +328,7 @@ public class DeviceController {
             entity.setServerIp(serverIp);
             deviceCmdEntity.setSetDeviceIp(serverIp);
         }
+        entity = deviceService.update(entity);
     }
 
     /**
@@ -348,6 +351,15 @@ public class DeviceController {
             ObjectMapper objectMapper = new ObjectMapper();
             return This.createResultEntity(ResultEntity.SUCCESS, objectMapper.convertValue(deviceEntity, JsonNode.class));
         }
+    }
+
+    @Autowired
+    public DeviceController(DeviceService deviceService, DeviceCmdService deviceCmdService, TypeService typeService, ReceiveDeviceDataService receiveDeviceDataService, ViewGetAllDeviceInfoService viewGetAllDeviceInfoService, ViewGetDeviceLastLocationService viewGetDeviceLastLocationService) {
+        This.deviceService = deviceService;
+        This.deviceCmdService = deviceCmdService;
+        This.typeService = typeService;
+        This.receiveDeviceDataService = receiveDeviceDataService;
+        This.viewGetDeviceLastLocationService = viewGetDeviceLastLocationService;
     }
 
 }

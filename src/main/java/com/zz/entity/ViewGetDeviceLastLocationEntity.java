@@ -364,4 +364,18 @@ public class ViewGetDeviceLastLocationEntity {
     public void setCommunityNum2(Integer communityNum2) {
     }
 
+    public void setNationNum1(Integer nationNum1) {
+    }
+
+    public void setSignalQuality(int signalQuality) {
+    }
+
+    public void setDeviceOnOff(int deviceOnOff) {
+    }
+
+    @Basic
+    @Column(name = "city", nullable = true, length = 45)
+    public String getCity() {
+    }
+
 }

@@ -77,6 +77,10 @@ public class RoleEntity {
         {
             return false;
         }
+        if (comment != null ? !comment.equals(that.comment) : that.comment != null) 
+        {
+            return false;
+        }
     }
 
     public void setId(long id) {
@@ -104,6 +108,11 @@ public class RoleEntity {
         result = 31 * result + createTime != null ? createTime.hashCode() : 0;
         result = 31 * result + comment != null ? comment.hashCode() : 0;
         result = 31 * result + isDelete;
+    }
+
+    @Basic
+    @Column(name = "is_delete", nullable = false)
+    public int getIsDelete() {
     }
 
 }

@@ -49,6 +49,10 @@ public class BindUserDepartmentRoleEntity {
         {
             return false;
         }
+        if (roleId != that.roleId) 
+        {
+            return false;
+        }
     }
 
     public void setId(long id) {
@@ -98,6 +102,11 @@ public class BindUserDepartmentRoleEntity {
     }
 
     public void setRoleId(Long roleId) {
+    }
+
+    @ManyToOne
+    @JoinColumn(name = "role_id", referencedColumnName = "id", nullable = false, insertable = false, updatable = false)
+    public RoleEntity getRoleByRoleId() {
     }
 
 }

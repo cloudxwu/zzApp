@@ -37,4 +37,8 @@ public class IServiceImpl {
     public IServiceImpl(IDaoImpl<T> dao) {
     }
 
+    @Override
+    public List<T> findAll() {
+    }
+
 }

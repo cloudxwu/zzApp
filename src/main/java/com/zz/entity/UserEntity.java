@@ -83,6 +83,7 @@ public class UserEntity {
         result = 31 * result + createTime != null ? createTime.hashCode() : 0;
         result = 31 * result + mobile != null ? mobile.hashCode() : 0;
         result = 31 * result + email != null ? email.hashCode() : 0;
+        result = 31 * result + isDelete;
     }
 
     public void setEmail(String email) {
@@ -151,6 +152,9 @@ public class UserEntity {
     @Basic
     @Column(name = "mobile", nullable = true, length = 45)
     public String getMobile() {
+    }
+
+    public void setBindUserDepartmentRolesById(Collection<BindUserDepartmentRoleEntity> bindUserDepartmentRolesById) {
     }
 
 }

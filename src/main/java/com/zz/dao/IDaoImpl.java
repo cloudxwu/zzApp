@@ -64,4 +64,8 @@ public class IDaoImpl {
         This.clazz = (Class<T>) type.getActualTypeArguments().[0];
     }
 
+    @Override
+    public void save(T entity) {
+    }
+
 }

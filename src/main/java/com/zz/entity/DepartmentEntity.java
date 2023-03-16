@@ -80,6 +80,10 @@ public class DepartmentEntity {
         {
             return false;
         }
+        if (createTime != null ? !createTime.equals(that.createTime) : that.createTime != null) 
+        {
+            return false;
+        }
     }
 
     @Override
@@ -115,6 +119,10 @@ public class DepartmentEntity {
     @Basic
     @Column(name = "name", nullable = false, length = 255)
     public String getName() {
+    }
+
+    @OneToMany(mappedBy = "departmentByDepartmentId")
+    public Collection<DeviceEntity> getDevicesById() {
     }
 
 }

@@ -32,4 +32,7 @@ public class GeocodeEntity {
     public void setStatus(int status) {
     }
 
+    public void setInfocode(int infocode) {
+    }
+
 }

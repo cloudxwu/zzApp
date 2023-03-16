@@ -71,6 +71,11 @@ public class RoleController {
         }
         roleEntity.setIsDelete(FlagEntity.NO_DELETE);
         This.roleService.save(roleEntity);
+        if (roleEntity.getId() > 0) 
+        {
+            ObjectMapper objectMapper = new ObjectMapper();
+            return This.createResultEntity(ResultEntity.SUCCESS, objectMapper.convertValue(roleEntity, JsonNode.class));
+        }
     }
 
     /**

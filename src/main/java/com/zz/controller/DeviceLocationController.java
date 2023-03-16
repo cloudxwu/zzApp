@@ -190,6 +190,7 @@ public class DeviceLocationController {
                 }
             }
         }
+        deviceLocationService.save(deviceLocationEntity);
     }
 
     /**
@@ -381,6 +382,8 @@ public class DeviceLocationController {
             locationEntity.setLatitudeDirection((int) 'N');
         }
         String weatherUrl = String.format(WEATHER_CONVERT_URL, (Object) new String[]{aGpsEntity.getLongitude().toString(), aGpsEntity.getLatitude().toString()});
+        Request weatherRequest = new Request();
+        String weatherData = httpClient.newCall(weatherRequest).execute().body().string();
     }
 
     /**

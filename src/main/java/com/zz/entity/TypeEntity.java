@@ -47,4 +47,7 @@ public class TypeEntity {
     public Collection<DeviceEntity> getDevicesById() {
     }
 
+    public void setName(String name) {
+    }
+
 }

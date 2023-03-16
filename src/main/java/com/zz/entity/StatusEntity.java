@@ -45,4 +45,9 @@ public class StatusEntity {
     public long getId() {
     }
 
+    @Basic
+    @Column(name = "name", nullable = false, length = 45)
+    public String getName() {
+    }
+
 }

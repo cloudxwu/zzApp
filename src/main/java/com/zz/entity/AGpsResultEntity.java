@@ -56,4 +56,7 @@ public class AGpsResultEntity {
     public String getRids() {
     }
 
+    public void setAddress(String address) {
+    }
+
 }

@@ -83,6 +83,7 @@ public class DepartmentController {
             entity.setParentId(parentId);
         }
         entity = departmentService.update(entity);
+        ObjectMapper objectMapper = new ObjectMapper();
     }
 
     /**
@@ -133,6 +134,11 @@ public class DepartmentController {
         departmentEntity.setCreateTime(simpleDateFormat.format(new Date()));
         departmentEntity.setParentId(parentId);
         departmentService.save(departmentEntity);
+        if (departmentEntity.getId() > 0) 
+        {
+            ObjectMapper objectMapper = new ObjectMapper();
+            return This.createResultEntity(ResultEntity.SUCCESS, objectMapper.convertValue(departmentEntity, JsonNode.class));
+        }
     }
 
     /**

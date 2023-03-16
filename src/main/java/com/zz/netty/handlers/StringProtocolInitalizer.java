@@ -48,4 +48,7 @@ public class StringProtocolInitalizer {
     public void setDecoder(StringDecoder decoder) {
     }
 
+    public void setServerHandler(ServerHandler serverHandler) {
+    }
+
 }

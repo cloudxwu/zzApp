@@ -177,4 +177,9 @@ public class ViewGetAllDeviceInfoEntity {
     public void setUid(String uid) {
     }
 
+    @Basic
+    @Column(name = "name", nullable = true, length = 45)
+    public String getName() {
+    }
+
 }

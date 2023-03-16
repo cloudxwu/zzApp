@@ -48,6 +48,10 @@ public class UserController {
         entity.setDepartmentId(departmentId);
         entity.setUserId(userId);
         bindUserDepartmentRelationService.save(entity);
+        if (entity.getId() > 0) 
+        {
+            return This.createResultEntity(ResultEntity.SUCCESS, objectMapper.convertValue(entity, JsonNode.class));
+        }
     }
 
     /**
@@ -119,6 +123,7 @@ public class UserController {
             entity.setEmail(email);
         }
         entity = userService.update(entity);
+        ObjectMapper objectMapper = new ObjectMapper();
     }
 
     /**
@@ -199,6 +204,33 @@ public class UserController {
         {
             ObjectMapper objectMapper = new ObjectMapper();
             return This.createResultEntity(ResultEntity.SUCCESS, objectMapper.convertValue(userList, JsonNode.class));
+        }
+    }
+
+    /**
+     * @api {post} /api/manage/user/role 把用户与角色进行绑定
+     * @apiVersion 0.0.1
+     * @apiName bindRole
+     * @apiGroup userGroup
+     *
+     * @apiParam {Number} user_id 用户ID
+     * @apiParam {Number} department_id 部门ID
+     * @apiParam {Number} role_id 角色ID
+     *
+     * @apiSuccess {String} code 返回码.
+     * @apiSuccess {String} msg  返回消息.
+     * @apiSuccess {Object} data  JSON格式的对象.
+     */
+    @RequestMapping(value = "/user/role", method = RequestMethod.POST)
+    public ResultEntity bindRole(long userId, long departmentId, long roleId) {
+        List<BindUserDepartmentRoleEntity> bindUserDepartmentRoleEntityList = bindUserDepartmentRelationService.getBindUserDepartmentEntity(userId, departmentId);
+        if (bindUserDepartmentRoleEntityList.size() > 0) 
+        {
+            BindUserDepartmentRoleEntity entity = bindUserDepartmentRoleEntityList.get(0);
+            entity.setRoleId(roleId);
+            entity = bindUserDepartmentRelationService.update(entity);
+            ObjectMapper objectMapper = new ObjectMapper();
+            return This.createResultEntity(ResultEntity.SUCCESS, objectMapper.convertValue(entity, JsonNode.class));
         }
     }
 

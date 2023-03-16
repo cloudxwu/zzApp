@@ -64,6 +64,10 @@ public class RightEntity {
         {
             return false;
         }
+        if (description != null ? !description.equals(that.description) : that.description != null) 
+        {
+            return false;
+        }
     }
 
     @Basic

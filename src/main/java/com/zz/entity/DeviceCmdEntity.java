@@ -182,4 +182,12 @@ public class DeviceCmdEntity {
     public String getSetDeviceIp() {
     }
 
+    @Basic
+    @Column(name = "set_battery_sleep_time", nullable = true)
+    public Integer getSetBatterySleepTime() {
+    }
+
+    public void setIsSend(Integer isSend) {
+    }
+
 }

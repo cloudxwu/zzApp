@@ -376,4 +376,22 @@ public class DeviceLocationEntity {
     public double getBatteryVoltage() {
     }
 
+    @Basic
+    @Column(name = "device_time", nullable = false)
+    public String getDeviceTime() {
+    }
+
+    public void setLatitude(BigDecimal latitude) {
+    }
+
+    @Basic
+    @Column(name = "location_num_2", nullable = true)
+    public Integer getLocationNum2() {
+    }
+
+    @Basic
+    @Column(name = "signal_strength_4", nullable = true)
+    public Integer getSignalStrength4() {
+    }
+
 }

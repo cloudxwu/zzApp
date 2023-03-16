@@ -66,4 +66,8 @@ public class NettyConfig {
     public StringDecoder stringDecoder() {
     }
 
+    @Bean
+    public ServerHandler serverHandler() {
+    }
+
 }

@@ -52,4 +52,14 @@ public class IDao {
     public List<T> findByParams(String sql, Object params) {
     }
 
+    /**
+     * 根据条件查询一组记录
+     * @param sql SQL语句
+     * @param params 参数列表
+     * @param limit 结果数量
+     * @return null表示没有找到，非null表示一组结果
+     */
+    public List<T> findByParams(String sql, Object params, int limit) {
+    }
+
 }

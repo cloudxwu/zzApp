@@ -185,4 +185,9 @@ public class ViewBindUserDepartmentRoleEntity {
     public String getUserEmail() {
     }
 
+    @Basic
+    @Column(name = "user_login_password", nullable = false, length = 45)
+    public String getUserLoginPassword() {
+    }
+
 }

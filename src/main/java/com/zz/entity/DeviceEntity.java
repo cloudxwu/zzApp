@@ -201,4 +201,14 @@ public class DeviceEntity {
     public Long getStatusId() {
     }
 
+    @Basic
+    @Column(name = "user_id", nullable = true)
+    public Long getUserId() {
+    }
+
+    @Basic
+    @Column(name = "battery_sleep_time", nullable = false)
+    public int getBatterySleepTime() {
+    }
+
 }
