@@ -191,6 +191,10 @@ public class DeviceLocationController {
             }
         }
         deviceLocationService.save(deviceLocationEntity);
+        if (deviceLocationEntity.getId() > 0) 
+        {
+            return This.createResultEntity(ResultEntity.SUCCESS, objectMapper.convertValue(deviceLocationEntity, JsonNode.class));
+        }
     }
 
     /**
@@ -384,6 +388,12 @@ public class DeviceLocationController {
         String weatherUrl = String.format(WEATHER_CONVERT_URL, (Object) new String[]{aGpsEntity.getLongitude().toString(), aGpsEntity.getLatitude().toString()});
         Request weatherRequest = new Request();
         String weatherData = httpClient.newCall(weatherRequest).execute().body().string();
+        JsonNode weatherNode = objectMapper.readTree(weatherData);
+        if (weatherNode.findValue("resultcode").textValue().equals("200")) 
+        {
+            locationEntity.setTemp(weatherNode.findValue("temp").textValue());
+            locationEntity.setHumidity(weatherNode.findValue("humidity").textValue());
+        }
     }
 
     /**

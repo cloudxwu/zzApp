@@ -67,6 +67,10 @@ public class UserEntity {
         {
             return false;
         }
+        if (email != null ? !email.equals(that.email) : that.email != null) 
+        {
+            return false;
+        }
     }
 
     @Basic
@@ -155,6 +159,9 @@ public class UserEntity {
     }
 
     public void setBindUserDepartmentRolesById(Collection<BindUserDepartmentRoleEntity> bindUserDepartmentRolesById) {
+    }
+
+    public void setUserRightRelationsById(Collection<UserRightRelationEntity> userRightRelationsById) {
     }
 
 }

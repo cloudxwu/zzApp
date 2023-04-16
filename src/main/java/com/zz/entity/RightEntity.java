@@ -100,4 +100,7 @@ public class RightEntity {
     public long getId() {
     }
 
+    public void setDescription(String description) {
+    }
+
 }

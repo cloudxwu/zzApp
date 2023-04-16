@@ -115,4 +115,7 @@ public class RoleEntity {
     public int getIsDelete() {
     }
 
+    public void setBindUserDepartmentRolesById(Collection<BindUserDepartmentRoleEntity> bindUserDepartmentRolesById) {
+    }
+
 }

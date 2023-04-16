@@ -211,4 +211,12 @@ public class DeviceEntity {
     public int getBatterySleepTime() {
     }
 
+    public void setIsDelete(int isDelete) {
+    }
+
+    @Basic
+    @Column(name = "type_id", nullable = true)
+    public Long getTypeId() {
+    }
+
 }

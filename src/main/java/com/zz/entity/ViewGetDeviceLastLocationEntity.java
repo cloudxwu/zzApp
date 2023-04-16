@@ -378,4 +378,22 @@ public class ViewGetDeviceLastLocationEntity {
     public String getCity() {
     }
 
+    @Basic
+    @Column(name = "station_flag_1", nullable = true)
+    public Integer getStationFlag1() {
+    }
+
+    @Basic
+    @Column(name = "longitude_direction", nullable = true)
+    public Integer getLongitudeDirection() {
+    }
+
+    public void setWeather(String weather) {
+    }
+
+    @Basic
+    @Column(name = "battery_voltage", nullable = false, precision = 0)
+    public double getBatteryVoltage() {
+    }
+
 }

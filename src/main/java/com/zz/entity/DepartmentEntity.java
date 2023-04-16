@@ -125,4 +125,9 @@ public class DepartmentEntity {
     public Collection<DeviceEntity> getDevicesById() {
     }
 
+    @Basic
+    @Column(name = "create_time", nullable = false)
+    public String getCreateTime() {
+    }
+
 }

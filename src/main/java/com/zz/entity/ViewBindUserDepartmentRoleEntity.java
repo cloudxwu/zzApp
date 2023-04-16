@@ -190,4 +190,15 @@ public class ViewBindUserDepartmentRoleEntity {
     public String getUserLoginPassword() {
     }
 
+    public void setId(long id) {
+    }
+
+    @Basic
+    @Column(name = "department_level", nullable = false)
+    public int getDepartmentLevel() {
+    }
+
+    public void setRoleIsDelete(Integer roleIsDelete) {
+    }
+
 }

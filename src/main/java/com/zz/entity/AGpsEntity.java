@@ -53,4 +53,7 @@ public class AGpsEntity {
     public int getCount() {
     }
 
+    public void setLatitude(BigDecimal latitude) {
+    }
+
 }

@@ -394,4 +394,20 @@ public class DeviceLocationEntity {
     public Integer getSignalStrength4() {
     }
 
+    public void setLocationNum2(Integer locationNum2) {
+    }
+
+    @Basic
+    @Column(name = "station_flag_1", nullable = true)
+    public Integer getStationFlag1() {
+    }
+
+    public void setDeviceTime(String deviceTime) {
+    }
+
+    @Basic
+    @Column(name = "nation_num_1", nullable = true)
+    public Integer getNationNum1() {
+    }
+
 }

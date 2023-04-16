@@ -85,4 +85,7 @@ public class UserRightRelationEntity {
         }
     }
 
+    public void setRightId(long rightId) {
+    }
+
 }

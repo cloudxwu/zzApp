@@ -174,6 +174,7 @@ public class DeviceController {
         deviceCmdEntity.setSetBatterySleepTime(batterySleepTime);
         deviceCmdEntity.setSetBatteryKeepLiveTime(batteryKeepLiveTime);
         deviceCmdEntity.setIsSend(0);
+        deviceService.save(deviceEntity);
     }
 
     /**
@@ -207,6 +208,10 @@ public class DeviceController {
             deviceCmdEntity.setSetCommand(command);
         }
         deviceCmdService.save(deviceCmdEntity);
+        if (deviceCmdEntity.getId() > 0) 
+        {
+            System.out.println("===Save Device CMD OK ===");
+        }
     }
 
     /**
@@ -236,6 +241,11 @@ public class DeviceController {
         deviceTypeClassifyEntity.setTypeEntity(nullTypeEntity);
         deviceTypeClassifyEntity.setDeviceEntityList(nullDeviceEntityList);
         deviceTypeClassifyEntityList.add(deviceTypeClassifyEntity);
+        if (deviceTypeClassifyEntityList.size() > 0) 
+        {
+            ObjectMapper objectMapper = new ObjectMapper();
+            return This.createResultEntity(ResultEntity.SUCCESS, objectMapper.convertValue(deviceTypeClassifyEntityList, JsonNode.class));
+        }
     }
 
     /**
@@ -329,6 +339,7 @@ public class DeviceController {
             deviceCmdEntity.setSetDeviceIp(serverIp);
         }
         entity = deviceService.update(entity);
+        deviceCmdService.save(deviceCmdEntity);
     }
 
     /**

@@ -85,4 +85,7 @@ public class RoleRightRelationEntity {
     public RoleEntity getRoleByRoleId() {
     }
 
+    public void setRightByRightId(RightEntity rightByRightId) {
+    }
+
 }

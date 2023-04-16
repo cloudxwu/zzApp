@@ -190,4 +190,12 @@ public class DeviceCmdEntity {
     public void setIsSend(Integer isSend) {
     }
 
+    public void setDeviceByDeviceId(DeviceEntity deviceByDeviceId) {
+    }
+
+    @Basic
+    @Column(name = "set_device_name", nullable = true, length = 45)
+    public String getSetDeviceName() {
+    }
+
 }

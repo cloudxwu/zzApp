@@ -182,4 +182,23 @@ public class ViewGetAllDeviceInfoEntity {
     public String getName() {
     }
 
+    @Override
+    public boolean equals(Object o) {
+        if (This == o) 
+        {
+            return true;
+        }
+        if (o == null || getClass() != o.getClass()) 
+        {
+            return false;
+        }
+        ViewGetAllDeviceInfoEntity that = (ViewGetAllDeviceInfoEntity) o;
+    }
+
+    public void setId(long id) {
+    }
+
+    public void setTypeId(Long typeId) {
+    }
+
 }

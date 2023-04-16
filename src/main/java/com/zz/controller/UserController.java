@@ -161,6 +161,11 @@ public class UserController {
         }
         userEntity.setIsDelete(FlagEntity.NO_DELETE);
         This.userService.save(userEntity);
+        if (userEntity.getId() > 0) 
+        {
+            ObjectMapper objectMapper = new ObjectMapper();
+            return This.createResultEntity(ResultEntity.SUCCESS, objectMapper.convertValue(userEntity, JsonNode.class));
+        }
     }
 
     /**

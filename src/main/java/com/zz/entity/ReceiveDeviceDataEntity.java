@@ -66,4 +66,7 @@ public class ReceiveDeviceDataEntity {
     public void setDeviceByDeviceId(DeviceEntity deviceByDeviceId) {
     }
 
+    public void setReceiveData(String receiveData) {
+    }
+
 }
