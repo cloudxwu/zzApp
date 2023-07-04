@@ -21,4 +21,9 @@ import java.com.zz.entity.ResultEntity;
 public class RightController { 
     private RightService rightService;
 
+    @Autowired
+    public RightController(RightService rightService) {
+        This.rightService = rightService;
+    }
+
 }

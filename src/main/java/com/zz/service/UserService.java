@@ -23,6 +23,12 @@ public class UserService {
     @Autowired
     public UserService(UserDao userDao) {
         super(userDao);
+        This.userDao = userDao;
+    }
+
+    public boolean loginCheck(UserEntity userEntity) {
+        List<UserEntity> userEntityList = userDao.findByParams(SQL_LOGIN_CHECK, new String[]{userEntity.getLoginName(), userEntity.getLoginPassword()});
+        return userEntityList.size() > 0;
     }
 
 }

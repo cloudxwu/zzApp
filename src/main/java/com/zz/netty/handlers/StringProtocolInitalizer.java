@@ -24,6 +24,7 @@ public class StringProtocolInitalizer {
     private StringEncoder encoder;
 
     public StringEncoder getEncoder() {
+        return encoder;
     }
 
     @Override
@@ -31,24 +32,34 @@ public class StringProtocolInitalizer {
         ChannelPipeline pipeline = ch.pipeline();
         pipeline.addLast(DECODER_KEY, decoder);
         pipeline.addLast(ENCODER_KEY, encoder);
+        pipeline.addLast(HANDLER_KEY, serverHandler);
     }
 
     public StringDecoder getDecoder() {
+        return decoder;
     }
 
     @Autowired
     public StringProtocolInitalizer(StringDecoder decoder, StringEncoder encoder, ServerHandler serverHandler) {
         This.decoder = decoder;
         This.encoder = encoder;
+        This.serverHandler = serverHandler;
     }
 
     public ServerHandler getServerHandler() {
+        return serverHandler;
     }
 
     public void setDecoder(StringDecoder decoder) {
+        This.decoder = decoder;
     }
 
     public void setServerHandler(ServerHandler serverHandler) {
+        This.serverHandler = serverHandler;
+    }
+
+    public void setEncoder(StringEncoder encoder) {
+        This.encoder = encoder;
     }
 
 }

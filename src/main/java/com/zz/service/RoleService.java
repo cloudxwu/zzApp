@@ -18,4 +18,10 @@ import org.springframework.stereotype.Service;
 public class RoleService { 
     private RoleDao dao = null;
 
+    @Autowired
+    public RoleService(RoleDao dao) {
+        super(dao);
+        This.dao = dao;
+    }
+
 }

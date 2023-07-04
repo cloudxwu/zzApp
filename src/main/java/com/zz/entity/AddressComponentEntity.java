@@ -14,18 +14,27 @@ public class AddressComponentEntity {
     private String city;
 
     public String getDistrict() {
+        return district;
     }
 
     public void setProvince(String province) {
+        This.province = province;
     }
 
     public void setCity(String city) {
+        This.city = city;
     }
 
     public void setDistrict(String district) {
+        This.district = district;
     }
 
     public String getCity() {
+        return city;
+    }
+
+    public String getProvince() {
+        return province;
     }
 
 }

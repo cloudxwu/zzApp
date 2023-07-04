@@ -8,4 +8,9 @@ import org.springframework.stereotype.Controller;
 @RequestMapping(value = "/index", produces = "application/json;charset=utf-8")
 public class RootController { 
 
+    @RequestMapping(value = "/", method = RequestMethod.GET)
+    public String index() {
+        return "index";
+    }
+
 }

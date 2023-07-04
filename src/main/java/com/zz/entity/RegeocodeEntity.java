@@ -13,12 +13,19 @@ public class RegeocodeEntity {
     private AddressComponentEntity addressComponent;
 
     public AddressComponentEntity getAddressComponent() {
+        return addressComponent;
     }
 
     public String getFormattedAddress() {
+        return formattedAddress;
     }
 
     public void setAddressComponent(AddressComponentEntity addressComponent) {
+        This.addressComponent = addressComponent;
+    }
+
+    public void setFormattedAddress(String formattedAddress) {
+        This.formattedAddress = formattedAddress;
     }
 
 }

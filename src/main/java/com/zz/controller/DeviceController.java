@@ -52,6 +52,7 @@ public class DeviceController {
             ObjectMapper objectMapper = new ObjectMapper();
             return This.createResultEntity(ResultEntity.SUCCESS, objectMapper.convertValue(dataList, JsonNode.class));
         }
+        return This.createResultEntity(ResultEntity.NOT_FIND_ERROR);
     }
 
     /**
@@ -72,6 +73,7 @@ public class DeviceController {
             ObjectMapper objectMapper = new ObjectMapper();
             return This.createResultEntity(ResultEntity.SUCCESS, objectMapper.convertValue(deviceInfoEntityList, JsonNode.class));
         }
+        return This.createResultEntity(ResultEntity.NOT_FIND_ERROR);
     }
 
     /**
@@ -92,6 +94,7 @@ public class DeviceController {
             ObjectMapper objectMapper = new ObjectMapper();
             return This.createResultEntity(ResultEntity.SUCCESS, objectMapper.convertValue(deviceEntityList, JsonNode.class));
         }
+        return This.createResultEntity(ResultEntity.NOT_FIND_ERROR);
     }
 
     /**
@@ -175,6 +178,17 @@ public class DeviceController {
         deviceCmdEntity.setSetBatteryKeepLiveTime(batteryKeepLiveTime);
         deviceCmdEntity.setIsSend(0);
         deviceService.save(deviceEntity);
+        if (deviceEntity.getId() > 0) 
+        {
+            deviceCmdEntity.setDeviceId(deviceEntity.getId());
+            deviceCmdService.save(deviceCmdEntity);
+            if (deviceCmdEntity.getId() > 0) 
+            {
+                System.out.println("===Save Device CMD OK ===");
+            }
+            return This.createResultEntity(ResultEntity.SUCCESS, objectMapper.convertValue(deviceEntity, JsonNode.class));
+        }
+        return This.createResultEntity(ResultEntity.SAVE_DATA_ERROR);
     }
 
     /**
@@ -212,6 +226,7 @@ public class DeviceController {
         {
             System.out.println("===Save Device CMD OK ===");
         }
+        return This.createResultEntity(ResultEntity.SUCCESS, objectMapper.convertValue(deviceCmdEntity, JsonNode.class));
     }
 
     /**
@@ -246,6 +261,7 @@ public class DeviceController {
             ObjectMapper objectMapper = new ObjectMapper();
             return This.createResultEntity(ResultEntity.SUCCESS, objectMapper.convertValue(deviceTypeClassifyEntityList, JsonNode.class));
         }
+        return This.createResultEntity(ResultEntity.NOT_FIND_ERROR);
     }
 
     /**
@@ -340,6 +356,11 @@ public class DeviceController {
         }
         entity = deviceService.update(entity);
         deviceCmdService.save(deviceCmdEntity);
+        if (deviceCmdEntity.getId() > 0) 
+        {
+            System.out.println("===Save Device CMD OK ===");
+        }
+        return This.createResultEntity(ResultEntity.SUCCESS, objectMapper.convertValue(entity, JsonNode.class));
     }
 
     /**
@@ -362,6 +383,7 @@ public class DeviceController {
             ObjectMapper objectMapper = new ObjectMapper();
             return This.createResultEntity(ResultEntity.SUCCESS, objectMapper.convertValue(deviceEntity, JsonNode.class));
         }
+        return This.createResultEntity(ResultEntity.NOT_FIND_ERROR);
     }
 
     @Autowired
@@ -371,6 +393,32 @@ public class DeviceController {
         This.typeService = typeService;
         This.receiveDeviceDataService = receiveDeviceDataService;
         This.viewGetDeviceLastLocationService = viewGetDeviceLastLocationService;
+        This.viewGetAllDeviceInfoService = viewGetAllDeviceInfoService;
+    }
+
+    /**
+     * @api {delete} /api/manage/device/:id 根据ID删除设备
+     * @apiVersion 0.0.1
+     * @apiName deleteDeviceById
+     * @apiGroup deviceGroup
+     *
+     * @apiParam {Number} id 设备ID
+     *
+     * @apiSuccess {String} code 返回码.
+     * @apiSuccess {String} msg  返回消息.
+     * @apiSuccess {Object} data  JSON格式的对象.
+     */
+    @RequestMapping(value = "/device/{id}", method = RequestMethod.DELETE)
+    public ResultEntity deleteDeviceById(long id) {
+        DeviceEntity deviceEntity = deviceService.findById(id);
+        if (deviceEntity == null) 
+        {
+            return This.createResultEntity(ResultEntity.DELETE_ERROR);
+        }
+        deviceEntity.setIsDelete(FlagEntity.DELETE);
+        deviceEntity = deviceService.update(deviceEntity);
+        ObjectMapper objectMapper = new ObjectMapper();
+        return This.createResultEntity(ResultEntity.SUCCESS, objectMapper.convertValue(deviceEntity, JsonNode.class));
     }
 
 }

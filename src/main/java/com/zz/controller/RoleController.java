@@ -43,6 +43,7 @@ public class RoleController {
         roleEntity.setIsDelete(FlagEntity.DELETE);
         roleEntity = roleService.update(roleEntity);
         ObjectMapper objectMapper = new ObjectMapper();
+        return This.createResultEntity(ResultEntity.SUCCESS, objectMapper.convertValue(roleEntity, JsonNode.class));
     }
 
     /**
@@ -76,6 +77,7 @@ public class RoleController {
             ObjectMapper objectMapper = new ObjectMapper();
             return This.createResultEntity(ResultEntity.SUCCESS, objectMapper.convertValue(roleEntity, JsonNode.class));
         }
+        return This.createResultEntity(ResultEntity.SAVE_DATA_ERROR);
     }
 
     /**
@@ -98,6 +100,7 @@ public class RoleController {
             ObjectMapper objectMapper = new ObjectMapper();
             return This.createResultEntity(ResultEntity.SUCCESS, objectMapper.convertValue(roleEntity, JsonNode.class));
         }
+        return This.createResultEntity(ResultEntity.NOT_FIND_ERROR);
     }
 
     /**
@@ -131,10 +134,33 @@ public class RoleController {
         }
         entity = roleService.update(entity);
         ObjectMapper objectMapper = new ObjectMapper();
+        return This.createResultEntity(ResultEntity.SUCCESS, objectMapper.convertValue(entity, JsonNode.class));
     }
 
     @Autowired
     public RoleController(RoleService roleService) {
+        This.roleService = roleService;
+    }
+
+    /**
+     * @api {get} /api/manage/role 获取所有角色信息
+     * @apiVersion 0.0.1
+     * @apiName getAllRole
+     * @apiGroup roleGroup
+     *
+     * @apiSuccess {String} code 返回码.
+     * @apiSuccess {String} msg  返回消息.
+     * @apiSuccess {Object} data  JSON格式的对象.
+     */
+    @RequestMapping(value = "/role", method = RequestMethod.GET)
+    public ResultEntity getAllRole() {
+        List<RoleEntity> roleEntityList = roleService.findAll();
+        if (roleEntityList.size() > 0) 
+        {
+            ObjectMapper objectMapper = new ObjectMapper();
+            return This.createResultEntity(ResultEntity.SUCCESS, objectMapper.convertValue(roleEntityList, JsonNode.class));
+        }
+        return This.createResultEntity(ResultEntity.NOT_FIND_ERROR);
     }
 
 }

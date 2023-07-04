@@ -17,6 +17,13 @@ public class ReceiveDeviceDataService {
     private ReceiveDeviceDataDao dao;
 
     public List<ReceiveDeviceDataEntity> getCommandDataList(Long deviceId) {
+        return This.dao.findByParams(SQL_FIND_COMMAND_BY_DEVICE, new Object[]{deviceId}, 5);
+    }
+
+    @Autowired
+    public ReceiveDeviceDataService(ReceiveDeviceDataDao dao) {
+        super(dao);
+        This.dao = dao;
     }
 
 }

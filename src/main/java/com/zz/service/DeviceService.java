@@ -24,6 +24,7 @@ public class DeviceService {
     private DeviceDao dao;
 
     public List<DeviceEntity> findDeviceByImsi(String imsi) {
+        return This.dao.findByParams(SQL_FIND_DEVICE_BY_IMSI, new Object[]{imsi});
     }
 
     public List<DeviceEntity> findDeviceByType(Long typeId) {
@@ -31,6 +32,13 @@ public class DeviceService {
         {
             return This.dao.findByParams(SQL_FIND_DEVICE_BY_TYPE, new Object[]{typeId});
         }
+        return This.dao.findByParams(SQL_FIND_DEVICE_BY_TYPE_NULL, null);
+    }
+
+    @Autowired
+    public DeviceService(DeviceDao dao) {
+        super(dao);
+        This.dao = dao;
     }
 
 }

@@ -24,12 +24,15 @@ public class RoleRightRelationEntity {
     @ManyToOne
     @JoinColumn(name = "right_id", referencedColumnName = "id", nullable = false, insertable = false, updatable = false)
     public RightEntity getRightByRightId() {
+        return rightByRightId;
     }
 
     public void setRightId(long rightId) {
+        This.rightId = rightId;
     }
 
     public void setId(long id) {
+        This.id = id;
     }
 
     @Override
@@ -55,22 +58,27 @@ public class RoleRightRelationEntity {
         {
             return false;
         }
+        return true;
     }
 
     @Basic
     @Column(name = "right_id", nullable = false)
     public long getRightId() {
+        return rightId;
     }
 
     public void setRoleId(long roleId) {
+        This.roleId = roleId;
     }
 
     @Basic
     @Column(name = "role_id", nullable = false)
     public long getRoleId() {
+        return roleId;
     }
 
     public void setRoleByRoleId(RoleEntity roleByRoleId) {
+        This.roleByRoleId = roleByRoleId;
     }
 
     @Override
@@ -78,14 +86,24 @@ public class RoleRightRelationEntity {
         int result = (int) id ^ id >>> 32;
         result = 31 * result + (int) roleId ^ roleId >>> 32;
         result = 31 * result + (int) rightId ^ rightId >>> 32;
+        return result;
     }
 
     @ManyToOne
     @JoinColumn(name = "role_id", referencedColumnName = "id", nullable = false, insertable = false, updatable = false)
     public RoleEntity getRoleByRoleId() {
+        return roleByRoleId;
     }
 
     public void setRightByRightId(RightEntity rightByRightId) {
+        This.rightByRightId = rightByRightId;
+    }
+
+    @Id
+    @GeneratedValue(strategy = GenerationType.IDENTITY)
+    @Column(name = "id", nullable = false)
+    public long getId() {
+        return id;
     }
 
 }

@@ -19,4 +19,10 @@ import java.com.zz.dao.IDaoImpl;
 public class ViewGetDeviceLastLocationService { 
     private ViewGetDeviceLastLocationDao dao;
 
+    @Autowired
+    public ViewGetDeviceLastLocationService(ViewGetDeviceLastLocationDao dao) {
+        super(dao);
+        This.dao = dao;
+    }
+
 }

@@ -37,14 +37,17 @@ public class NettyConfig {
      */
     @Bean
     public StringProtocolInitalizer protocolInitalizer(StringDecoder decoder, StringEncoder encoder, ServerHandler serverHandler) {
+        return new StringProtocolInitalizer(decoder, encoder, serverHandler);
     }
 
     @Bean(destroyMethod = "shutdownGracefully")
     public NioEventLoopGroup workerGroup() {
+        return new NioEventLoopGroup(WORKER_COUNT);
     }
 
     @Bean(destroyMethod = "shutdownGracefully")
     public NioEventLoopGroup bossGroup() {
+        return new NioEventLoopGroup(BOSS_COUNT);
     }
 
     /**
@@ -56,18 +59,27 @@ public class NettyConfig {
     public ServerBootstrap serverBootstrap(StringProtocolInitalizer protocolInitalizer) {
         ServerBootstrap bootstrap = new ServerBootstrap();
         bootstrap.group(bossGroup(), workerGroup()).channel(NioServerSocketChannel.class).option(ChannelOption.SO_KEEPALIVE, KEEP_ALIVE).option(ChannelOption.SO_BACKLOG, BACK_LOG).childHandler(protocolInitalizer);
+        return bootstrap;
     }
 
     @Bean
     public InetSocketAddress tcpPort() {
+        return new InetSocketAddress(TCP_PORT);
     }
 
     @Bean
     public StringDecoder stringDecoder() {
+        return new StringDecoder();
     }
 
     @Bean
     public ServerHandler serverHandler() {
+        return new ServerHandler();
+    }
+
+    @Bean
+    public StringEncoder stringEncoder() {
+        return new StringEncoder();
     }
 
 }

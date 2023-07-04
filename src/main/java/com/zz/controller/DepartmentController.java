@@ -42,10 +42,12 @@ public class DepartmentController {
             ObjectMapper objectMapper = new ObjectMapper();
             return This.createResultEntity(ResultEntity.SUCCESS, objectMapper.convertValue(departmentEntity, JsonNode.class));
         }
+        return This.createResultEntity(ResultEntity.NOT_FIND_ERROR);
     }
 
     @Autowired
     public DepartmentController(DepartmentService departmentService) {
+        This.departmentService = departmentService;
     }
 
     /**
@@ -84,6 +86,7 @@ public class DepartmentController {
         }
         entity = departmentService.update(entity);
         ObjectMapper objectMapper = new ObjectMapper();
+        return This.createResultEntity(ResultEntity.SUCCESS, objectMapper.convertValue(entity, JsonNode.class));
     }
 
     /**
@@ -108,6 +111,7 @@ public class DepartmentController {
         departmentEntity.setIsDelete(FlagEntity.DELETE);
         departmentEntity = departmentService.update(departmentEntity);
         ObjectMapper objectMapper = new ObjectMapper();
+        return This.createResultEntity(ResultEntity.SUCCESS, objectMapper.convertValue(departmentEntity, JsonNode.class));
     }
 
     /**
@@ -139,6 +143,7 @@ public class DepartmentController {
             ObjectMapper objectMapper = new ObjectMapper();
             return This.createResultEntity(ResultEntity.SUCCESS, objectMapper.convertValue(departmentEntity, JsonNode.class));
         }
+        return This.createResultEntity(ResultEntity.SAVE_DATA_ERROR);
     }
 
     /**
@@ -153,6 +158,28 @@ public class DepartmentController {
      */
     @RequestMapping(value = "/department/structure", method = RequestMethod.GET)
     public ResultEntity getDepartmentStructure() {
+        return This.createResultEntity(ResultEntity.SUCCESS, departmentService.getOrganizationStructure());
+    }
+
+    /**
+     * @api {get} /api/manage/department 获取所有部门信息
+     * @apiVersion 0.0.1
+     * @apiName getAllDepartment
+     * @apiGroup departmentGroup
+     *
+     * @apiSuccess {String} code 返回码.
+     * @apiSuccess {String} msg  返回消息.
+     * @apiSuccess {Object} data  JSON格式的对象.
+     */
+    @RequestMapping(value = "/department", method = RequestMethod.GET)
+    public ResultEntity getAllDepartment() {
+        List<DepartmentEntity> departmentEntityList = departmentService.findAll();
+        if (departmentEntityList.size() > 0) 
+        {
+            ObjectMapper objectMapper = new ObjectMapper();
+            return This.createResultEntity(ResultEntity.SUCCESS, objectMapper.convertValue(departmentEntityList, JsonNode.class));
+        }
+        return This.createResultEntity(ResultEntity.NOT_FIND_ERROR);
     }
 
 }

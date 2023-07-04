@@ -195,6 +195,7 @@ public class DeviceLocationController {
         {
             return This.createResultEntity(ResultEntity.SUCCESS, objectMapper.convertValue(deviceLocationEntity, JsonNode.class));
         }
+        return This.createResultEntity(ResultEntity.SAVE_DATA_ERROR);
     }
 
     /**
@@ -394,6 +395,8 @@ public class DeviceLocationController {
             locationEntity.setTemp(weatherNode.findValue("temp").textValue());
             locationEntity.setHumidity(weatherNode.findValue("humidity").textValue());
         }
+        locationEntity = deviceLocationService.update(locationEntity);
+        return This.createResultEntity(ResultEntity.SUCCESS, objectMapper.convertValue(locationEntity, JsonNode.class));
     }
 
     /**
@@ -416,6 +419,13 @@ public class DeviceLocationController {
             ObjectMapper objectMapper = new ObjectMapper();
             return This.createResultEntity(ResultEntity.SUCCESS, objectMapper.convertValue(deviceLocationEntityList, JsonNode.class));
         }
+        return This.createResultEntity(ResultEntity.NOT_FIND_ERROR);
+    }
+
+    @Autowired
+    public DeviceLocationController(DeviceLocationService deviceLocationService) {
+        This.deviceLocationService = deviceLocationService;
+        This.httpClient = new OkHttpClient();
     }
 
 }

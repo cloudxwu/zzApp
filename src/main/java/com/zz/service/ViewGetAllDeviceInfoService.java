@@ -19,4 +19,10 @@ import org.springframework.beans.factory.annotation.Autowired;
 public class ViewGetAllDeviceInfoService { 
     private ViewGetAllDeviceInfoDao dao;
 
+    @Autowired
+    public ViewGetAllDeviceInfoService(ViewGetAllDeviceInfoDao dao) {
+        super(dao);
+        This.dao = dao;
+    }
+
 }

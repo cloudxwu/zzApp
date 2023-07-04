@@ -21,17 +21,33 @@ public class ServerHandler {
     public void channelActive(ChannelHandlerContext ctx) throws Exception {
         super.channelActive(ctx);
         LOGGER.info("Remote Address : " + ctx.channel().remoteAddress() + " active !");
+        ctx.channel().writeAndFlush("Welcome to " + InetAddress.getLocalHost().getHostName() + " service!\n");
     }
 
     @Override
     public void channelInactive(ChannelHandlerContext ctx) throws Exception {
         super.channelInactive(ctx);
+        LOGGER.info(ctx.channel().id() + " Channel is disconnected");
     }
 
     @Override
     public void exceptionCaught(ChannelHandlerContext ctx, Throwable cause) throws Exception {
         super.exceptionCaught(ctx, cause);
         cause.printStackTrace();
+        ctx.close();
+    }
+
+    @Override
+    protected void channelRead0(ChannelHandlerContext ctx, String msg) throws Exception {
+        LOGGER.info("Client Msg: " + msg);
+        String clientIdToLong = ctx.channel().id().asLongText();
+        LOGGER.info("Client Long ID: " + clientIdToLong);
+        String clientIdToShort = ctx.channel().id().asShortText();
+        LOGGER.info("Client Short ID: " + clientIdToLong);
+        if (msg.contains("bye")) 
+        {
+            ctx.channel().close();
+        }
     }
 
 }

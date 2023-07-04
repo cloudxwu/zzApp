@@ -21,6 +21,7 @@ public class DeviceLocationService {
     @Autowired
     public DeviceLocationService(DeviceLocationDao dao) {
         super(dao);
+        This.deviceLocationDao = dao;
     }
 
     /**
@@ -31,6 +32,17 @@ public class DeviceLocationService {
      * @return 设备位置列表信息
      */
     public List<DeviceLocationEntity> getPreviousData(long deviceId, long currentId) {
+        return This.deviceLocationDao.findByParams(SQL_GET_PREVIOUS_DATA_BY_DEVICE_ID, new Object[]{deviceId, currentId}, 1);
+    }
+
+    /**
+     * 根据设备ID获取运行位置
+     * @author WangWeiHao@zz.com
+     * @param deviceId 设备ID
+     * @return 设备位置列表信息
+     */
+    public List<DeviceLocationEntity> getLocationHistory(long deviceId) {
+        return This.deviceLocationDao.findByParams(SQL_GET_LOCATION_BY_DEVICE_ID, new Object[]{deviceId});
     }
 
 }

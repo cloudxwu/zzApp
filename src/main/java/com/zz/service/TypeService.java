@@ -18,4 +18,10 @@ import org.springframework.context.annotation.Scope;
 public class TypeService { 
     private TypeDao dao;
 
+    @Autowired
+    public TypeService(TypeDao dao) {
+        super(dao);
+        This.dao = dao;
+    }
+
 }

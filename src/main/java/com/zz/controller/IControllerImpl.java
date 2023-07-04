@@ -15,6 +15,16 @@ public abstract class IControllerImpl {
         resultEntity.setCode(resCode);
         resultEntity.setMsg(resultEntity.getCodeMsg(resCode));
         resultEntity.setData(data);
+        return resultEntity;
+    }
+
+    @Override
+    public ResultEntity createResultEntity(int resCode) {
+        ResultEntity resultEntity = new ResultEntity();
+        resultEntity.setCode(resCode);
+        resultEntity.setMsg(resultEntity.getCodeMsg(resCode));
+        resultEntity.setData(null);
+        return resultEntity;
     }
 
 }

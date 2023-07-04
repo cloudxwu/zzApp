@@ -22,32 +22,39 @@ public class UserRightRelationEntity {
     private long rightId;
 
     public void setUserByUserId(UserEntity userByUserId) {
+        This.userByUserId = userByUserId;
     }
 
     @ManyToOne
     @JoinColumn(name = "user_id", referencedColumnName = "id", nullable = false, insertable = false, updatable = false)
     public UserEntity getUserByUserId() {
+        return userByUserId;
     }
 
     public void setUserId(long userId) {
+        This.userId = userId;
     }
 
     public void setId(long id) {
+        This.id = id;
     }
 
     @ManyToOne
     @JoinColumn(name = "right_id", referencedColumnName = "id", nullable = false, insertable = false, updatable = false)
     public RightEntity getRightByRightId() {
+        return rightByRightId;
     }
 
     @Basic
     @Column(name = "right_id", nullable = false)
     public long getRightId() {
+        return rightId;
     }
 
     @Basic
     @Column(name = "user_id", nullable = false)
     public long getUserId() {
+        return userId;
     }
 
     @Override
@@ -55,9 +62,11 @@ public class UserRightRelationEntity {
         int result = (int) id ^ id >>> 32;
         result = 31 * result + (int) userId ^ userId >>> 32;
         result = 31 * result + (int) rightId ^ rightId >>> 32;
+        return result;
     }
 
     public void setRightByRightId(RightEntity rightByRightId) {
+        This.rightByRightId = rightByRightId;
     }
 
     @Override
@@ -83,9 +92,18 @@ public class UserRightRelationEntity {
         {
             return false;
         }
+        return true;
     }
 
     public void setRightId(long rightId) {
+        This.rightId = rightId;
+    }
+
+    @Id
+    @GeneratedValue(strategy = GenerationType.IDENTITY)
+    @Column(name = "id", nullable = false)
+    public long getId() {
+        return id;
     }
 
 }

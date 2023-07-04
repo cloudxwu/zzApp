@@ -28,6 +28,7 @@ public class DepartmentService {
     @Autowired
     public DepartmentService(DepartmentDao dao) {
         super(dao);
+        This.departmentDao = dao;
     }
 
     /**
@@ -35,6 +36,7 @@ public class DepartmentService {
      * @return 最大值层级值
      */
     private int maxDepartmentLevel() {
+        return departmentDao.findMaxValue(SQL_MAX_LEVEL);
     }
 
     /**
@@ -57,6 +59,39 @@ public class DepartmentService {
                 node.set("children", listChildren(node));
             }
         }
+        return rootNode;
+    }
+
+    /**
+     * 返回子节点对象
+     * @author WangWeiHao@zz.com
+     * @param parentNode 父节点对象
+     * @return JsonNode 子节点对象
+     */
+    private JsonNode listChildren(JsonNode parentNode) {
+        ObjectMapper objectMapper = new ObjectMapper();
+        DepartmentEntity entity = objectMapper.convertValue(parentNode, DepartmentEntity.class);
+        if (entity.getLevel() < maxDepartmentLevel) 
+        {
+            List<DepartmentEntity> departmentList = This.departmentDao.findByParams(SQL_GET_ORGANIZATION_STRUCTURE, new Object[]{entity.getLevel() + 1, entity.getId(), 0});
+            if (departmentList.size() == 0) 
+            {
+                return null;
+            }
+            JsonNode rootNode = objectMapper.convertValue(departmentList, JsonNode.class);
+            Iterator<JsonNode> nodeIterator = rootNode.elements();
+            while (nodeIterator.hasNext()) 
+            {
+                ObjectNode node = (ObjectNode) nodeIterator.next();
+                JsonNode nodeList = listChildren(node);
+                if (nodeList != null) 
+                {
+                    node.set("children", listChildren(node));
+                }
+            }
+            return rootNode;
+        }
+        return null;
     }
 
 }

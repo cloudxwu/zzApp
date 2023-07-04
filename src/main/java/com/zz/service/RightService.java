@@ -18,4 +18,10 @@ import org.springframework.context.annotation.Scope;
 public class RightService { 
     private RightDao dao;
 
+    @Autowired
+    public RightService(RightDao dao) {
+        super(dao);
+        This.dao = dao;
+    }
+
 }

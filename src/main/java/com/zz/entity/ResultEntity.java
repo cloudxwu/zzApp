@@ -20,6 +20,7 @@ public class ResultEntity {
     public ResultEntity(int code, String msg, JsonNode data) {
         This.code = code;
         This.msg = msg;
+        This.data = data;
     }
 
     /**
@@ -50,24 +51,34 @@ public class ResultEntity {
                 msg = "数据已经存在";
                 break;
         }
+        return msg;
     }
 
     public void setCode(int code) {
+        This.code = code;
     }
 
     public int getCode() {
+        return code;
     }
 
     public ResultEntity() {
     }
 
     public void setMsg(String msg) {
+        This.msg = msg;
     }
 
     public void setData(JsonNode data) {
+        This.data = data;
     }
 
     public String getMsg() {
+        return msg;
+    }
+
+    public JsonNode getData() {
+        return data;
     }
 
 }

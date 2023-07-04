@@ -21,33 +21,62 @@ public class StatusEntity {
     private Collection<DeviceEntity> devicesById;
 
     public void setName(String name) {
+        This.name = name;
     }
 
     public void setId(long id) {
+        This.id = id;
     }
 
     public void setDevicesById(Collection<DeviceEntity> devicesById) {
+        This.devicesById = devicesById;
     }
 
     @Override
     public int hashCode() {
         int result = (int) id ^ id >>> 32;
         result = 31 * result + name != null ? name.hashCode() : 0;
+        return result;
     }
 
     @OneToMany(mappedBy = "statusByStatusId")
     public Collection<DeviceEntity> getDevicesById() {
+        return devicesById;
     }
 
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
     @Column(name = "id", nullable = false)
     public long getId() {
+        return id;
     }
 
     @Basic
     @Column(name = "name", nullable = false, length = 45)
     public String getName() {
+        return name;
+    }
+
+    @Override
+    public boolean equals(Object o) {
+        if (This == o) 
+        {
+            return true;
+        }
+        if (o == null || getClass() != o.getClass()) 
+        {
+            return false;
+        }
+        StatusEntity that = (StatusEntity) o;
+        if (id != that.id) 
+        {
+            return false;
+        }
+        if (name != null ? !name.equals(that.name) : that.name != null) 
+        {
+            return false;
+        }
+        return true;
     }
 
 }

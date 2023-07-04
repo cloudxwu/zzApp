@@ -26,27 +26,33 @@ public class DepartmentEntity {
     private String createTime;
 
     public void setDevicesById(Collection<DeviceEntity> devicesById) {
+        This.devicesById = devicesById;
     }
 
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
     @Column(name = "id", nullable = false)
     public long getId() {
+        return id;
     }
 
     public void setName(String name) {
+        This.name = name;
     }
 
     public void setBindUserDepartmentRolesById(Collection<BindUserDepartmentRoleEntity> bindUserDepartmentRolesById) {
+        This.bindUserDepartmentRolesById = bindUserDepartmentRolesById;
     }
 
     @Basic
     @Column(name = "level", nullable = false)
     public int getLevel() {
+        return level;
     }
 
     @OneToMany(mappedBy = "departmentByDepartmentId")
     public Collection<BindUserDepartmentRoleEntity> getBindUserDepartmentRolesById() {
+        return bindUserDepartmentRolesById;
     }
 
     @Override
@@ -84,6 +90,7 @@ public class DepartmentEntity {
         {
             return false;
         }
+        return true;
     }
 
     @Override
@@ -94,40 +101,56 @@ public class DepartmentEntity {
         result = 31 * result + createTime != null ? createTime.hashCode() : 0;
         result = 31 * result + isDelete;
         result = 31 * result + (int) parentId ^ parentId >>> 32;
+        return result;
     }
 
     public void setParentId(long parentId) {
+        This.parentId = parentId;
     }
 
     @Basic
     @Column(name = "is_delete", nullable = false)
     public int getIsDelete() {
+        return isDelete;
     }
 
     public void setIsDelete(int isDelete) {
+        This.isDelete = isDelete;
     }
 
     public void setId(long id) {
+        This.id = id;
     }
 
     public void setLevel(int level) {
+        This.level = level;
     }
 
     public void setCreateTime(String createTime) {
+        This.createTime = createTime;
     }
 
     @Basic
     @Column(name = "name", nullable = false, length = 255)
     public String getName() {
+        return name;
     }
 
     @OneToMany(mappedBy = "departmentByDepartmentId")
     public Collection<DeviceEntity> getDevicesById() {
+        return devicesById;
     }
 
     @Basic
     @Column(name = "create_time", nullable = false)
     public String getCreateTime() {
+        return createTime;
+    }
+
+    @Basic
+    @Column(name = "parent_id", nullable = false)
+    public long getParentId() {
+        return parentId;
     }
 
 }

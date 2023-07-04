@@ -29,16 +29,20 @@ public class RightEntity {
         result = 31 * result + name != null ? name.hashCode() : 0;
         result = 31 * result + description != null ? description.hashCode() : 0;
         result = 31 * result + (int) parentId ^ parentId >>> 32;
+        return result;
     }
 
     @OneToMany(mappedBy = "rightByRightId")
     public Collection<RoleRightRelationEntity> getRoleRightRelationsById() {
+        return roleRightRelationsById;
     }
 
     public void setName(String name) {
+        This.name = name;
     }
 
     public void setUserRightRelationsById(Collection<UserRightRelationEntity> userRightRelationsById) {
+        This.userRightRelationsById = userRightRelationsById;
     }
 
     @Override
@@ -68,39 +72,53 @@ public class RightEntity {
         {
             return false;
         }
+        return true;
     }
 
     @Basic
     @Column(name = "parent_id", nullable = false)
     public long getParentId() {
+        return parentId;
     }
 
     public void setParentId(long parentId) {
+        This.parentId = parentId;
     }
 
     public void setRoleRightRelationsById(Collection<RoleRightRelationEntity> roleRightRelationsById) {
+        This.roleRightRelationsById = roleRightRelationsById;
     }
 
     @Basic
     @Column(name = "name", nullable = false, length = 45)
     public String getName() {
+        return name;
     }
 
     @Basic
     @Column(name = "description", nullable = false, length = 200)
     public String getDescription() {
+        return description;
     }
 
     public void setId(long id) {
+        This.id = id;
     }
 
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
     @Column(name = "id", nullable = false)
     public long getId() {
+        return id;
     }
 
     public void setDescription(String description) {
+        This.description = description;
+    }
+
+    @OneToMany(mappedBy = "rightByRightId")
+    public Collection<UserRightRelationEntity> getUserRightRelationsById() {
+        return userRightRelationsById;
     }
 
 }

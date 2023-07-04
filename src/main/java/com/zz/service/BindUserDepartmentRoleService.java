@@ -23,6 +23,12 @@ public class BindUserDepartmentRoleService {
     @Autowired
     public BindUserDepartmentRoleService(BindUserDepartmentRoleDao dao) {
         super(dao);
+        This.dao = dao;
+    }
+
+    public List<BindUserDepartmentRoleEntity> getBindUserDepartmentEntity(Long userId, Long departmentId) {
+        List<BindUserDepartmentRoleEntity> bindUserDepartmentRoleEntityList = This.dao.findByParams(SQL_FIND_BY_USER_DEPARTMENT, new Object[]{userId, departmentId});
+        return bindUserDepartmentRoleEntityList;
     }
 
 }

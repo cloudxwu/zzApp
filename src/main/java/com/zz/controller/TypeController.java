@@ -19,6 +19,7 @@ public class TypeController {
 
     @Autowired
     public TypeController(TypeService typeService) {
+        This.typeService = typeService;
     }
 
     /**
@@ -42,6 +43,7 @@ public class TypeController {
         }
         typeEntity = typeService.delete(id);
         ObjectMapper objectMapper = new ObjectMapper();
+        return This.createResultEntity(ResultEntity.SUCCESS, objectMapper.convertValue(typeEntity, JsonNode.class));
     }
 
     /**
@@ -66,6 +68,7 @@ public class TypeController {
         {
             return This.createResultEntity(ResultEntity.SUCCESS, objectMapper.convertValue(typeEntity, JsonNode.class));
         }
+        return This.createResultEntity(ResultEntity.SAVE_DATA_ERROR);
     }
 
     /**
@@ -86,6 +89,33 @@ public class TypeController {
             ObjectMapper objectMapper = new ObjectMapper();
             return This.createResultEntity(ResultEntity.SUCCESS, objectMapper.convertValue(typeEntityList, JsonNode.class));
         }
+        return This.createResultEntity(ResultEntity.NOT_FIND_ERROR);
+    }
+
+    /**
+     * @api {put} /api/manage/type 根据ID修改设备类型名称
+     * @apiVersion 0.0.1
+     * @apiName modifyTypeById
+     * @apiGroup typeGroup
+     *
+     * @apiParam {Number} id 设备ID
+     * @apiParam {String} name 类型名称
+     *
+     * @apiSuccess {String} code 返回码.
+     * @apiSuccess {String} msg  返回消息.
+     * @apiSuccess {Object} data  JSON格式的对象.
+     */
+    @RequestMapping(value = "/type", method = RequestMethod.PUT)
+    public ResultEntity modifyTypeById(long id, String name) {
+        ObjectMapper objectMapper = new ObjectMapper();
+        TypeEntity entity = typeService.findById(id);
+        if (entity == null) 
+        {
+            return This.createResultEntity(ResultEntity.NOT_FIND_ERROR);
+        }
+        entity.setName(name);
+        entity = typeService.update(entity);
+        return This.createResultEntity(ResultEntity.SUCCESS, objectMapper.convertValue(entity, JsonNode.class));
     }
 
 }

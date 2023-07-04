@@ -24,6 +24,7 @@ public class BindUserDepartmentRoleEntity {
     private long id;
 
     public void setDepartmentByDepartmentId(DepartmentEntity departmentByDepartmentId) {
+        This.departmentByDepartmentId = departmentByDepartmentId;
     }
 
     @Override
@@ -53,30 +54,36 @@ public class BindUserDepartmentRoleEntity {
         {
             return false;
         }
+        return true;
     }
 
     public void setId(long id) {
+        This.id = id;
     }
 
     @ManyToOne
     @JoinColumn(name = "department_id", referencedColumnName = "id", nullable = false, insertable = false, updatable = false)
     public DepartmentEntity getDepartmentByDepartmentId() {
+        return departmentByDepartmentId;
     }
 
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
     @Column(name = "id", nullable = false)
     public long getId() {
+        return id;
     }
 
     @Basic
     @Column(name = "user_id", nullable = false)
     public long getUserId() {
+        return userId;
     }
 
     @ManyToOne
     @JoinColumn(name = "user_id", referencedColumnName = "id", nullable = false, insertable = false, updatable = false)
     public UserEntity getUserByUserId() {
+        return userByUserId;
     }
 
     @Override
@@ -85,31 +92,45 @@ public class BindUserDepartmentRoleEntity {
         result = 31 * result + (int) userId ^ userId >>> 32;
         result = 31 * result + (int) departmentId ^ departmentId >>> 32;
         result = 31 * result + (int) roleId ^ roleId >>> 32;
+        return result;
     }
 
     public void setUserByUserId(UserEntity userByUserId) {
+        This.userByUserId = userByUserId;
     }
 
     public void setUserId(long userId) {
+        This.userId = userId;
     }
 
     @Basic
     @Column(name = "role_id", nullable = true)
     public Long getRoleId() {
+        return roleId;
     }
 
     public void setRoleByRoleId(RoleEntity roleByRoleId) {
+        This.roleByRoleId = roleByRoleId;
     }
 
     public void setRoleId(Long roleId) {
+        This.roleId = roleId;
     }
 
     @ManyToOne
     @JoinColumn(name = "role_id", referencedColumnName = "id", nullable = false, insertable = false, updatable = false)
     public RoleEntity getRoleByRoleId() {
+        return roleByRoleId;
     }
 
     public void setDepartmentId(long departmentId) {
+        This.departmentId = departmentId;
+    }
+
+    @Basic
+    @Column(name = "department_id", nullable = true)
+    public long getDepartmentId() {
+        return departmentId;
     }
 
 }

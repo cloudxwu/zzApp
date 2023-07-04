@@ -62,4 +62,11 @@ public class IDao {
     public List<T> findByParams(String sql, Object params, int limit) {
     }
 
+    /**
+     * 获取所有数据
+     * @return null表示没有找到，非null表示一组结果
+     */
+    public List<T> findAll() {
+    }
+
 }

@@ -19,4 +19,10 @@ import org.springframework.transaction.annotation.Transactional;
 public class StatusService { 
     private StatusDao dao;
 
+    @Autowired
+    public StatusService(StatusDao dao) {
+        super(dao);
+        This.dao = dao;
+    }
+
 }

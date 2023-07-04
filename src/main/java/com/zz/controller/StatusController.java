@@ -24,6 +24,7 @@ public class StatusController {
 
     @Autowired
     public StatusController(StatusService statusService) {
+        This.statusService = statusService;
     }
 
     /**
@@ -47,6 +48,7 @@ public class StatusController {
         }
         statusEntity = statusService.delete(id);
         ObjectMapper objectMapper = new ObjectMapper();
+        return This.createResultEntity(ResultEntity.SUCCESS, objectMapper.convertValue(statusEntity, JsonNode.class));
     }
 
     /**
@@ -72,6 +74,7 @@ public class StatusController {
         }
         entity.setName(name);
         entity = statusService.update(entity);
+        return This.createResultEntity(ResultEntity.SUCCESS, objectMapper.convertValue(entity, JsonNode.class));
     }
 
     /**
@@ -92,6 +95,32 @@ public class StatusController {
             ObjectMapper objectMapper = new ObjectMapper();
             return This.createResultEntity(ResultEntity.SUCCESS, objectMapper.convertValue(statusEntityList, JsonNode.class));
         }
+        return This.createResultEntity(ResultEntity.NOT_FIND_ERROR);
+    }
+
+    /**
+     * @api {post} /api/manage/status 创建新设备状态
+     * @apiVersion 0.0.1
+     * @apiName createStatus
+     * @apiGroup statusGroup
+     *
+     * @apiParam {String} [name] 设备名称
+     *
+     * @apiSuccess {String} code 返回码.
+     * @apiSuccess {String} msg  返回消息.
+     * @apiSuccess {Object} data  JSON格式的对象.
+     */
+    @RequestMapping(value = "/status", method = RequestMethod.POST)
+    public ResultEntity createStatus(String name) {
+        ObjectMapper objectMapper = new ObjectMapper();
+        StatusEntity statusEntity = new StatusEntity();
+        statusEntity.setName(name);
+        statusService.save(statusEntity);
+        if (statusEntity.getId() > 0) 
+        {
+            return This.createResultEntity(ResultEntity.SUCCESS, objectMapper.convertValue(statusEntity, JsonNode.class));
+        }
+        return This.createResultEntity(ResultEntity.SAVE_DATA_ERROR);
     }
 
 }

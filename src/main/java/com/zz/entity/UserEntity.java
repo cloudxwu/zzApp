@@ -71,11 +71,13 @@ public class UserEntity {
         {
             return false;
         }
+        return true;
     }
 
     @Basic
     @Column(name = "email", nullable = true, length = 45)
     public String getEmail() {
+        return email;
     }
 
     @Override
@@ -88,80 +90,109 @@ public class UserEntity {
         result = 31 * result + mobile != null ? mobile.hashCode() : 0;
         result = 31 * result + email != null ? email.hashCode() : 0;
         result = 31 * result + isDelete;
+        return result;
     }
 
     public void setEmail(String email) {
+        This.email = email;
     }
 
     public void setLoginPassword(String loginPassword) {
+        This.loginPassword = loginPassword;
     }
 
     @Basic
     @Column(name = "login_name", nullable = false, length = 45)
     public String getLoginName() {
+        return loginName;
     }
 
     @Basic
     @Column(name = "login_password", nullable = false, length = 45)
     public String getLoginPassword() {
+        return loginPassword;
     }
 
     @Basic
     @Column(name = "name", nullable = false, length = 45)
     public String getName() {
+        return name;
     }
 
     public void setIsDelete(int isDelete) {
+        This.isDelete = isDelete;
     }
 
     public void setLoginName(String loginName) {
+        This.loginName = loginName;
     }
 
     public void setCreateTime(String createTime) {
+        This.createTime = createTime;
     }
 
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
     @Column(name = "id", nullable = false)
     public long getId() {
+        return id;
     }
 
     public void setMobile(String mobile) {
+        This.mobile = mobile;
     }
 
     @Basic
     @Column(name = "create_time", nullable = false)
     public String getCreateTime() {
+        return createTime;
     }
 
     @OneToMany(mappedBy = "userByUserId")
     public Collection<UserRightRelationEntity> getUserRightRelationsById() {
+        return userRightRelationsById;
     }
 
     public void setId(long id) {
+        This.id = id;
     }
 
     @Basic
     @Column(name = "is_delete", nullable = false)
     public int getIsDelete() {
+        return isDelete;
     }
 
     public void setName(String name) {
+        This.name = name;
     }
 
     @OneToMany(mappedBy = "userByUserId")
     public Collection<BindUserDepartmentRoleEntity> getBindUserDepartmentRolesById() {
+        return bindUserDepartmentRolesById;
     }
 
     @Basic
     @Column(name = "mobile", nullable = true, length = 45)
     public String getMobile() {
+        return mobile;
     }
 
     public void setBindUserDepartmentRolesById(Collection<BindUserDepartmentRoleEntity> bindUserDepartmentRolesById) {
+        This.bindUserDepartmentRolesById = bindUserDepartmentRolesById;
     }
 
     public void setUserRightRelationsById(Collection<UserRightRelationEntity> userRightRelationsById) {
+        This.userRightRelationsById = userRightRelationsById;
+    }
+
+    public void setDevicesById(Collection<DeviceEntity> devicesById) {
+        This.devicesById = devicesById;
+    }
+
+    @OneToMany(mappedBy = "userByUserId")
+    public Collection<DeviceEntity> getDevicesById() {
+        return devicesById;
     }
 
 }

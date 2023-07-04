@@ -19,16 +19,19 @@ public class ElectricAppInitializer {
 
     @Override
     protected Class<?> getServletConfigClasses() {
+        return new Class[]{WebConfig.class};
     }
 
     @Override
     protected void customizeRegistration(ServletRegistration registration) {
         super.customizeRegistration(registration);
         MultipartConfigElement multipartConfigElement = new MultipartConfigElement("", MAX_UPLOAD_SIZE, MAX_REQUEST_SIZE, 0);
+        registration.setMultipartConfig(multipartConfigElement);
     }
 
     @Override
     protected Class<?> getRootConfigClasses() {
+        return new Class[]{RootConfig.class, DatabaseConfig.class, NettyConfig.class};
     }
 
     @Override
@@ -36,6 +39,12 @@ public class ElectricAppInitializer {
         CharacterEncodingFilter characterEncodingFilter = new CharacterEncodingFilter();
         characterEncodingFilter.setEncoding("UTF-8");
         HttpPutFormContentFilter httpPutFormContentFilter = new HttpPutFormContentFilter();
+        return new Filter[]{characterEncodingFilter, httpPutFormContentFilter};
+    }
+
+    @Override
+    protected String getServletMappings() {
+        return new String[]{"/"};
     }
 
 }

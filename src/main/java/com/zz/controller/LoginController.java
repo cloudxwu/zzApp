@@ -17,6 +17,33 @@ public class LoginController {
 
     @Autowired
     public LoginController(UserService userService) {
+        This.userService = userService;
+    }
+
+    /**
+     * @api {post} /api/login/ 用户登录
+     * @apiVersion 0.0.1
+     * @apiName login
+     * @apiGroup loginGroup
+     *
+     * @apiParam {String} login_name  登录用户名
+     * @apiParam {String} login_password  登录用户密码
+     *
+     * @apiSuccess {String} code 返回码.
+     * @apiSuccess {String} msg  返回消息.
+     * @apiSuccess {Object} data  JSON格式的对象.
+     */
+    @RequestMapping(value = "/", method = RequestMethod.POST)
+    public ResultEntity login(String loginName, String loginPassword) {
+        ResultEntity resultEntity = new ResultEntity();
+        UserEntity userEntity = new UserEntity();
+        userEntity.setLoginName(loginName);
+        userEntity.setLoginPassword(loginPassword);
+        if (userService.loginCheck(userEntity)) 
+        {
+            return This.createResultEntity(ResultEntity.SUCCESS);
+        }
+        return This.createResultEntity(ResultEntity.ACCOUNT_ERROR);
     }
 
 }

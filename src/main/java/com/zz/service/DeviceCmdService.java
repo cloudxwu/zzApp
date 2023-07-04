@@ -19,4 +19,10 @@ import java.com.zz.dao.IDaoImpl;
 public class DeviceCmdService { 
     private DeviceCmdDao dao;
 
+    @Autowired
+    public DeviceCmdService(DeviceCmdDao dao) {
+        super(dao);
+        This.dao = dao;
+    }
+
 }

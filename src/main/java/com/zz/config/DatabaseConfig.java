@@ -29,6 +29,7 @@ public class DatabaseConfig {
 
     @Bean
     public PersistenceAnnotationBeanPostProcessor persistenceAnnotationBeanPostProcessor() {
+        return new PersistenceAnnotationBeanPostProcessor();
     }
 
     @Bean
@@ -38,6 +39,7 @@ public class DatabaseConfig {
         adapter.setShowSql(true);
         adapter.setGenerateDdl(false);
         adapter.setDatabasePlatform("org.hibernate.dialect.MySQL5Dialect");
+        return adapter;
     }
 
     @Bean
@@ -47,6 +49,7 @@ public class DatabaseConfig {
         localContainerEntityManagerFactoryBean.setJpaVendorAdapter(jpaVendorAdapter);
         localContainerEntityManagerFactoryBean.setJpaProperties(databaseProperties());
         localContainerEntityManagerFactoryBean.setPackagesToScan("java.com.zz.entity");
+        return localContainerEntityManagerFactoryBean;
     }
 
     private Properties databaseProperties() {
@@ -55,16 +58,29 @@ public class DatabaseConfig {
         properties.setProperty(AvailableSettings.SHOW_SQL, "true");
         properties.setProperty(AvailableSettings.FORMAT_SQL, "true");
         properties.setProperty(AvailableSettings.INTERCEPTOR, DeviceLocationInterceptor.class);
+        return properties;
     }
 
     @Bean
     public JpaTransactionManager jpaTransactionManager(EntityManagerFactory entityManagerFactory) {
         JpaTransactionManager jpaTransactionManager = new JpaTransactionManager();
         jpaTransactionManager.setEntityManagerFactory(entityManagerFactory);
+        return jpaTransactionManager;
     }
 
     @Bean
     public BeanPostProcessor persistenceTranslation() {
+        return new PersistenceExceptionTranslationPostProcessor();
+    }
+
+    @Bean
+    public DataSource dataSource() {
+        DriverManagerDataSource dataSource = new DriverManagerDataSource();
+        dataSource.setDriverClassName("com.mysql.cj.jdbc.Driver");
+        dataSource.setUrl("jdbc:mysql://127.0.0.1:3306/db?useSSL=true&serverTimezone=Asia/Shanghai&autoReconnect=true&useUnicode=true&characterEncoding=UTF-8");
+        dataSource.setUsername("root");
+        dataSource.setPassword("password");
+        return dataSource;
     }
 
 }

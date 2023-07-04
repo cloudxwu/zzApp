@@ -31,19 +31,23 @@ public class WebConfig {
      */
     @Override
     public void addCorsMappings(CorsRegistry registry) {
+        registry.addMapping("/**").allowedOrigins("http://localhost:4200", "http1").allowedMethods("POST", "GET", "PUT", "DELETE").maxAge(3600).allowCredentials(true);
     }
 
     @Override
     public void setApplicationContext(ApplicationContext applicationContext) throws BeansException {
+        This.applicationContext = applicationContext;
     }
 
     @Bean
     public MultipartResolver multipartResolver() {
+        return new StandardServletMultipartResolver();
     }
 
     @Override
     public void configureDefaultServletHandling(DefaultServletHandlerConfigurer configurer) {
         super.configureDefaultServletHandling(configurer);
+        configurer.enable();
     }
 
     @Bean
@@ -55,6 +59,7 @@ public class WebConfig {
         templateResolver.setTemplateMode(TemplateMode.HTML);
         templateResolver.setCharacterEncoding("UTF-8");
         templateResolver.setCacheable(false);
+        return templateResolver;
     }
 
     /** 
@@ -66,6 +71,7 @@ public class WebConfig {
         SpringTemplateEngine templateEngine = new SpringTemplateEngine();
         templateEngine.setTemplateResolver(templateResolver());
         templateEngine.setEnableSpringELCompiler(true);
+        return templateEngine;
     }
 
     @Override
@@ -74,6 +80,15 @@ public class WebConfig {
         registry.addResourceHandler("/images/**").addResourceLocations("/WEB-INF/images/");
         registry.addResourceHandler("/css/**").addResourceLocations("/WEB-INF/css/");
         registry.addResourceHandler("/js/**").addResourceLocations("/WEB-INF/js/");
+        registry.addResourceHandler("/apidoc/**").addResourceLocations("/WEB-INF/apidoc/");
+    }
+
+    @Bean
+    public ThymeleafViewResolver thymeleafViewResolver() {
+        ThymeleafViewResolver viewResolver = new ThymeleafViewResolver();
+        viewResolver.setTemplateEngine(templateEngine());
+        viewResolver.setCharacterEncoding("UTF-8");
+        return viewResolver;
     }
 
 }

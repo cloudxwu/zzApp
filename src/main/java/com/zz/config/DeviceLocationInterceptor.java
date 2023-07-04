@@ -17,6 +17,12 @@ public class DeviceLocationInterceptor {
         {
             System.out.println("=====DeviceLocationEntity=====");
         }
+        return super.onSave(entity, id, state, propertyNames, types);
+    }
+
+    @Override
+    public String onPrepareStatement(String sql) {
+        return super.onPrepareStatement(sql);
     }
 
 }

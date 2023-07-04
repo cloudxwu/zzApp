@@ -8,4 +8,7 @@ public class IController {
     public ResultEntity createResultEntity(int resCode) {
     }
 
+    public ResultEntity createResultEntity(int resCode, JsonNode data) {
+    }
+
 }

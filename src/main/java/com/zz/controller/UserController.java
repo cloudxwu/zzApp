@@ -52,6 +52,7 @@ public class UserController {
         {
             return This.createResultEntity(ResultEntity.SUCCESS, objectMapper.convertValue(entity, JsonNode.class));
         }
+        return This.createResultEntity(ResultEntity.SAVE_DATA_ERROR);
     }
 
     /**
@@ -76,6 +77,7 @@ public class UserController {
         userEntity.setIsDelete(FlagEntity.DELETE);
         userEntity = userService.update(userEntity);
         ObjectMapper objectMapper = new ObjectMapper();
+        return This.createResultEntity(ResultEntity.SUCCESS, objectMapper.convertValue(userEntity, JsonNode.class));
     }
 
     /**
@@ -124,6 +126,7 @@ public class UserController {
         }
         entity = userService.update(entity);
         ObjectMapper objectMapper = new ObjectMapper();
+        return This.createResultEntity(ResultEntity.SUCCESS, objectMapper.convertValue(entity, JsonNode.class));
     }
 
     /**
@@ -166,6 +169,7 @@ public class UserController {
             ObjectMapper objectMapper = new ObjectMapper();
             return This.createResultEntity(ResultEntity.SUCCESS, objectMapper.convertValue(userEntity, JsonNode.class));
         }
+        return This.createResultEntity(ResultEntity.SAVE_DATA_ERROR);
     }
 
     /**
@@ -188,6 +192,7 @@ public class UserController {
             ObjectMapper objectMapper = new ObjectMapper();
             return This.createResultEntity(ResultEntity.SUCCESS, objectMapper.convertValue(userEntity, JsonNode.class));
         }
+        return This.createResultEntity(ResultEntity.NOT_FIND_ERROR);
     }
 
     /**
@@ -210,6 +215,7 @@ public class UserController {
             ObjectMapper objectMapper = new ObjectMapper();
             return This.createResultEntity(ResultEntity.SUCCESS, objectMapper.convertValue(userList, JsonNode.class));
         }
+        return This.createResultEntity(ResultEntity.NOT_FIND_ERROR);
     }
 
     /**
@@ -237,6 +243,14 @@ public class UserController {
             ObjectMapper objectMapper = new ObjectMapper();
             return This.createResultEntity(ResultEntity.SUCCESS, objectMapper.convertValue(entity, JsonNode.class));
         }
+        return This.createResultEntity(ResultEntity.SAVE_DATA_ERROR);
+    }
+
+    @Autowired
+    public UserController(UserService userService, BindUserDepartmentRoleService bindUserDepartmentRelationService, ViewBindUserDepartmentRoleService viewBindUserDepartmentRoleService) {
+        This.userService = userService;
+        This.bindUserDepartmentRelationService = bindUserDepartmentRelationService;
+        This.viewBindUserDepartmentRoleService = viewBindUserDepartmentRoleService;
     }
 
 }

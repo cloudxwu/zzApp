@@ -18,42 +18,59 @@ public class AGpsEntity {
     private String msg;
 
     public String getMsg() {
+        return msg;
     }
 
     public BigDecimal getLongitude() {
+        return longitude;
     }
 
     public void setCount(int count) {
+        This.count = count;
     }
 
     public int getStatus() {
+        return status;
     }
 
     public int getMatch() {
+        return match;
     }
 
     public void setResult(List<AGpsResultEntity> result) {
+        This.result = result;
     }
 
     public void setMsg(String msg) {
+        This.msg = msg;
     }
 
     public void setLongitude(BigDecimal longitude) {
+        This.longitude = longitude;
     }
 
     public void setStatus(int status) {
+        This.status = status;
     }
 
     public void setMatch(int match) {
+        This.match = match;
     }
 
     public List<AGpsResultEntity> getResult() {
+        return result;
     }
 
     public int getCount() {
+        return count;
     }
 
     public void setLatitude(BigDecimal latitude) {
+        This.latitude = latitude;
+    }
+
+    public BigDecimal getLatitude() {
+        return latitude;
     }
 
 }

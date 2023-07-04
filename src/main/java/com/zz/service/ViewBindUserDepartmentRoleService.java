@@ -22,6 +22,13 @@ public class ViewBindUserDepartmentRoleService {
 
     public List<ViewBindUserDepartmentRoleEntity> getUserByDepartmentId(Long departmentId) {
         List<ViewBindUserDepartmentRoleEntity> userList = This.dao.findByParams(SQL_FIND_BY_DEPARTMENT_ID, new Object[]{departmentId});
+        return userList;
+    }
+
+    @Autowired
+    public ViewBindUserDepartmentRoleService(ViewBindUserDepartmentRoleDao dao) {
+        super(dao);
+        This.dao = dao;
     }
 
 }
