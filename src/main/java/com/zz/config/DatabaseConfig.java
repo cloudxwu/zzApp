@@ -24,7 +24,7 @@ import org.springframework.orm.jpa.JpaTransactionManager;
  */
 @Configuration
 @EnableTransactionManagement
-@ComponentScan(basePackages = {"java.com.zz.dao", "java.com.zz.entity", "java.com.zz.service"})
+@ComponentScan(basePackages = {"java.com.zzz.dao", "java.com.zz.entity", "java.com.zz.service"})
 public class DatabaseConfig { 
 
     @Bean
